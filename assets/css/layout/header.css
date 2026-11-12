@@ -1,0 +1,128 @@
+/* سربرگ شیشه‌ای شناور، کشوی منو در موبایل (از سمت چپ) و منوی پایین با دکمه رزرو وسط */
+
+/* ================= لوگو ================= */
+.brand { display: inline-flex; align-items: center; gap: var(--s3); text-decoration: none; color: var(--ink); white-space: nowrap; }
+.brand:hover { color: var(--ink); }
+/* فقط نشانِ طاقی؛ نسخه روشنش در حالت تیره جایگزین می‌شود. */
+.logo { display: block; height: 42px; aspect-ratio: 168 / 204; background: url("../../img/logo.svg") center / contain no-repeat; }
+:root[data-theme="dark"] .logo { background-image: url("../../img/logo-dark.svg"); }
+.brand__name { font-size: 1.02rem; font-weight: 600; color: var(--muted); line-height: 1.3; }
+.brand__name b { color: var(--ink); font-weight: 900; }
+.brand__fa { font-size: .8rem; font-weight: 600; color: var(--muted); padding-inline-start: var(--s3); border-inline-start: 1px solid var(--line); line-height: 1.45; }
+
+/* ================= سربرگ ================= */
+.site-header { position: sticky; top: 0; z-index: 40; padding-top: var(--s3); }
+
+/* شیشه روی ::before است، نه خود نوار؛ چون backdrop-filter روی والد،
+   جای «position: fixed» کشوی منو را خراب می‌کند. */
+.site-header__bar {
+  position: relative; display: flex; align-items: center; gap: var(--s4);
+  width: calc(100% - 24px); max-width: calc(var(--wrap) - 32px); min-height: 66px;
+  margin-inline: auto; padding-inline: var(--s4);
+}
+.site-header__bar::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 22px;
+  background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(22px) saturate(170%); backdrop-filter: blur(22px) saturate(170%);
+}
+
+.site-nav { margin-inline-start: auto; }
+.site-nav__head { display: none; }
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; align-items: center; }
+.site-nav a {
+  position: relative; display: inline-flex; align-items: center; min-height: 42px; padding-inline: var(--s3);
+  color: var(--ink); text-decoration: none; border-radius: 12px; font-weight: 500; white-space: nowrap;
+  transition: background .2s var(--ease), color .2s var(--ease);
+}
+.site-nav a:hover { background: var(--accent-soft); color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--accent-ink); font-weight: 700; background: var(--accent-soft); }
+.header-actions { display: flex; align-items: center; gap: var(--s2); }
+
+.icon-btn {
+  position: relative; display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  border: 1px solid var(--glass-border); background: var(--glass-soft); color: var(--ink);
+  border-radius: 14px; transition: background .2s var(--ease), border-color .2s var(--ease), transform .12s var(--ease);
+}
+.icon-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+.icon-btn:active { transform: translateY(1px); }
+.icon-btn svg { width: 20px; height: 20px; }
+.icon-btn .badge-count {
+  position: absolute; top: -6px; inset-inline-end: -6px; min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 10px; background: var(--accent); color: var(--on-accent); font-size: 11px; line-height: 20px; text-align: center; font-weight: 700;
+}
+/* دکمه تم: ماه در حالت روشن، خورشید در حالت تیره */
+.i-sun, :root[data-theme="dark"] .i-moon { display: none; }
+:root[data-theme="dark"] .i-sun { display: block; }
+.nav-toggle { display: none; }
+
+/* ================= موبایل و تبلت: کشوی منو از سمت چپ ================= */
+@media (max-width: 1180px) {
+  .nav-toggle { display: inline-grid; }
+  .header-actions .btn-book { display: none; }
+  /* دکمه منو آخرین فرزند است، پس در راست‌به‌چپ سمت چپ می‌نشیند. */
+  .header-actions { margin-inline-start: auto; }
+
+  .site-nav {
+    position: fixed; z-index: 60; top: 12px; bottom: 12px; left: 12px; width: 84vw; max-width: 320px;
+    display: flex; flex-direction: column; gap: var(--s4); margin: 0; padding: var(--s4); overflow-y: auto;
+    border-radius: 26px; background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(26px) saturate(170%); backdrop-filter: blur(26px) saturate(170%);
+    transform: translateX(calc(-100% - 24px)); visibility: hidden;
+    transition: transform .45s var(--ease-out), visibility 0s .45s;
+  }
+  .site-nav.is-open { transform: none; visibility: visible; transition: transform .45s var(--ease-out); }
+  .site-nav__head { display: flex; align-items: center; gap: var(--s3); padding-bottom: var(--s3); border-bottom: 1px solid var(--line); }
+  .site-nav__head .logo { height: 36px; }
+  .site-nav__head strong { flex: 1; }
+  .site-nav ul { flex-direction: column; align-items: stretch; gap: var(--s1); }
+  .site-nav a { width: 100%; min-height: 48px; padding-inline: var(--s4); }
+
+  .nav-backdrop {
+    position: fixed; inset: 0; z-index: 35; background: rgba(29, 20, 24, .35); /* زیر سربرگ (۴۰) که کشو داخل آن است */
+    -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+    opacity: 0; pointer-events: none; transition: opacity .35s var(--ease);
+  }
+  .nav-backdrop.is-open { opacity: 1; pointer-events: auto; }
+}
+
+/* ================= منوی پایین با دکمه رزرو در وسط ================= */
+.tabbar { display: none; }
+@media (max-width: 1180px) {
+  .tabbar {
+    position: fixed; z-index: 30; left: 12px; right: 12px; bottom: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
+    display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; height: 70px; padding: 0 var(--s1);
+    border-radius: 24px; background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(22px) saturate(170%); backdrop-filter: blur(22px) saturate(170%);
+  }
+  .tabbar__item, .tabbar__book {
+    position: relative; display: grid; justify-items: center; gap: 3px; padding: 0 0 10px;
+    color: var(--muted); text-decoration: none; font-size: .72rem; font-weight: 600; line-height: 1.4;
+  }
+  .tabbar__item .icon { width: 23px; height: 23px; transition: transform .25s var(--ease-out); }
+  .tabbar__item:hover { color: var(--ink); }
+  .tabbar__item[aria-current="page"] { color: var(--accent-ink); }
+  .tabbar__item[aria-current="page"] .icon { transform: translateY(-2px); }
+  .tabbar__item[aria-current="page"]::after {
+    content: ""; position: absolute; bottom: 4px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent);
+  }
+  .tabbar__book { color: var(--accent-ink); font-weight: 800; }
+  .tabbar__fab {
+    display: grid; place-items: center; width: 60px; height: 60px; margin-top: -30px; border-radius: 20px;
+    background: linear-gradient(135deg, var(--accent), var(--plum)); color: var(--on-accent);
+    box-shadow: 0 0 0 5px var(--glass-ring), 0 14px 26px -10px var(--accent);
+    transition: transform .25s var(--ease-out);
+  }
+  .tabbar__fab .icon { width: 28px; height: 28px; }
+  .tabbar__book:hover .tabbar__fab { transform: translateY(-3px) rotate(-4deg); }
+  body.has-tabbar { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+}
+
+/* گوشی‌های خیلی کوچک: همه‌چیز در یک ردیف جا شود */
+@media (max-width: 380px) {
+  .site-header__bar { gap: var(--s2); padding-inline: var(--s3); }
+  .brand { gap: var(--s2); min-width: 0; }
+  .brand .logo { height: 34px; }
+  .brand__name { font-size: .88rem; }
+  .header-actions { gap: 4px; }
+  .header-actions .icon-btn { width: 38px; height: 38px; border-radius: 12px; }
+}

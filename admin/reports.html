@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>گزارش‌ها و آمار | سالن زیبایی آیدا</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#FBF1F0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#170F13" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="../assets/img/icon-180.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="آیدا" />
+    <link rel="preload" href="../assets/fonts/vazirmatn-arabic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="../assets/css/base/tokens.css" />
+    <link rel="stylesheet" href="../assets/css/base/base.css" />
+    <link rel="stylesheet" href="../assets/css/layout/header.css" />
+    <link rel="stylesheet" href="../assets/css/layout/footer.css" />
+    <link rel="stylesheet" href="../assets/css/components/buttons.css" />
+    <link rel="stylesheet" href="../assets/css/components/forms.css" />
+    <link rel="stylesheet" href="../assets/css/components/cards.css" />
+    <link rel="stylesheet" href="../assets/css/components/tables.css" />
+    <link rel="stylesheet" href="../assets/css/components/dialog.css" />
+    <link rel="stylesheet" href="../assets/css/layout/panel.css" />
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/base/motion.css" />
+
+    <!-- اسکریپت‌ها -->
+    <script src="../assets/js/theme-init.js"></script>
+    <script src="../assets/js/common/theme.js" defer></script>
+    <script src="../assets/js/common/nav.js" defer></script>
+    <script src="../assets/js/common/reveal.js" defer></script>
+    <script src="../assets/js/common/ui.js" defer></script>
+    <script src="../assets/js/common/forms.js" defer></script>
+    <script src="../assets/js/common/pwa.js" defer></script>
+    <script src="../assets/js/components/select.js" defer></script>
+    <script src="../assets/js/components/panel.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+
+    <!-- ===== سربرگ سایت ===== -->
+    <header class="site-header">
+      <div class="wrap site-header__bar">
+        <a class="brand" href="../index.html" aria-label="صفحه اصلی سالن زیبایی آیدا">
+          <span class="logo" role="img" aria-label="آیدا"></span>
+          <span class="brand__name">
+            سالن زیبایی
+            <b>آیدا</b>
+          </span>
+        </a>
+        <nav id="site-nav" class="site-nav" aria-label="منوی اصلی">
+          <div class="site-nav__head">
+            <span class="logo" aria-hidden="true"></span>
+            <strong>منوی سالن</strong>
+            <button type="button" class="icon-btn" data-nav-close aria-label="بستن منو">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <ul>
+            <li><a href="../index.html">خانه</a></li>
+            <li><a href="../services.html">خدمات</a></li>
+            <li><a href="../stylists.html">آرایشگران</a></li>
+            <li><a href="../about.html">درباره ما</a></li>
+            <li><a href="#contact">تماس</a></li>
+            <li><a href="../admin/index.html">پنل من</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a class="icon-btn" href="../account/notifications.html" aria-label="اعلان‌ها">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z" />
+              <path d="M10 20a2 2 0 0 0 4 0" />
+            </svg>
+            <span class="badge-count" aria-hidden="true">۲</span>
+          </a>
+          <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false" aria-label="تغییر حالت روشن و تیره">
+            <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" /></svg
+            ><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+          </button>
+          <button type="button" class="icon-btn nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="منو">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <div class="wrap panel-layout">
+        <!-- ===== منوی پنل ===== -->
+        <nav class="side-nav" aria-label="منوی پنل مدیریت">
+          <div class="side-nav__user">
+            <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
+            <div>
+              <strong>مدیر سالن</strong>
+              <small>دسترسی کامل</small>
+            </div>
+          </div>
+          <div class="side-nav__group">
+            <p class="side-nav__title">عمومی</p>
+            <ul>
+              <li>
+                <a href="../admin/index.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4h6v8h-6z" />
+                    <path d="M4 16h6v4h-6z" />
+                    <path d="M14 12h6v8h-6z" />
+                    <path d="M14 4h6v4h-6z" />
+                  </svg>
+                  <span>داشبورد</span>
+                </a>
+              </li>
+              <li>
+                <a href="../admin/reports.html" aria-current="page">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 3v18h18" />
+                    <path d="M7 15l4 -4l3 3l5 -6" />
+                  </svg>
+                  <span>گزارش‌ها و آمار</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="side-nav__group">
+            <p class="side-nav__title">نوبت‌دهی</p>
+            <ul>
+              <li>
+                <a href="../admin/appointments.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                    <path d="M16 3v4" />
+                    <path d="M8 3v4" />
+                    <path d="M4 11h16" />
+                  </svg>
+                  <span>نوبت‌ها</span>
+                  <span class="side-nav__badge">۲</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="side-nav__group">
+            <p class="side-nav__title">سالن</p>
+            <ul>
+              <li>
+                <a href="../admin/services.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M6 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M8.6 8.6l10.4 10.4" />
+                    <path d="M8.6 15.4l10.4 -10.4" />
+                  </svg>
+                  <span>خدمات و دسته‌ها</span>
+                </a>
+              </li>
+              <li>
+                <a href="../admin/staff.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                    <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                  </svg>
+                  <span>آرایشگران</span>
+                </a>
+              </li>
+              <li>
+                <a href="../admin/discounts.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15 5v2" />
+                    <path d="M15 11v2" />
+                    <path d="M15 17v2" />
+                    <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
+                  </svg>
+                  <span>کدهای تخفیف</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="side-nav__group">
+            <p class="side-nav__title">مشتریان</p>
+            <ul>
+              <li>
+                <a href="../admin/reviews.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 9h8" />
+                    <path d="M8 13h6" />
+                    <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                  </svg>
+                  <span>نظرات و پیام‌ها</span>
+                  <span class="side-nav__badge">۳</span>
+                </a>
+              </li>
+              <li>
+                <a href="../admin/users.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                  </svg>
+                  <span>کاربران و نقش‌ها</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="side-nav__group">
+            <p class="side-nav__title">سیستم</p>
+            <ul>
+              <li>
+                <a href="../admin/settings.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M10.3 4.3c.4 -1.8 3 -1.8 3.4 0a1.7 1.7 0 0 0 2.6 1.1c1.5 -.9 3.3 .8 2.4 2.4a1.7 1.7 0 0 0 1 2.5c1.8 .4 1.8 3 0 3.4a1.7 1.7 0 0 0 -1 2.6c.9 1.5 -.9 3.3 -2.4 2.4a1.7 1.7 0 0 0 -2.6 1c-.4 1.8 -3 1.8 -3.4 0a1.7 1.7 0 0 0 -2.6 -1c-1.5 .9 -3.3 -.9 -2.4 -2.4a1.7 1.7 0 0 0 -1 -2.6c-1.8 -.4 -1.8 -3 0 -3.4a1.7 1.7 0 0 0 1 -2.5c-.9 -1.6 .9 -3.3 2.4 -2.4a1.7 1.7 0 0 0 2.6 -1.1z" />
+                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  </svg>
+                  <span>تنظیمات و تعطیلات</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="side-nav__group">
+            <p class="side-nav__title">حساب</p>
+            <ul>
+              <li>
+                <a href="../account/profile.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                  </svg>
+                  <span>حساب من</span>
+                </a>
+              </li>
+              <li>
+                <a href="../account/notifications.html">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+                    <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+                  </svg>
+                  <span>اعلان‌ها</span>
+                  <span class="side-nav__badge">۲</span>
+                </a>
+              </li>
+              <li class="side-nav__logout-item">
+                <a class="side-nav__logout" href="../index.html" data-logout>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+                    <path d="M9 12h12l-3 -3" />
+                    <path d="M18 15l3 -3" />
+                  </svg>
+                  <span>خروج</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- ===== محتوای صفحه (داده‌ها نمونه‌اند؛ بک‌اند آن‌ها را پر می‌کند) ===== -->
+        <div class="panel-content">
+          <header class="p-head">
+            <div>
+              <p class="p-head__eyebrow">پنل مدیریت</p>
+              <h1>گزارش‌ها و آمار</h1>
+              <p class="p-head__sub">۱ تا ۲۱ آبان ۱۴۰۵</p>
+            </div>
+            <div class="p-head__actions">
+              <button type="button" class="btn btn-outline" data-export>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+                  <path d="M7 11l5 5l5 -5" />
+                  <path d="M12 4v12" />
+                </svg>
+                خروجی اکسل
+              </button>
+            </div>
+          </header>
+          <section class="card mb-3">
+            <form class="cluster" method="get" style="align-items: flex-end">
+              <div class="field" style="flex: 1 1 150px">
+                <label for="from">از تاریخ</label>
+                <input id="from" name="from" class="input ltr" value="1405/08/01" placeholder="1405/08/01" />
+              </div>
+              <div class="field" style="flex: 1 1 150px">
+                <label for="to">تا تاریخ</label>
+                <input id="to" name="to" class="input ltr" value="1405/08/21" placeholder="1405/08/21" />
+              </div>
+              <button type="submit" class="btn btn-primary">نمایش</button>
+              <div class="tabs" style="margin: 0">
+                <a href="?range=7">۷ روز</a>
+                <a href="?range=30" aria-current="page">این ماه</a>
+                <a href="?range=90">۳ ماه</a>
+              </div>
+            </form>
+          </section>
+          <div class="stats" style="margin-top: var(--s4)">
+            <div class="stat stat--lead">
+              <span class="stat__icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                  <path d="M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                </svg>
+              </span>
+              <span class="stat__label">درآمد بازه</span>
+              <span class="stat__value">
+                ۲۱۴
+                <small>میلیون تومان</small>
+              </span>
+              <span class="stat__trend stat__trend--up">▲ ۱۲٪ نسبت به ماه قبل</span>
+            </div>
+            <div class="stat">
+              <span class="stat__icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                  <path d="M16 3v4" />
+                  <path d="M8 3v4" />
+                  <path d="M4 11h16" />
+                </svg>
+              </span>
+              <span class="stat__label">کل نوبت‌ها</span>
+              <span class="stat__value">۲۷۰</span>
+              <span class="stat__trend stat__trend--up">▲ ۸٪</span>
+            </div>
+            <div class="stat">
+              <span class="stat__icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 9v4" />
+                  <path d="M12 16h.01" />
+                  <path d="M10.24 3.957l-8.422 14.06a1.989 1.989 0 0 0 1.7 2.983h16.845a1.989 1.989 0 0 0 1.7 -2.983l-8.423 -14.06a1.989 1.989 0 0 0 -3.4 0z" />
+                </svg>
+              </span>
+              <span class="stat__label">نرخ لغو و عدم مراجعه</span>
+              <span class="stat__value">۵٪</span>
+              <span class="stat__trend stat__trend--down">▼ ۱٪</span>
+            </div>
+            <div class="stat">
+              <span class="stat__icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15 5v2" />
+                  <path d="M15 11v2" />
+                  <path d="M15 17v2" />
+                  <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
+                </svg>
+              </span>
+              <span class="stat__label">میانگین ارزش هر نوبت</span>
+              <span class="stat__value">
+                ۷۹۰
+                <small>هزار تومان</small>
+              </span>
+              <span class="stat__trend stat__trend--up">▲ ۳٪</span>
+            </div>
+          </div>
+          <div class="stack-lg">
+            <section class="card">
+              <div class="card__head">
+                <div>
+                  <h2>روند درآمد روزانه</h2>
+                  <p>میلیون تومان</p>
+                </div>
+              </div>
+              <svg class="chart" viewBox="0 0 640 230" role="img" aria-label="نمودار خطی؛ داده دقیق در جدول زیر">
+                <defs>
+                  <linearGradient id="area-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="var(--accent)" stop-opacity=".35" />
+                    <stop offset="1" stop-color="var(--accent)" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <line class="grid-line" x1="10" y1="14.0" x2="594" y2="14.0" />
+                <text x="640" y="18.0" text-anchor="end">۳۶</text>
+                <line class="grid-line" x1="10" y1="76.0" x2="594" y2="76.0" />
+                <text x="640" y="80.0" text-anchor="end">۲۴</text>
+                <line class="grid-line" x1="10" y1="138.0" x2="594" y2="138.0" />
+                <text x="640" y="142.0" text-anchor="end">۱۲</text>
+                <line class="grid-line" x1="10" y1="200.0" x2="594" y2="200.0" />
+                <text x="640" y="204.0" text-anchor="end">۰</text>
+                <path
+                  class="area"
+                  d="M594.0,200 L594.0,105.7 L549.1,83.4 L504.2,97.4 L459.2,69.9 L414.3,58.0 L369.4,200.0 L324.5,89.6 L279.5,76.6 L234.6,60.6 L189.7,75.1 L144.8,46.6 L99.8,38.3 L54.9,200.0 L10.0,52.8 L10.0,200 Z" />
+                <polyline
+                  class="line"
+                  points="594.0,105.7 549.1,83.4 504.2,97.4 459.2,69.9 414.3,58.0 369.4,200.0 324.5,89.6 279.5,76.6 234.6,60.6 189.7,75.1 144.8,46.6 99.8,38.3 54.9,200.0 10.0,52.8" />
+                <circle class="dot" cx="594.0" cy="105.7" r="3.5"><title>۸: ۱۸٫۲ میلیون تومان</title></circle>
+                <circle class="dot" cx="549.1" cy="83.4" r="3.5"><title>۹: ۲۲٫۵ میلیون تومان</title></circle>
+                <circle class="dot" cx="504.2" cy="97.4" r="3.5"><title>۱۰: ۱۹٫۸ میلیون تومان</title></circle>
+                <circle class="dot" cx="459.2" cy="69.9" r="3.5"><title>۱۱: ۲۵٫۱ میلیون تومان</title></circle>
+                <circle class="dot" cx="414.3" cy="58.0" r="3.5"><title>۱۲: ۲۷٫۴ میلیون تومان</title></circle>
+                <circle class="dot" cx="369.4" cy="200.0" r="3.5"><title>۱۳: ۰ میلیون تومان</title></circle>
+                <circle class="dot" cx="324.5" cy="89.6" r="3.5"><title>۱۴: ۲۱٫۳ میلیون تومان</title></circle>
+                <circle class="dot" cx="279.5" cy="76.6" r="3.5"><title>۱۵: ۲۳٫۸ میلیون تومان</title></circle>
+                <circle class="dot" cx="234.6" cy="60.6" r="3.5"><title>۱۶: ۲۶٫۹ میلیون تومان</title></circle>
+                <circle class="dot" cx="189.7" cy="75.1" r="3.5"><title>۱۷: ۲۴٫۱ میلیون تومان</title></circle>
+                <circle class="dot" cx="144.8" cy="46.6" r="3.5"><title>۱۸: ۲۹٫۶ میلیون تومان</title></circle>
+                <circle class="dot" cx="99.8" cy="38.3" r="3.5"><title>۱۹: ۳۱٫۲ میلیون تومان</title></circle>
+                <circle class="dot" cx="54.9" cy="200.0" r="3.5"><title>۲۰: ۰ میلیون تومان</title></circle>
+                <circle class="dot" cx="10.0" cy="52.8" r="3.5"><title>۲۱: ۲۸٫۴ میلیون تومان</title></circle>
+                <text x="594.0" y="222" text-anchor="middle">۸</text>
+                <text x="504.2" y="222" text-anchor="middle">۱۰</text>
+                <text x="414.3" y="222" text-anchor="middle">۱۲</text>
+                <text x="324.5" y="222" text-anchor="middle">۱۴</text>
+                <text x="234.6" y="222" text-anchor="middle">۱۶</text>
+                <text x="144.8" y="222" text-anchor="middle">۱۸</text>
+                <text x="54.9" y="222" text-anchor="middle">۲۰</text>
+              </svg>
+              <details class="chart-data">
+                <summary>نمایش جدول داده‌ها</summary>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">روز</th>
+                      <th scope="col">مقدار</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>۸</td>
+                      <td>۱۸٫۲ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۹</td>
+                      <td>۲۲٫۵ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۰</td>
+                      <td>۱۹٫۸ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۱</td>
+                      <td>۲۵٫۱ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۲</td>
+                      <td>۲۷٫۴ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۳</td>
+                      <td>۰ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۴</td>
+                      <td>۲۱٫۳ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۵</td>
+                      <td>۲۳٫۸ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۶</td>
+                      <td>۲۶٫۹ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۷</td>
+                      <td>۲۴٫۱ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۸</td>
+                      <td>۲۹٫۶ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۱۹</td>
+                      <td>۳۱٫۲ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۲۰</td>
+                      <td>۰ میلیون تومان</td>
+                    </tr>
+                    <tr>
+                      <td>۲۱</td>
+                      <td>۲۸٫۴ میلیون تومان</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+            </section>
+            <div class="grid grid--2">
+              <section class="card">
+                <div class="card__head">
+                  <div><h2>تعداد نوبت در روزهای هفته</h2></div>
+                </div>
+                <svg class="chart" viewBox="0 0 640 230" role="img" aria-label="نمودار ستونی؛ داده دقیق در جدول زیر">
+                  <line class="grid-line" x1="0" y1="200" x2="640" y2="200" />
+                  <rect class="bar" x="554.8" y="76.5" width="29.9" height="123.5" rx="6"><title>شنبه: ۴۲</title></rect>
+                  <rect class="bar bar--alt" x="588.7" y="85.3" width="29.9" height="114.7" rx="6"><title>شنبه: ۳۹</title></rect>
+                  <text x="586.7" y="222" text-anchor="middle">شنبه</text>
+                  <rect class="bar" x="448.1" y="88.3" width="29.9" height="111.7" rx="6"><title>یکشنبه: ۳۸</title></rect>
+                  <rect class="bar bar--alt" x="482.0" y="97.1" width="29.9" height="102.9" rx="6"><title>یکشنبه: ۳۵</title></rect>
+                  <text x="480.0" y="222" text-anchor="middle">یکشنبه</text>
+                  <rect class="bar" x="341.5" y="82.4" width="29.9" height="117.6" rx="6"><title>دوشنبه: ۴۰</title></rect>
+                  <rect class="bar bar--alt" x="375.3" y="79.4" width="29.9" height="120.6" rx="6"><title>دوشنبه: ۴۱</title></rect>
+                  <text x="373.3" y="222" text-anchor="middle">دوشنبه</text>
+                  <rect class="bar" x="234.8" y="91.2" width="29.9" height="108.8" rx="6"><title>سه‌شنبه: ۳۷</title></rect>
+                  <rect class="bar bar--alt" x="268.7" y="103.0" width="29.9" height="97.0" rx="6"><title>سه‌شنبه: ۳۳</title></rect>
+                  <text x="266.7" y="222" text-anchor="middle">سه‌شنبه</text>
+                  <rect class="bar" x="128.1" y="55.9" width="29.9" height="144.1" rx="6"><title>چهارشنبه: ۴۹</title></rect>
+                  <rect class="bar bar--alt" x="162.0" y="70.6" width="29.9" height="129.4" rx="6"><title>چهارشنبه: ۴۴</title></rect>
+                  <text x="160.0" y="222" text-anchor="middle">چهارشنبه</text>
+                  <rect class="bar" x="21.5" y="38.3" width="29.9" height="161.7" rx="6"><title>پنجشنبه: ۵۵</title></rect>
+                  <rect class="bar bar--alt" x="55.3" y="53.0" width="29.9" height="147.0" rx="6"><title>پنجشنبه: ۵۰</title></rect>
+                  <text x="53.3" y="222" text-anchor="middle">پنجشنبه</text>
+                </svg>
+                <ul class="chart-legend">
+                  <li>
+                    <i></i>
+                    این ماه
+                  </li>
+                  <li>
+                    <i style="--c: var(--plum); opacity: 0.4"></i>
+                    ماه قبل
+                  </li>
+                </ul>
+                <details class="chart-data">
+                  <summary>نمایش جدول داده‌ها</summary>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">روز</th>
+                        <th scope="col">این ماه</th>
+                        <th scope="col">ماه قبل</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>شنبه</td>
+                        <td>۴۲</td>
+                        <td>۳۹</td>
+                      </tr>
+                      <tr>
+                        <td>یکشنبه</td>
+                        <td>۳۸</td>
+                        <td>۳۵</td>
+                      </tr>
+                      <tr>
+                        <td>دوشنبه</td>
+                        <td>۴۰</td>
+                        <td>۴۱</td>
+                      </tr>
+                      <tr>
+                        <td>سه‌شنبه</td>
+                        <td>۳۷</td>
+                        <td>۳۳</td>
+                      </tr>
+                      <tr>
+                        <td>چهارشنبه</td>
+                        <td>۴۹</td>
+                        <td>۴۴</td>
+                      </tr>
+                      <tr>
+                        <td>پنجشنبه</td>
+                        <td>۵۵</td>
+                        <td>۵۰</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </details>
+              </section>
+              <section class="card">
+                <div class="card__head">
+                  <div><h2>وضعیت نوبت‌ها</h2></div>
+                </div>
+                <div class="donut-wrap">
+                  <div style="position: relative; width: 150px; height: 150px">
+                    <svg class="donut" viewBox="0 0 160 160" role="img" aria-label="نمودار دایره‌ای؛ درصدها در فهرست کنار آن">
+                      <circle r="60" cx="80" cy="80" stroke="var(--glass-soft)" />
+                      <circle r="60" cx="80" cy="80" stroke="var(--accent)" stroke-dasharray="323.9 53.1" stroke-dashoffset="0.0">
+                        <title>انجام شد: ۸۶٪</title>
+                      </circle>
+                      <circle r="60" cx="80" cy="80" stroke="var(--plum)" stroke-dasharray="33.5 343.5" stroke-dashoffset="-323.9">
+                        <title>تأیید شده (آینده): ۹٪</title>
+                      </circle>
+                      <circle r="60" cx="80" cy="80" stroke="#E9A46F" stroke-dasharray="12.6 364.4" stroke-dashoffset="-357.4">
+                        <title>لغو شد: ۳٪</title>
+                      </circle>
+                      <circle r="60" cx="80" cy="80" stroke="#8E6BB8" stroke-dasharray="7.0 370.0" stroke-dashoffset="-370.0">
+                        <title>عدم مراجعه: ۲٪</title>
+                      </circle>
+                    </svg>
+                    <div style="position: absolute; inset: 0; display: grid; place-items: center; text-align: center; line-height: 1.3">
+                      <span>
+                        <b style="font-size: 1.3rem">۲۷۰</b>
+                        <br />
+                        <small class="text-muted">نوبت</small>
+                      </span>
+                    </div>
+                  </div>
+                  <ul class="chart-legend">
+                    <li>
+                      <span>
+                        <i style="--c: var(--accent); display: inline-block; margin-inline-end: 6px"></i>
+                        انجام شد
+                      </span>
+                      <b>۸۶٪</b>
+                    </li>
+                    <li>
+                      <span>
+                        <i style="--c: var(--plum); display: inline-block; margin-inline-end: 6px"></i>
+                        تأیید شده (آینده)
+                      </span>
+                      <b>۹٪</b>
+                    </li>
+                    <li>
+                      <span>
+                        <i style="--c: #e9a46f; display: inline-block; margin-inline-end: 6px"></i>
+                        لغو شد
+                      </span>
+                      <b>۳٪</b>
+                    </li>
+                    <li>
+                      <span>
+                        <i style="--c: #8e6bb8; display: inline-block; margin-inline-end: 6px"></i>
+                        عدم مراجعه
+                      </span>
+                      <b>۲٪</b>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <section class="card card--flush">
+              <div class="card__head">
+                <div><h2>عملکرد آرایشگران</h2></div>
+              </div>
+              <div class="table-wrap">
+                <table class="table table--stack" id="rep-staff">
+                  <thead>
+                    <tr>
+                      <th scope="col">آرایشگر</th>
+                      <th scope="col">نوبت</th>
+                      <th scope="col">نرخ لغو</th>
+                      <th scope="col">درآمد</th>
+                      <th scope="col">امتیاز</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="آرایشگر">
+                        <span class="person">
+                          <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
+                          <span>
+                            <b>سارا محمدی</b>
+                            <small>متخصص رنگ و لایت</small>
+                          </span>
+                        </span>
+                      </td>
+                      <td data-label="نوبت" class="num">۶۴</td>
+                      <td data-label="نرخ لغو" class="num">۴٪</td>
+                      <td data-label="درآمد" class="num">۴۸٬۶۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="امتیاز">
+                        <span class="stars" aria-label="امتیاز ۴.۹ از ۵">
+                          ★★★★★
+                          <span class="stars__off"></span>
+                        </span>
+                        ۴.۹
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="آرایشگر">
+                        <span class="person">
+                          <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
+                          <span>
+                            <b>نگار رضایی</b>
+                            <small>میکاپ آرتیست</small>
+                          </span>
+                        </span>
+                      </td>
+                      <td data-label="نوبت" class="num">۳۸</td>
+                      <td data-label="نرخ لغو" class="num">۶٪</td>
+                      <td data-label="درآمد" class="num">۴۱٬۲۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="امتیاز">
+                        <span class="stars" aria-label="امتیاز ۴.۸ از ۵">
+                          ★★★★★
+                          <span class="stars__off"></span>
+                        </span>
+                        ۴.۸
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="آرایشگر">
+                        <span class="person">
+                          <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
+                          <span>
+                            <b>پریسا احمدی</b>
+                            <small>پوست و فیشیال</small>
+                          </span>
+                        </span>
+                      </td>
+                      <td data-label="نوبت" class="num">۵۲</td>
+                      <td data-label="نرخ لغو" class="num">۳٪</td>
+                      <td data-label="درآمد" class="num">۳۳٬۸۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="امتیاز">
+                        <span class="stars" aria-label="امتیاز ۴.۸ از ۵">
+                          ★★★★★
+                          <span class="stars__off"></span>
+                        </span>
+                        ۴.۸
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="آرایشگر">
+                        <span class="person">
+                          <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
+                          <span>
+                            <b>الهام نوری</b>
+                            <small>مژه و ابرو</small>
+                          </span>
+                        </span>
+                      </td>
+                      <td data-label="نوبت" class="num">۴۱</td>
+                      <td data-label="نرخ لغو" class="num">۵٪</td>
+                      <td data-label="درآمد" class="num">۲۹٬۵۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="امتیاز">
+                        <span class="stars" aria-label="امتیاز ۴.۹ از ۵">
+                          ★★★★★
+                          <span class="stars__off"></span>
+                        </span>
+                        ۴.۹
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="آرایشگر">
+                        <span class="person">
+                          <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
+                          <span>
+                            <b>مینا کریمی</b>
+                            <small>ناخن‌کار</small>
+                          </span>
+                        </span>
+                      </td>
+                      <td data-label="نوبت" class="num">۵۸</td>
+                      <td data-label="نرخ لغو" class="num">۸٪</td>
+                      <td data-label="درآمد" class="num">۲۲٬۱۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="امتیاز">
+                        <span class="stars" aria-label="امتیاز ۴.۷ از ۵">
+                          ★★★★★
+                          <span class="stars__off"></span>
+                        </span>
+                        ۴.۷
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="آرایشگر">
+                        <span class="person">
+                          <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
+                          <span>
+                            <b>شیما رستمی</b>
+                            <small>مو و عروس</small>
+                          </span>
+                        </span>
+                      </td>
+                      <td data-label="نوبت" class="num">۱۷</td>
+                      <td data-label="نرخ لغو" class="num">۲٪</td>
+                      <td data-label="درآمد" class="num">۱۸٬۴۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="امتیاز">
+                        <span class="stars" aria-label="امتیاز ۴.۶ از ۵">
+                          ★★★★★
+                          <span class="stars__off"></span>
+                        </span>
+                        ۴.۶
+                      </td>
+                    </tr>
+                    <tr class="table-empty-row" hidden><td colspan="5" class="table-empty">موردی پیدا نشد.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section class="card card--flush">
+              <div class="card__head">
+                <div><h2>پرفروش‌ترین خدمات</h2></div>
+              </div>
+              <div class="table-wrap">
+                <table class="table table--stack" id="rep-svc">
+                  <thead>
+                    <tr>
+                      <th scope="col">خدمت</th>
+                      <th scope="col">تعداد</th>
+                      <th scope="col">درآمد</th>
+                      <th scope="col">سهم از بیشترین</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="خدمت">رنگ مو</td>
+                      <td data-label="تعداد" class="num">۳۱</td>
+                      <td data-label="درآمد" class="num">۶۱٬۴۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="سهم">
+                        <span class="progress-bar"><i style="width: 100%"></i></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="خدمت">کوتاهی مو</td>
+                      <td data-label="تعداد" class="num">۵۴</td>
+                      <td data-label="درآمد" class="num">۲۷٬۰۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="سهم">
+                        <span class="progress-bar"><i style="width: 44%"></i></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="خدمت">میکاپ مجلسی</td>
+                      <td data-label="تعداد" class="num">۱۲</td>
+                      <td data-label="درآمد" class="num">۳۴٬۶۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="سهم">
+                        <span class="progress-bar"><i style="width: 56%"></i></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="خدمت">ژلیش</td>
+                      <td data-label="تعداد" class="num">۴۰</td>
+                      <td data-label="درآمد" class="num">۱۸٬۰۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="سهم">
+                        <span class="progress-bar"><i style="width: 29%"></i></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="خدمت">پاکسازی پوست</td>
+                      <td data-label="تعداد" class="num">۲۲</td>
+                      <td data-label="درآمد" class="num">۲۰٬۹۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="سهم">
+                        <span class="progress-bar"><i style="width: 34%"></i></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-label="خدمت">اکستنشن مژه</td>
+                      <td data-label="تعداد" class="num">۱۴</td>
+                      <td data-label="درآمد" class="num">۲۳٬۱۰۰٬۰۰۰.۰ تومان</td>
+                      <td data-label="سهم">
+                        <span class="progress-bar"><i style="width: 38%"></i></span>
+                      </td>
+                    </tr>
+                    <tr class="table-empty-row" hidden><td colspan="4" class="table-empty">موردی پیدا نشد.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== پانویس سایت ===== -->
+    <footer class="site-footer" id="contact">
+      <div class="wrap">
+        <div class="footer-box">
+          <!-- لوگو و نام -->
+          <a class="footer-brand" href="../index.html" aria-label="صفحه اصلی سالن زیبایی آیدا">
+            <span class="logo" aria-hidden="true"></span>
+            <strong>سالن زیبایی آیدا</strong>
+          </a>
+          <p class="footer-tagline">زیبایی، به وقت تو</p>
+
+          <!-- تماس و فضای مجازی -->
+          <div class="footer-contact">
+            <a class="footer-phone" href="tel:02100000000">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+              </svg>
+              <span class="ltr">۰۲۱-۰۰۰۰۰۰۰۰</span>
+            </a>
+            <ul class="social-list" aria-label="فضای مجازی">
+              <li>
+                <a class="social-btn" href="https://instagram.com/aida.salon" rel="noopener" target="_blank" aria-label="اینستاگرام">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M16.5 7.5v.01" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-btn" href="https://t.me/aida_salon" rel="noopener" target="_blank" aria-label="تلگرام">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-btn" href="https://wa.me/989120000000" rel="noopener" target="_blank" aria-label="واتس‌اپ">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                    <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- نقشه: بک‌اند به‌جای .map-box__canvas، iframe نقشه بلد را می‌گذارد (data-balad-lat / data-balad-lng) -->
+          <div class="map-box" data-balad-lat="35.7000" data-balad-lng="51.4000">
+            <div class="map-box__canvas" aria-hidden="true">
+              <span class="map-box__pin">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                </svg>
+              </span>
+            </div>
+            <div class="map-box__info">
+              <span class="map-box__icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                </svg>
+              </span>
+              <div>
+                <strong>نشانی سالن</strong>
+                <p>تهران، خیابان نمونه، پلاک ۱۲ (نشانی نمونه)</p>
+                <p class="map-box__hours">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                    <path d="M12 7v5l3 3" />
+                  </svg>
+                  شنبه تا پنجشنبه، ۱۰ تا ۱۹
+                </p>
+              </div>
+              <a class="btn btn-ghost btn-sm" href="https://balad.ir" rel="noopener" target="_blank">مسیریابی با بلد</a>
+            </div>
+          </div>
+
+          <nav class="footer-links" aria-label="پیوندهای پایین صفحه">
+            <a href="../services.html">خدمات</a>
+            <a href="../stylists.html">آرایشگران</a>
+            <a href="../about.html#hours">ساعات کاری و قوانین</a>
+            <a href="../about.html">درباره ما</a>
+          </nav>
+        </div>
+        <p class="site-footer__base">© سالن زیبایی آیدا</p>
+      </div>
+    </footer>
+  </body>
+</html>

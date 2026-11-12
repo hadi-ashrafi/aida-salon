@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720">
+  <title>فضای داخلی سالن زیبایی</title>
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F9E4E6"/><stop offset="1" stop-color="#F3D2CF"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7C2B5"/><stop offset="1" stop-color="#D9A999"/></linearGradient>
+    <linearGradient id="mirror" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".95"/><stop offset=".55" stop-color="#F6DDE6"/><stop offset="1" stop-color="#E9B9C9"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8C48F"/><stop offset=".5" stop-color="#C9955A"/><stop offset="1" stop-color="#E7C08A"/></linearGradient>
+    <linearGradient id="chair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C2577B"/><stop offset="1" stop-color="#8E2B4E"/></linearGradient>
+    <radialGradient id="light" cx=".5" cy="0" r=".9"><stop offset="0" stop-color="#FFF6E8" stop-opacity=".9"/><stop offset="1" stop-color="#FFF6E8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="640" height="720" fill="url(#wall)"/>
+  <!-- قاب‌بندی دیوار -->
+  <g fill="none" stroke="#EBC7C6" stroke-width="3"><rect x="24" y="40" width="168" height="420" rx="6"/><rect x="448" y="40" width="168" height="420" rx="6"/></g>
+  <!-- کف -->
+  <path d="M0 540h640v180H0z" fill="url(#floor)"/>
+  <path d="M0 540h640" stroke="#C99484" stroke-width="4"/>
+  <g stroke="#D3A090" stroke-width="2" opacity=".6"><path d="M80 540L0 720M240 540l-60 180M400 540l60 180M560 540l80 180"/></g>
+  <!-- چراغ‌های آویز -->
+  <g>
+    <path d="M200 0v96M440 0v96" stroke="url(#gold)" stroke-width="3"/>
+    <path d="M168 96a32 30 0 0 1 64 0z" fill="url(#gold)"/><path d="M408 96a32 30 0 0 1 64 0z" fill="url(#gold)"/>
+    <ellipse cx="200" cy="170" rx="120" ry="80" fill="url(#light)"/><ellipse cx="440" cy="170" rx="120" ry="80" fill="url(#light)"/>
+  </g>
+  <!-- آینه طاقی با قاب طلایی -->
+  <path d="M206 470V250a114 114 0 0 1 228 0v220z" fill="url(#gold)"/>
+  <path d="M220 470V252a100 100 0 0 1 200 0v218z" fill="url(#mirror)"/>
+  <path d="M262 230l40 -40M282 270l70 -70M300 320l40 -40" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+  <!-- میز -->
+  <rect x="170" y="466" width="300" height="16" rx="8" fill="url(#gold)"/>
+  <path d="M190 482v58M450 482v58" stroke="#C9955A" stroke-width="6"/>
+  <g><rect x="200" y="436" width="18" height="30" rx="5" fill="#C2577B"/><rect x="224" y="426" width="14" height="40" rx="5" fill="#E9A9BE"/><circle cx="430" cy="452" r="14" fill="#F2B48C"/></g>
+  <!-- صندلی آرایش -->
+  <path d="M262 420a58 58 0 0 1 116 0v70h-116z" fill="url(#chair)"/>
+  <rect x="246" y="482" width="148" height="38" rx="19" fill="url(#chair)"/>
+  <path d="M320 520v60" stroke="url(#gold)" stroke-width="10"/>
+  <ellipse cx="320" cy="590" rx="62" ry="12" fill="url(#gold)"/>
+  <!-- گلدان و گیاه -->
+  <g transform="translate(520 440)">
+    <path d="M30 100c-30-40-40-90-10-120c10 40 18 70 10 120z" fill="#7FA88A"/>
+    <path d="M38 100c10-50 40-80 70-80c-10 40-35 70-70 80z" fill="#93BC9C"/>
+    <path d="M30 100c-20-30-60-40-80-30c20 25 50 35 80 30z" fill="#6E9A7B"/>
+    <path d="M0 96h76l-10 70H10z" fill="#F3EDE7" stroke="#E2D6CC" stroke-width="3"/>
+  </g>
+  <!-- قفسه -->
+  <g transform="translate(46 300)">
+    <rect width="124" height="10" rx="5" fill="url(#gold)"/>
+    <rect x="12" y="-46" width="22" height="46" rx="6" fill="#E9A9BE"/><rect x="42" y="-34" width="18" height="34" rx="5" fill="#C2577B"/><rect x="70" y="-52" width="16" height="52" rx="5" fill="#F2B48C"/><circle cx="104" cy="-14" r="14" fill="#E3C5D8"/>
+    <rect y="110" width="124" height="10" rx="5" fill="url(#gold)"/>
+    <rect x="16" y="70" width="40" height="40" rx="8" fill="#F6E1D3"/><rect x="64" y="80" width="46" height="30" rx="8" fill="#EFC9D6"/>
+  </g>
+  <circle cx="560" cy="140" r="4" fill="#FFFFFF"/><circle cx="90" cy="120" r="3" fill="#FFFFFF"/>
+</svg>

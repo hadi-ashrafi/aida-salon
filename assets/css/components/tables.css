@@ -1,0 +1,19 @@
+/* جدول‌ها، صفحه‌بندی و تب‌ها */
+
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.table th, .table td { padding: var(--s3); text-align: start; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.table th { font-size: .85rem; color: var(--muted); font-weight: 600; white-space: nowrap; }
+.table tr:hover td { background: color-mix(in srgb, var(--accent-soft) 50%, transparent); }
+.table .actions { display: flex; flex-wrap: wrap; gap: var(--s2); justify-content: flex-end; }
+@media (max-width: 760px) {
+  .table--stack thead { display: none; }
+  .table--stack, .table--stack tbody, .table--stack tr, .table--stack td { display: block; width: 100%; }
+  .table--stack tr { border: 1px solid var(--line); border-radius: var(--r-lg); margin-bottom: var(--s3); padding: var(--s2) var(--s3); background: var(--surface); }
+  .table--stack td { border: 0; padding: var(--s1) 0; display: flex; justify-content: space-between; gap: var(--s3); }
+  .table--stack td::before { content: attr(data-label); color: var(--muted); font-size: .85rem; flex-shrink: 0; }
+  .table--stack td.actions { justify-content: flex-start; padding-top: var(--s2); }
+  .table--stack td.actions::before { content: none; }
+}
+.pager { display: flex; gap: var(--s2); justify-content: center; margin-top: var(--s5); flex-wrap: wrap; }
+

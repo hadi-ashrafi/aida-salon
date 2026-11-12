@@ -1,0 +1,191 @@
+/* رزرو نوبت: چهار قدم با یک قدم در هر لحظه، خلاصه کنار (دسکتاپ) یا برگه بازشونده (موبایل) و نوار اقدام پایین
+   این فایل قسمت انتخاب روز و ساعت صفحه «تغییر زمان» در پنل‌ها را هم پوشش می‌دهد. */
+
+.booking-page { padding-block: var(--s5) var(--s6); }
+.booking-head { margin-bottom: var(--s4); }
+.booking-head h1 { margin: 0; font-size: clamp(1.5rem, 5vw, 2.2rem); }
+.booking-head p { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
+
+/* ================= مراحل ================= */
+.stepper { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 0 0 var(--s5); padding: 6px; border-radius: 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); }
+.stepper li { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 6px; border-radius: 14px; color: var(--muted); font-size: .9rem; font-weight: 600; cursor: pointer; transition: background .25s var(--ease), color .25s var(--ease); }
+.stepper__num { display: inline-grid; place-items: center; width: 26px; height: 26px; flex-shrink: 0; border-radius: 9px; background: var(--glass-soft); border: 1px solid var(--glass-border); font-size: .8rem; font-weight: 800; }
+.stepper li.is-done { color: var(--accent-ink); }
+.stepper li.is-done .stepper__num { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-size: 0; }
+.stepper li.is-done .stepper__num::after { content: "✓"; font-size: .8rem; }
+.stepper li[aria-current="step"] { background: linear-gradient(135deg, var(--accent), var(--plum)); color: var(--on-accent); box-shadow: 0 10px 20px -14px var(--accent); }
+.stepper li[aria-current="step"] .stepper__num { background: rgba(255, 255, 255, .22); border-color: transparent; color: inherit; }
+/* گوشی‌های کوچک: فقط عنوان قدم فعال، بقیه فقط شماره */
+@media (max-width: 480px) {
+  .stepper { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .stepper li { gap: 4px; padding: 0 2px; font-size: .78rem; }
+  .stepper li:not([aria-current]) .stepper__label { display: none; }
+  .stepper li[aria-current="step"] { grid-column: span 1; }
+}
+@media (max-width: 360px) { .stepper li[aria-current] .stepper__label { display: none; } }
+
+/* ================= چیدمان ================= */
+.booking { display: grid; gap: var(--s5); }
+.booking > * { min-width: 0; }
+@media (min-width: 1000px) { .booking { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; } }
+
+.wizard-step { padding: var(--s5); border-radius: 26px; background: var(--glass-bg); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: blur(var(--blur)); backdrop-filter: blur(var(--blur)); animation: step-in .4s var(--ease-out); }
+@media (max-width: 480px) { .wizard-step { padding: var(--s4) var(--s3); border-radius: 22px; } }
+.wizard-step__head { margin-bottom: var(--s4); }
+.wizard-step__head h2 { margin: 0; font-size: 1.2rem; outline: none; }
+.wizard-step__head p { margin: 4px 0 0; color: var(--muted); font-size: .9rem; }
+.mini-title { margin: var(--s4) 0 var(--s2); font-size: .95rem; }
+@keyframes step-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ================= قدم ۱: خدمت ================= */
+.booking-search { margin-bottom: var(--s3); }
+.cat-jumps { display: flex; gap: 6px; margin: 0 calc(-1 * var(--s5)) var(--s3); padding: 2px var(--s5) var(--s2); overflow-x: auto; scrollbar-width: none; }
+.cat-jumps::-webkit-scrollbar { display: none; }
+@media (max-width: 480px) { .cat-jumps { margin-inline: calc(-1 * var(--s3)); padding-inline: var(--s3); } }
+.cat-jump { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 var(--s3); border-radius: 99px; font: inherit; font-size: .84rem; font-weight: 600; color: var(--ink); background: var(--glass-soft); border: 1px solid var(--glass-border); cursor: pointer; white-space: nowrap; }
+.cat-jump .icon { width: 18px; height: 18px; color: var(--accent); }
+.cat-jump:hover { border-color: var(--accent); }
+
+.picked-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--s3); }
+.picked-chips:empty { display: none; }
+.picked-chip { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 var(--s3) 0 var(--s2); border-radius: 99px; border: 0; font: inherit; font-size: .84rem; font-weight: 700; color: var(--on-accent); background: var(--accent); cursor: pointer; }
+.picked-chip::after { content: "✕"; font-size: .72rem; opacity: .8; }
+
+.svc-groups-pick { display: grid; gap: var(--s2); }
+.svc-groups-pick .svc-pick + .svc-pick { margin-top: 0; }
+.svc-pick { scroll-margin-top: 100px; }
+.svc-pick__count { min-width: 22px; height: 22px; padding: 0 6px; border-radius: 99px; background: var(--accent); color: var(--on-accent); font-size: .72rem; font-weight: 800; line-height: 22px; text-align: center; }
+
+/* ================= گزینه‌ها (خدمت و آرایشگر) ================= */
+.option-list { display: grid; gap: var(--s2); }
+@media (min-width: 640px) { .option-list.cols-2, .svc-pick .option-list { grid-template-columns: 1fr 1fr; } }
+.option {
+  position: relative; display: flex; align-items: center; gap: var(--s3); min-height: 60px; padding: var(--s2) var(--s3);
+  border: 1px solid var(--glass-border); border-radius: 16px; background: var(--glass-soft); cursor: pointer;
+  transition: border-color .2s var(--ease), background .2s var(--ease), transform .15s var(--ease);
+}
+.option:hover { border-color: rgba(194, 59, 101, .45); }
+.option:active { transform: scale(.99); }
+/* ورودی واقعی پنهان است؛ تیک سمت چپ نشان انتخاب است */
+.option input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.option__main { flex: 1; min-width: 0; display: grid; line-height: 1.5; }
+.option__name { font-weight: 700; }
+.option__meta { font-size: .8rem; color: var(--muted); }
+.option__rating { font-size: .78rem; color: var(--muted); }
+.option__side { font-weight: 700; white-space: nowrap; font-size: .88rem; }
+.option__check { width: 24px; height: 24px; flex-shrink: 0; padding: 3px; border-radius: 8px; border: 1.5px solid var(--line); color: transparent; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease); }
+.option.is-checked { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+.option.is-checked .option__check { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.option:focus-within { outline: 3px solid var(--accent); outline-offset: 2px; }
+.option.is-disabled { opacity: .45; cursor: not-allowed; }
+.option.is-hidden { display: none; }
+@media (max-width: 360px) {
+  .option { flex-wrap: wrap; gap: 6px var(--s2); }
+  .option__side { order: 3; width: 100%; padding-inline-start: 0; font-size: .82rem; color: var(--accent-ink); }
+}
+.staff-option .avatar--sm { width: 44px; height: 44px; border-radius: 14px; }
+.avatar--any { display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--plum)); color: #fff; }
+.avatar--any .icon { width: 22px; height: 22px; }
+.staff-option__note { font-size: .74rem; font-weight: 600; color: var(--muted); }
+.staff-list { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .staff-list { grid-template-columns: 1fr 1fr; } }
+
+/* ================= قدم ۳: روز و ساعت ================= */
+.day-strip { display: flex; gap: var(--s2); overflow-x: auto; padding-bottom: var(--s2); scroll-snap-type: x proximity; scrollbar-width: thin; }
+.day {
+  flex: 0 0 68px; scroll-snap-align: start; display: grid; justify-items: center; gap: 0; padding: var(--s2) 4px;
+  border: 1px solid var(--glass-border); border-radius: 16px; background: var(--glass-soft); font: inherit; color: var(--ink); cursor: pointer;
+  transition: border-color .2s var(--ease), background .2s var(--ease), color .2s var(--ease);
+}
+.day:hover:not(:disabled) { border-color: var(--accent); }
+.day__name { font-size: .72rem; color: var(--muted); white-space: nowrap; }
+.day__num { font-size: 1.35rem; font-weight: 900; line-height: 1.3; }
+.day__month { font-size: .7rem; color: var(--muted); }
+.day[aria-pressed="true"] { background: linear-gradient(160deg, var(--accent), var(--plum)); border-color: transparent; color: var(--on-accent); box-shadow: 0 10px 20px -12px var(--accent); }
+.day[aria-pressed="true"] .day__name, .day[aria-pressed="true"] .day__month { color: inherit; opacity: .85; }
+.day:disabled { opacity: .4; cursor: not-allowed; }
+.day:disabled .day__num { text-decoration: line-through; }
+
+.slot-group { margin: var(--s3) 0 var(--s2); font-size: .8rem; font-weight: 700; color: var(--muted); }
+.slots { display: grid; gap: var(--s2); grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); }
+.slot {
+  min-height: 46px; font: inherit; font-weight: 800; color: var(--ink); cursor: pointer;
+  background: var(--glass-soft); border: 1px solid var(--glass-border); border-radius: 14px;
+  transition: border-color .2s var(--ease), background .2s var(--ease), color .2s var(--ease);
+}
+.slot:hover { border-color: var(--accent); color: var(--accent-ink); }
+.slot[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); box-shadow: 0 8px 18px -10px var(--accent); animation: pop .3s var(--ease-out); }
+#step-time[aria-disabled="true"] [data-slots] { opacity: .4; pointer-events: none; }
+.slot-state { margin: var(--s2) 0 0; padding: var(--s3); text-align: center; font-size: .88rem; color: var(--muted); border: 1px dashed var(--line); border-radius: 14px; }
+.slot-state--error { color: var(--danger); border-color: var(--danger); }
+.loader { display: inline-block; width: 18px; height: 18px; border: 2px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; vertical-align: middle; margin-inline-end: var(--s2); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ================= قدم ۴: مرور ================= */
+.review-list { list-style: none; display: grid; gap: var(--s2); margin: 0; padding: 0; }
+.review-list li { display: grid; grid-template-columns: 80px 1fr auto; gap: var(--s3); align-items: center; padding: var(--s3); border-radius: 16px; background: var(--glass-soft); border: 1px solid var(--glass-border); }
+.review-list span { font-size: .85rem; color: var(--muted); }
+.review-list b { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 400px) { .review-list li { grid-template-columns: 1fr auto; } .review-list span { grid-column: 1 / -1; } }
+.code-input { display: flex; gap: var(--s2); }
+.code-input .input { min-width: 0; }
+.notice-box { padding: var(--s3) var(--s4); border-radius: 16px; background: var(--accent-soft); font-size: .88rem; line-height: 1.9; }
+
+/* ================= خلاصه ================= */
+.summary { padding: var(--s5); border-radius: 26px; background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); }
+.summary__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--s3); }
+.summary__head h2 { margin: 0; font-size: 1.05rem; }
+.summary__close { display: none; }
+.summary dl { display: grid; grid-template-columns: auto 1fr; gap: var(--s2) var(--s4); margin: 0; }
+.summary dt { color: var(--muted); font-size: .88rem; }
+.summary dd { margin: 0; text-align: end; font-weight: 600; overflow-wrap: anywhere; }
+.summary .total { font-size: 1.25rem; color: var(--accent-ink); font-weight: 900; }
+.summary--static { position: static; }
+@media (min-width: 1000px) { .summary { position: sticky; top: 96px; } }
+/* زیر ۱۰۰۰ پیکسل: برگه‌ای که از پایین بالا می‌آید */
+@media (max-width: 999px) {
+  .summary {
+    position: fixed; z-index: 45; inset: auto 8px calc(96px + env(safe-area-inset-bottom)) 8px; max-height: 70vh; overflow-y: auto;
+    transform: translateY(calc(100% + 120px)); visibility: hidden; transition: transform .35s var(--ease-out), visibility 0s .35s;
+  }
+  .summary.is-open { transform: none; visibility: visible; transition: transform .35s var(--ease-out); }
+  .summary__close { display: inline-grid; }
+  .summary-backdrop { position: fixed; inset: 0; z-index: 44; background: rgba(29, 20, 24, .35); }
+}
+@media (min-width: 1000px) { .summary-backdrop { display: none !important; } }
+
+/* ================= نوار اقدام پایین ================= */
+.wizard-bar {
+  position: sticky; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 40; grid-column: 1 / -1;
+  display: flex; align-items: center; gap: var(--s2); padding: var(--s2); border-radius: 22px;
+  background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+}
+@media (min-width: 1000px) { .wizard-bar { grid-column: 1; } }
+.wizard-bar__info {
+  flex: 1; min-width: 0; display: grid; justify-items: start; gap: 0; padding: 4px var(--s2); border: 0; background: none;
+  font: inherit; color: inherit; text-align: start; cursor: pointer; line-height: 1.5;
+}
+.wizard-bar__label { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .8rem; color: var(--muted); }
+.wizard-bar__price { font-size: 1rem; font-weight: 900; color: var(--accent-ink); }
+.wizard-bar__price:empty { display: none; }
+@media (min-width: 1000px) { .wizard-bar__info { cursor: default; pointer-events: none; } }
+.wizard-bar .btn { min-height: 48px; flex-shrink: 0; }
+.wizard-bar__next.is-final { background: linear-gradient(135deg, var(--accent), var(--plum)); }
+@media (max-width: 420px) {
+  .wizard-bar { gap: 4px; padding: 6px; }
+  .wizard-bar .btn { padding-inline: var(--s3); font-size: .88rem; }
+  .wizard-bar__prev span { display: none; }
+  .wizard-bar__next span { max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+/* ================= صفحه تغییر زمان (پنل‌ها) از همین اجزا استفاده می‌کند ================= */
+.step { padding: var(--s5); border-radius: 22px; background: var(--glass-bg); border: 1px solid var(--glass-border); min-width: 0; }
+.step + .step { margin-top: var(--s4); }
+.step__title { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s4); font-size: 1.05rem; font-weight: 800; }
+legend.step__title { float: right; width: 100%; padding: 0; }
+legend.step__title + * { clear: both; }
+.step__num { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--accent-soft); color: var(--accent-ink); font-weight: 800; font-size: .9rem; }
+.step[aria-disabled="true"] { opacity: .55; pointer-events: none; }
+@media (max-width: 480px) { .step { padding: var(--s4) var(--s3); } }
+@keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }

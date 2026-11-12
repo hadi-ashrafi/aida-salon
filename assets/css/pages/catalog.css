@@ -1,0 +1,141 @@
+/* صفحه‌های خدمات، آرایشگران، معرفی و تماس */
+
+/* Price list, kept for the stylist page. */
+.menu__item { display: flex; align-items: baseline; gap: var(--s3); padding-block: var(--s3); border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.menu__main { display: grid; }
+.menu__name { font-weight: 700; }
+.menu__meta { font-size: .85rem; color: var(--muted); }
+.menu__dots { flex: 1; border-bottom: 1px dotted var(--muted); transform: translateY(-4px); min-width: 24px; }
+.menu__price { font-weight: 700; white-space: nowrap; }
+
+.crumbs { display: flex; flex-wrap: wrap; gap: var(--s2); font-size: .9rem; color: var(--muted); margin-bottom: var(--s5); }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--accent-ink); }
+
+.svc-hero { display: grid; gap: var(--s5); align-items: center; padding: var(--s5); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); }
+@media (min-width: 700px) { .svc-hero { grid-template-columns: auto 1fr; padding: var(--s6); } }
+.svc-hero__img { width: 120px; height: 120px; object-fit: cover; border-radius: var(--r-lg); }
+.svc-hero h1 { margin-bottom: var(--s2); }
+.svc-hero p { color: var(--muted); max-width: 60ch; }
+.facts { display: flex; flex-wrap: wrap; gap: var(--s3); margin: 0; }
+.facts > div { padding: var(--s2) var(--s4); background: var(--cream); border-radius: var(--r-sm); }
+.facts dt { font-size: .8rem; color: var(--muted); }
+.facts dd { margin: 0; font-weight: 800; }
+
+.offer-list { display: grid; gap: var(--s3); }
+.offer {
+  display: grid; grid-template-columns: 64px 1fr; gap: var(--s3) var(--s4); align-items: center;
+  padding: var(--s4); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm);
+}
+.offer .avatar { width: 64px; border-radius: var(--r-md); font-size: 1.5rem; }
+.offer__who h3 { margin: 0; }
+.offer__who h3 a { color: var(--ink); text-decoration: none; }
+.offer__who h3 a:hover { color: var(--accent-ink); }
+.offer__who p { margin: 0; color: var(--muted); font-size: .92rem; }
+.offer__price { display: grid; grid-column: 1 / -1; }
+.offer__price strong { font-size: 1.15rem; }
+.offer .btn { grid-column: 1 / -1; }
+@media (min-width: 700px) {
+  .offer { grid-template-columns: 64px 1fr auto auto; }
+  .offer__price, .offer .btn { grid-column: auto; text-align: end; }
+}
+
+.filters { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: end; margin-bottom: var(--s5); }
+.filters .field { flex: 1 1 200px; }
+.cat-chips { display: flex; gap: var(--s2); overflow-x: auto; padding-bottom: var(--s2); margin-bottom: var(--s4); }
+.cat-chips a {
+  display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--s4); white-space: nowrap;
+  border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none;
+  transition: background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+}
+.cat-chips a:hover { border-color: var(--accent); color: var(--accent-ink); }
+.cat-chips a[aria-current="page"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.price { font-weight: 800; }
+
+/* ================= خدمات: گروه هر دسته ================= */
+.svc-groups { display: grid; gap: var(--s5); }
+.svc-group { padding: var(--s5); border: 1px solid var(--glass-border); border-radius: 26px; scroll-margin-top: 100px; }
+.svc-group__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s4); margin-bottom: var(--s4); }
+.svc-group__head > div { flex: 1; min-width: 180px; }
+.svc-group__head h2 { margin: 0; font-size: 1.25rem; }
+.svc-group__head p { margin: 0; color: var(--muted); font-size: .9rem; }
+.svc-group__en { font-size: .8rem; font-weight: 500; color: var(--muted); margin-inline-start: var(--s1); }
+.svc-group .tile-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+.svc-group .tile { aspect-ratio: auto; align-items: flex-start; justify-content: flex-start; gap: 2px; padding: var(--s3) var(--s4); text-align: start; border: 1px solid var(--glass-border); border-radius: var(--r-md); }
+.svc-group .tile:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 40%, transparent); }
+.svc-group .tile .tile__meta { margin: 0; }
+
+.filters { padding: var(--s4); border: 1px solid var(--glass-border); border-radius: var(--r-lg); }
+
+/* ================= پروفایل آرایشگر ================= */
+.profile { display: grid; gap: var(--s5); align-items: center; padding: var(--s5); border-radius: 28px; margin-bottom: var(--s5); }
+@media (min-width: 760px) { .profile { grid-template-columns: 240px 1fr; padding: var(--s6); } }
+.profile__avatar { max-width: 240px; border-radius: 28px; box-shadow: 0 0 0 6px var(--glass-soft); }
+.profile__info { display: grid; gap: var(--s3); justify-items: start; }
+.profile__info h1 { margin: 0; }
+.profile__info p { margin: 0; }
+.profile__title { color: var(--muted); font-size: 1.05rem; }
+.profile__facts { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s3); margin: var(--s2) 0; padding: 0; }
+.profile__facts li { display: grid; padding: var(--s2) var(--s4); border-radius: var(--r-md); background: var(--glass-soft); border: 1px solid var(--glass-border); }
+.profile__facts span { font-size: .8rem; color: var(--muted); }
+.profile-grid { display: grid; gap: var(--s5); }
+@media (min-width: 960px) { .profile-grid { grid-template-columns: 1.15fr .85fr; align-items: start; } }
+.profile-grid > * { min-width: 0; }
+.panel + .panel { margin-top: 0; }
+
+.menu__cat { display: flex; align-items: center; gap: var(--s2); margin: var(--s5) 0 0; font-size: 1rem; color: var(--accent-ink); }
+.menu__cat:first-of-type { margin-top: var(--s3); }
+
+/* گالری نمونه‌کار؛ بدون عکس، کاشی رنگی با آیکن دسته. بک‌اند به‌جای آیکن <img> می‌گذارد. */
+.gallery { display: grid; gap: var(--s2); grid-template-columns: repeat(3, 1fr); }
+.gallery__item {
+  position: relative; display: grid; place-items: center; aspect-ratio: 1; margin: 0; overflow: hidden; border-radius: var(--r-md);
+  color: rgba(255, 255, 255, .9); background: linear-gradient(150deg, #E88AA8, #A32E54);
+}
+.gallery__item--1 { background: linear-gradient(150deg, #F2B48C, #C2577B); }
+.gallery__item--2 { background: linear-gradient(150deg, #C9A7E8, #8E3B6A); }
+.gallery__item .icon { width: 34%; height: 34%; stroke-width: 1.2; }
+.gallery__item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gallery__item figcaption {
+  position: absolute; inset: auto 0 0; padding: 18px 8px 6px; font-size: .75rem; font-weight: 600; text-align: center;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .35));
+}
+
+/* ================= درباره ما ================= */
+.about { display: grid; gap: var(--s6); align-items: center; }
+@media (min-width: 900px) { .about { grid-template-columns: .95fr 1.05fr; gap: var(--s7); } }
+.about__media { position: relative; margin: 0; }
+.about__media img { width: 100%; aspect-ratio: 8 / 9; object-fit: cover; border-radius: 36px; box-shadow: 0 0 0 8px var(--glass-soft), var(--shadow); }
+.about__badge {
+  position: absolute; inset: auto auto -18px 20px; display: grid; padding: var(--s3) var(--s5); border-radius: 20px; border: 1px solid var(--glass-border);
+}
+.about__badge strong { font-size: 1.15rem; color: var(--accent-ink); }
+.about__badge span { font-size: .8rem; color: var(--muted); }
+.about__eyebrow { margin: 0 0 var(--s2); font-weight: 700; color: var(--accent-ink); letter-spacing: .02em; }
+.about__text h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: var(--s4); }
+.about__lead { font-size: 1.15rem; font-weight: 600; }
+.about__text p { color: var(--muted); }
+.about__text .about__lead { color: var(--ink); }
+.about__points { list-style: none; display: grid; gap: var(--s2); margin: var(--s5) 0 0; padding: 0; }
+.about__points li {
+  display: flex; align-items: center; gap: var(--s3); padding: var(--s3) var(--s4); border-radius: 16px;
+  background: var(--glass-bg); border: 1px solid var(--glass-border); font-weight: 600;
+}
+.about__points li::before { content: "✓"; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 9px; background: var(--accent); color: var(--on-accent); font-size: .8rem; }
+
+/* ساعات کاری و قوانین (در صفحه درباره ما) */
+.about-info { display: grid; gap: var(--s5); margin-top: var(--s7); scroll-margin-top: 100px; }
+@media (min-width: 900px) { .about-info { grid-template-columns: 1fr 1.2fr; align-items: start; } }
+.about-info .panel { border-radius: 26px; }
+.about-info__title { display: flex; align-items: center; gap: var(--s2); margin-bottom: var(--s2); font-size: 1.2rem; }
+.about-info__title::before { content: ""; width: 10px; height: 26px; border-radius: 6px; background: linear-gradient(var(--accent), var(--plum)); }
+.hours-list { list-style: none; display: grid; gap: 2px; margin: var(--s3) 0 0; padding: 0; }
+.hours-list li { display: flex; justify-content: space-between; padding: var(--s2) var(--s3); border-radius: 12px; }
+.hours-list li:nth-child(odd) { background: var(--glass-soft); }
+.hours-list .is-off { color: var(--danger); }
+.rules-list { list-style: none; counter-reset: rule; display: grid; gap: var(--s3); margin: var(--s3) 0 0; padding: 0; }
+.rules-list li { counter-increment: rule; display: grid; grid-template-columns: 32px 1fr; gap: var(--s3); align-items: start; line-height: 1.9; }
+.rules-list li::before {
+  content: counter(rule, persian); display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px;
+  background: var(--accent-soft); color: var(--accent-ink); font-weight: 800;
+}

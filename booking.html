@@ -1,0 +1,1563 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>رزرو نوبت | سالن زیبایی آیدا</title>
+    <meta name="description" content="رزرو آنلاین نوبت سالن زیبایی آیدا: آرایشگر و ساعت آزاد را خودتان انتخاب کنید." />
+    <meta name="theme-color" content="#FBF1F0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#170F13" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/img/icon-180.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="آیدا" />
+    <link rel="preload" href="assets/fonts/vazirmatn-arabic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="assets/css/base/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base/base.css" />
+    <link rel="stylesheet" href="assets/css/layout/header.css" />
+    <link rel="stylesheet" href="assets/css/layout/footer.css" />
+    <link rel="stylesheet" href="assets/css/components/buttons.css" />
+    <link rel="stylesheet" href="assets/css/components/forms.css" />
+    <link rel="stylesheet" href="assets/css/components/cards.css" />
+    <link rel="stylesheet" href="assets/css/components/tables.css" />
+    <link rel="stylesheet" href="assets/css/components/dialog.css" />
+    <link rel="stylesheet" href="assets/css/pages/booking.css" />
+    <link rel="stylesheet" href="assets/css/base/motion.css" />
+
+    <!-- اسکریپت‌ها -->
+    <script src="assets/js/theme-init.js"></script>
+    <script src="assets/js/common/theme.js" defer></script>
+    <script src="assets/js/common/nav.js" defer></script>
+    <script src="assets/js/common/reveal.js" defer></script>
+    <script src="assets/js/common/ui.js" defer></script>
+    <script src="assets/js/common/forms.js" defer></script>
+    <script src="assets/js/common/pwa.js" defer></script>
+    <script src="assets/js/components/select.js" defer></script>
+    <script src="assets/js/components/slot-picker.js" defer></script>
+    <script src="assets/js/pages/booking.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+
+    <!-- ===== سربرگ سایت ===== -->
+    <header class="site-header">
+      <div class="wrap site-header__bar">
+        <a class="brand" href="index.html" aria-label="صفحه اصلی سالن زیبایی آیدا">
+          <span class="logo" role="img" aria-label="آیدا"></span>
+          <span class="brand__name">
+            سالن زیبایی
+            <b>آیدا</b>
+          </span>
+        </a>
+        <nav id="site-nav" class="site-nav" aria-label="منوی اصلی">
+          <div class="site-nav__head">
+            <span class="logo" aria-hidden="true"></span>
+            <strong>منوی سالن</strong>
+            <button type="button" class="icon-btn" data-nav-close aria-label="بستن منو">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <ul>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="services.html">خدمات</a></li>
+            <li><a href="stylists.html">آرایشگران</a></li>
+            <li><a href="about.html">درباره ما</a></li>
+            <li><a href="#contact">تماس</a></li>
+            <li><a href="account/login.html">ورود / ثبت‌نام</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false" aria-label="تغییر حالت روشن و تیره">
+            <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" /></svg
+            ><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+          </button>
+          <button type="button" class="icon-btn nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="منو">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          </button>
+          <a class="btn btn-primary btn-book" href="booking.html">رزرو نوبت</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- ===== رزرو نوبت: چهار مرحله؛ هر بار یک مرحله دیده می‌شود (assets/js/pages/booking.js) ===== -->
+      <div class="wrap booking-page">
+        <header class="booking-head">
+          <h1>رزرو نوبت</h1>
+          <p>در چهار قدم کوتاه؛ هر وقت خواستید می‌توانید به قدم قبل برگردید.</p>
+        </header>
+
+        <ol class="stepper" aria-label="مراحل رزرو" data-stepper>
+          <li data-step="0" aria-current="step">
+            <span class="stepper__num">۱</span>
+            <span class="stepper__label">خدمت</span>
+          </li>
+          <li data-step="1">
+            <span class="stepper__num">۲</span>
+            <span class="stepper__label">آرایشگر</span>
+          </li>
+          <li data-step="2">
+            <span class="stepper__num">۳</span>
+            <span class="stepper__label">زمان</span>
+          </li>
+          <li data-step="3">
+            <span class="stepper__num">۴</span>
+            <span class="stepper__label">تأیید</span>
+          </li>
+        </ol>
+
+        <form class="booking" method="post" action="" novalidate data-booking data-deposit-percent="20">
+          <input type="hidden" name="date" data-picked-date />
+          <input type="hidden" name="time" data-picked-time />
+
+          <div class="booking__main">
+            <!-- قدم ۱: خدمت -->
+            <section class="wizard-step" data-panel="0" aria-labelledby="s0-title">
+              <div class="wizard-step__head">
+                <h2 id="s0-title">چه خدمتی می‌خواهید؟</h2>
+                <p>می‌توانید چند خدمت را با هم بگیرید؛ مدت‌ها پشت سر هم حساب می‌شود.</p>
+              </div>
+              <div class="search-input booking-search">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                  <path d="M21 21l-6 -6" />
+                </svg>
+                <input type="search" class="input" placeholder="جستجوی خدمت؛ مثلاً ژلیش" aria-label="جستجوی خدمت" data-svc-search />
+              </div>
+              <div class="cat-jumps" role="group" aria-label="رفتن به دسته">
+                <button type="button" class="cat-jump" data-jump="1">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M6 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M8.6 8.6l10.4 10.4" />
+                    <path d="M8.6 15.4l10.4 -10.4" />
+                  </svg>
+                  مو
+                </button>
+                <button type="button" class="cat-jump" data-jump="2">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 10h6v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                    <path d="M10 10v-4h4v4" />
+                    <path d="M11 6v-3h2v3" />
+                    <path d="M11 14h2" />
+                  </svg>
+                  ناخن
+                </button>
+                <button type="button" class="cat-jump" data-jump="3">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 11c3 -4 11 -6 18 -2" />
+                    <path d="M5 15c2 2 4.5 3 7 3s5 -1 7 -3" />
+                    <path d="M12 15m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                  </svg>
+                  ابرو
+                </button>
+                <button type="button" class="cat-jump" data-jump="4">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 13c3 -4 6 -6 9 -6s6 2 9 6" />
+                    <path d="M3 13c3 3 6 4.5 9 4.5s6 -1.5 9 -4.5" />
+                    <path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                    <path d="M12 7v-3" />
+                    <path d="M7.5 8.5l-1.5 -2.5" />
+                    <path d="M16.5 8.5l1.5 -2.5" />
+                  </svg>
+                  مژه
+                </button>
+                <button type="button" class="cat-jump" data-jump="5">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 21v-4a4 4 0 1 1 4 4h-4" />
+                    <path d="M21 3a16 16 0 0 0 -12.8 10.2" />
+                    <path d="M21 3a16 16 0 0 1 -10.2 12.8" />
+                    <path d="M10.6 9a9 9 0 0 1 4.4 4.4" />
+                  </svg>
+                  میکاپ و گریم
+                </button>
+                <button type="button" class="cat-jump" data-jump="6">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0 -18" />
+                    <path d="M9 14.5c1.6 1.4 4.4 1.4 6 0" />
+                    <path d="M9 10h.01" />
+                    <path d="M15 10h.01" />
+                  </svg>
+                  پوست و فیشیال
+                </button>
+                <button type="button" class="cat-jump" data-jump="7">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 4h14v4h-14z" />
+                    <path d="M7 8v2a5 5 0 0 0 10 0v-2" />
+                    <path d="M12 15v6" />
+                    <path d="M9 21h6" />
+                  </svg>
+                  اپیلاسیون و اصلاح
+                </button>
+                <button type="button" class="cat-jump" data-jump="8">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 20l4 -1l11 -11a2.1 2.1 0 0 0 -3 -3l-11 11z" />
+                    <path d="M14 6l3 3" />
+                    <path d="M4 20l1 -4" />
+                  </svg>
+                  آرایش دائم
+                </button>
+                <button type="button" class="cat-jump" data-jump="9">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 20c-5 0 -8 -4 -8 -8c4 0 8 3 8 8z" />
+                    <path d="M12 20c5 0 8 -4 8 -8c-4 0 -8 3 -8 8z" />
+                    <path d="M12 20c-2 -3 -2 -9 0 -13c2 4 2 10 0 13z" />
+                  </svg>
+                  ماساژ و اسپا
+                </button>
+                <button type="button" class="cat-jump" data-jump="10">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z" /></svg>
+                  خدمات عروس
+                </button>
+                <button type="button" class="cat-jump" data-jump="11">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 3h6v3h-6z" />
+                    <path d="M8 6h8l1 3v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-10z" />
+                    <path d="M10 13h4" />
+                  </svg>
+                  مراقبت و زیبایی بدن
+                </button>
+              </div>
+              <div class="picked-chips" data-picked-chips aria-live="polite"></div>
+              <div class="svc-groups-pick">
+                <details class="svc-pick" id="pick-1" open data-cat="1">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                        <path d="M6 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                        <path d="M8.6 8.6l10.4 10.4" />
+                        <path d="M8.6 15.4l10.4 -10.4" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">مو</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۱۴ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="کوتاهی مو مو">
+                      <input type="checkbox" name="serviceIds" value="1" data-price="450000" data-duration="45" data-name="کوتاهی مو" />
+                      <span class="option__main">
+                        <span class="option__name">کوتاهی مو</span>
+                        <span class="option__meta">۴۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۴۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="رنگ مو مو">
+                      <input type="checkbox" name="serviceIds" value="2" data-price="1800000" data-duration="150" data-name="رنگ مو" />
+                      <span class="option__main">
+                        <span class="option__name">رنگ مو</span>
+                        <span class="option__meta">۲ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۱٬۸۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="رنگ ریشه مو">
+                      <input type="checkbox" name="serviceIds" value="3" data-price="900000" data-duration="90" data-name="رنگ ریشه" />
+                      <span class="option__main">
+                        <span class="option__name">رنگ ریشه</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۹۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="رنگساژ مو">
+                      <input type="checkbox" name="serviceIds" value="4" data-price="1200000" data-duration="90" data-name="رنگساژ" />
+                      <span class="option__main">
+                        <span class="option__name">رنگساژ</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۱٬۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="هایلایت و مش مو">
+                      <input type="checkbox" name="serviceIds" value="5" data-price="3200000" data-duration="210" data-name="هایلایت و مش" />
+                      <span class="option__main">
+                        <span class="option__name">هایلایت و مش</span>
+                        <span class="option__meta">۳ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۳٬۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="بالیاژ و آمبره مو">
+                      <input type="checkbox" name="serviceIds" value="6" data-price="4500000" data-duration="240" data-name="بالیاژ و آمبره" />
+                      <span class="option__main">
+                        <span class="option__name">بالیاژ و آمبره</span>
+                        <span class="option__meta">۴ ساعت</span>
+                      </span>
+                      <span class="option__side">۴٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="دکلره مو">
+                      <input type="checkbox" name="serviceIds" value="7" data-price="2500000" data-duration="180" data-name="دکلره" />
+                      <span class="option__main">
+                        <span class="option__name">دکلره</span>
+                        <span class="option__meta">۳ ساعت</span>
+                      </span>
+                      <span class="option__side">۲٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="کراتین و احیا مو">
+                      <input type="checkbox" name="serviceIds" value="8" data-price="3500000" data-duration="180" data-name="کراتین و احیا" />
+                      <span class="option__main">
+                        <span class="option__name">کراتین و احیا</span>
+                        <span class="option__meta">۳ ساعت</span>
+                      </span>
+                      <span class="option__side">۳٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="صافی مو مو">
+                      <input type="checkbox" name="serviceIds" value="9" data-price="4000000" data-duration="210" data-name="صافی مو" />
+                      <span class="option__main">
+                        <span class="option__name">صافی مو</span>
+                        <span class="option__meta">۳ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۴٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="بوتاکس مو مو">
+                      <input type="checkbox" name="serviceIds" value="10" data-price="2800000" data-duration="150" data-name="بوتاکس مو" />
+                      <span class="option__main">
+                        <span class="option__name">بوتاکس مو</span>
+                        <span class="option__meta">۲ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲٬۸۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="شینیون مو">
+                      <input type="checkbox" name="serviceIds" value="11" data-price="2200000" data-duration="120" data-name="شینیون" />
+                      <span class="option__main">
+                        <span class="option__name">شینیون</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۲٬۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="براشینگ مو">
+                      <input type="checkbox" name="serviceIds" value="12" data-price="350000" data-duration="40" data-name="براشینگ" />
+                      <span class="option__main">
+                        <span class="option__name">براشینگ</span>
+                        <span class="option__meta">۴۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۳۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="بافت مو مو">
+                      <input type="checkbox" name="serviceIds" value="13" data-price="600000" data-duration="60" data-name="بافت مو" />
+                      <span class="option__main">
+                        <span class="option__name">بافت مو</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۶۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اکستنشن مو مو">
+                      <input type="checkbox" name="serviceIds" value="14" data-price="6000000" data-duration="240" data-name="اکستنشن مو" />
+                      <span class="option__main">
+                        <span class="option__name">اکستنشن مو</span>
+                        <span class="option__meta">۴ ساعت</span>
+                      </span>
+                      <span class="option__side">۶٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-2" data-cat="2">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 10h6v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                        <path d="M10 10v-4h4v4" />
+                        <path d="M11 6v-3h2v3" />
+                        <path d="M11 14h2" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">ناخن</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۸ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="کاشت ناخن ناخن">
+                      <input type="checkbox" name="serviceIds" value="15" data-price="1200000" data-duration="120" data-name="کاشت ناخن" />
+                      <span class="option__main">
+                        <span class="option__name">کاشت ناخن</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ترمیم ناخن ناخن">
+                      <input type="checkbox" name="serviceIds" value="16" data-price="700000" data-duration="90" data-name="ترمیم ناخن" />
+                      <span class="option__main">
+                        <span class="option__name">ترمیم ناخن</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۷۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ژلیش ناخن">
+                      <input type="checkbox" name="serviceIds" value="17" data-price="450000" data-duration="60" data-name="ژلیش" />
+                      <span class="option__main">
+                        <span class="option__name">ژلیش</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۴۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="لمینت ناخن ناخن">
+                      <input type="checkbox" name="serviceIds" value="18" data-price="550000" data-duration="60" data-name="لمینت ناخن" />
+                      <span class="option__main">
+                        <span class="option__name">لمینت ناخن</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۵۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="مانیکور ناخن">
+                      <input type="checkbox" name="serviceIds" value="19" data-price="400000" data-duration="45" data-name="مانیکور" />
+                      <span class="option__main">
+                        <span class="option__name">مانیکور</span>
+                        <span class="option__meta">۴۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۴۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="پدیکور ناخن">
+                      <input type="checkbox" name="serviceIds" value="20" data-price="550000" data-duration="60" data-name="پدیکور" />
+                      <span class="option__main">
+                        <span class="option__name">پدیکور</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۵۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="طراحی ناخن ناخن">
+                      <input type="checkbox" name="serviceIds" value="21" data-price="250000" data-duration="30" data-name="طراحی ناخن" />
+                      <span class="option__main">
+                        <span class="option__name">طراحی ناخن</span>
+                        <span class="option__meta">۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ریموو ناخن ناخن">
+                      <input type="checkbox" name="serviceIds" value="22" data-price="200000" data-duration="30" data-name="ریموو ناخن" />
+                      <span class="option__main">
+                        <span class="option__name">ریموو ناخن</span>
+                        <span class="option__meta">۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-3" data-cat="3">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 11c3 -4 11 -6 18 -2" />
+                        <path d="M5 15c2 2 4.5 3 7 3s5 -1 7 -3" />
+                        <path d="M12 15m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">ابرو</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۶ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="اصلاح ابرو ابرو">
+                      <input type="checkbox" name="serviceIds" value="23" data-price="150000" data-duration="20" data-name="اصلاح ابرو" />
+                      <span class="option__main">
+                        <span class="option__name">اصلاح ابرو</span>
+                        <span class="option__meta">۲۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۱۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="طراحی ابرو ابرو">
+                      <input type="checkbox" name="serviceIds" value="24" data-price="350000" data-duration="40" data-name="طراحی ابرو" />
+                      <span class="option__main">
+                        <span class="option__name">طراحی ابرو</span>
+                        <span class="option__meta">۴۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۳۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="رنگ ابرو ابرو">
+                      <input type="checkbox" name="serviceIds" value="25" data-price="250000" data-duration="30" data-name="رنگ ابرو" />
+                      <span class="option__main">
+                        <span class="option__name">رنگ ابرو</span>
+                        <span class="option__meta">۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="لیفت ابرو ابرو">
+                      <input type="checkbox" name="serviceIds" value="26" data-price="800000" data-duration="60" data-name="لیفت ابرو" />
+                      <span class="option__main">
+                        <span class="option__name">لیفت ابرو</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۸۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="لمینت ابرو ابرو">
+                      <input type="checkbox" name="serviceIds" value="27" data-price="900000" data-duration="60" data-name="لمینت ابرو" />
+                      <span class="option__main">
+                        <span class="option__name">لمینت ابرو</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۹۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="فیبروز و میکروبلیدینگ ابرو">
+                      <input type="checkbox" name="serviceIds" value="28" data-price="4500000" data-duration="150" data-name="فیبروز و میکروبلیدینگ" />
+                      <span class="option__main">
+                        <span class="option__name">فیبروز و میکروبلیدینگ</span>
+                        <span class="option__meta">۲ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۴٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-4" data-cat="4">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 13c3 -4 6 -6 9 -6s6 2 9 6" />
+                        <path d="M3 13c3 3 6 4.5 9 4.5s6 -1.5 9 -4.5" />
+                        <path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M12 7v-3" />
+                        <path d="M7.5 8.5l-1.5 -2.5" />
+                        <path d="M16.5 8.5l1.5 -2.5" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">مژه</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۶ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="اکستنشن مژه مژه">
+                      <input type="checkbox" name="serviceIds" value="29" data-price="1500000" data-duration="120" data-name="اکستنشن مژه" />
+                      <span class="option__main">
+                        <span class="option__name">اکستنشن مژه</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="لیفت مژه مژه">
+                      <input type="checkbox" name="serviceIds" value="30" data-price="900000" data-duration="60" data-name="لیفت مژه" />
+                      <span class="option__main">
+                        <span class="option__name">لیفت مژه</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۹۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="لمینت مژه مژه">
+                      <input type="checkbox" name="serviceIds" value="31" data-price="950000" data-duration="60" data-name="لمینت مژه" />
+                      <span class="option__main">
+                        <span class="option__name">لمینت مژه</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۹۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="رنگ مژه مژه">
+                      <input type="checkbox" name="serviceIds" value="32" data-price="250000" data-duration="20" data-name="رنگ مژه" />
+                      <span class="option__main">
+                        <span class="option__name">رنگ مژه</span>
+                        <span class="option__meta">۲۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ترمیم مژه مژه">
+                      <input type="checkbox" name="serviceIds" value="33" data-price="700000" data-duration="60" data-name="ترمیم مژه" />
+                      <span class="option__main">
+                        <span class="option__name">ترمیم مژه</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۷۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ریموو مژه مژه">
+                      <input type="checkbox" name="serviceIds" value="34" data-price="250000" data-duration="30" data-name="ریموو مژه" />
+                      <span class="option__main">
+                        <span class="option__name">ریموو مژه</span>
+                        <span class="option__meta">۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-5" data-cat="5">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 21v-4a4 4 0 1 1 4 4h-4" />
+                        <path d="M21 3a16 16 0 0 0 -12.8 10.2" />
+                        <path d="M21 3a16 16 0 0 1 -10.2 12.8" />
+                        <path d="M10.6 9a9 9 0 0 1 4.4 4.4" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">میکاپ و گریم</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۶ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="میکاپ روزانه میکاپ و گریم">
+                      <input type="checkbox" name="serviceIds" value="35" data-price="900000" data-duration="45" data-name="میکاپ روزانه" />
+                      <span class="option__main">
+                        <span class="option__name">میکاپ روزانه</span>
+                        <span class="option__meta">۴۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۹۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="میکاپ لایت میکاپ و گریم">
+                      <input type="checkbox" name="serviceIds" value="36" data-price="1300000" data-duration="60" data-name="میکاپ لایت" />
+                      <span class="option__main">
+                        <span class="option__name">میکاپ لایت</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۳۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="میکاپ مجلسی میکاپ و گریم">
+                      <input type="checkbox" name="serviceIds" value="37" data-price="2500000" data-duration="90" data-name="میکاپ مجلسی" />
+                      <span class="option__main">
+                        <span class="option__name">میکاپ مجلسی</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="میکاپ تخصصی میکاپ و گریم">
+                      <input type="checkbox" name="serviceIds" value="38" data-price="3500000" data-duration="120" data-name="میکاپ تخصصی" />
+                      <span class="option__main">
+                        <span class="option__name">میکاپ تخصصی</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۳٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="گریم میکاپ و گریم">
+                      <input type="checkbox" name="serviceIds" value="39" data-price="3000000" data-duration="120" data-name="گریم" />
+                      <span class="option__main">
+                        <span class="option__name">گریم</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۳٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="خودآرایی میکاپ و گریم">
+                      <input type="checkbox" name="serviceIds" value="40" data-price="2000000" data-duration="120" data-name="خودآرایی" />
+                      <span class="option__main">
+                        <span class="option__name">خودآرایی</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۲٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-6" data-cat="6">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0 -18" />
+                        <path d="M9 14.5c1.6 1.4 4.4 1.4 6 0" />
+                        <path d="M9 10h.01" />
+                        <path d="M15 10h.01" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">پوست و فیشیال</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۷ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="پاکسازی پوست پوست و فیشیال">
+                      <input type="checkbox" name="serviceIds" value="41" data-price="900000" data-duration="75" data-name="پاکسازی پوست" />
+                      <span class="option__main">
+                        <span class="option__name">پاکسازی پوست</span>
+                        <span class="option__meta">۱ ساعت و ۱۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۹۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="فیشیال کلاسیک پوست و فیشیال">
+                      <input type="checkbox" name="serviceIds" value="42" data-price="1200000" data-duration="75" data-name="فیشیال کلاسیک" />
+                      <span class="option__main">
+                        <span class="option__name">فیشیال کلاسیک</span>
+                        <span class="option__meta">۱ ساعت و ۱۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۱٬۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="فیشیال تخصصی پوست و فیشیال">
+                      <input type="checkbox" name="serviceIds" value="43" data-price="2000000" data-duration="90" data-name="فیشیال تخصصی" />
+                      <span class="option__main">
+                        <span class="option__name">فیشیال تخصصی</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="آبرسانی پوست پوست و فیشیال">
+                      <input type="checkbox" name="serviceIds" value="44" data-price="1400000" data-duration="60" data-name="آبرسانی پوست" />
+                      <span class="option__main">
+                        <span class="option__name">آبرسانی پوست</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۴۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="فیشیال ضدجوش پوست و فیشیال">
+                      <input type="checkbox" name="serviceIds" value="45" data-price="1500000" data-duration="75" data-name="فیشیال ضدجوش" />
+                      <span class="option__main">
+                        <span class="option__name">فیشیال ضدجوش</span>
+                        <span class="option__meta">۱ ساعت و ۱۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۱٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="فیشیال روشن‌کننده پوست و فیشیال">
+                      <input type="checkbox" name="serviceIds" value="46" data-price="1600000" data-duration="75" data-name="فیشیال روشن‌کننده" />
+                      <span class="option__main">
+                        <span class="option__name">فیشیال روشن‌کننده</span>
+                        <span class="option__meta">۱ ساعت و ۱۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۱٬۶۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="مراقبت پوست حساس پوست و فیشیال">
+                      <input type="checkbox" name="serviceIds" value="47" data-price="1500000" data-duration="60" data-name="مراقبت پوست حساس" />
+                      <span class="option__main">
+                        <span class="option__name">مراقبت پوست حساس</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-7" data-cat="7">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 4h14v4h-14z" />
+                        <path d="M7 8v2a5 5 0 0 0 10 0v-2" />
+                        <path d="M12 15v6" />
+                        <path d="M9 21h6" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">اپیلاسیون و اصلاح</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۷ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="اصلاح صورت اپیلاسیون و اصلاح">
+                      <input type="checkbox" name="serviceIds" value="48" data-price="200000" data-duration="20" data-name="اصلاح صورت" />
+                      <span class="option__main">
+                        <span class="option__name">اصلاح صورت</span>
+                        <span class="option__meta">۲۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="وکس صورت اپیلاسیون و اصلاح">
+                      <input type="checkbox" name="serviceIds" value="49" data-price="300000" data-duration="30" data-name="وکس صورت" />
+                      <span class="option__main">
+                        <span class="option__name">وکس صورت</span>
+                        <span class="option__meta">۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۳۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اپیلاسیون دست اپیلاسیون و اصلاح">
+                      <input type="checkbox" name="serviceIds" value="50" data-price="450000" data-duration="40" data-name="اپیلاسیون دست" />
+                      <span class="option__main">
+                        <span class="option__name">اپیلاسیون دست</span>
+                        <span class="option__meta">۴۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۴۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اپیلاسیون پا اپیلاسیون و اصلاح">
+                      <input type="checkbox" name="serviceIds" value="51" data-price="650000" data-duration="60" data-name="اپیلاسیون پا" />
+                      <span class="option__main">
+                        <span class="option__name">اپیلاسیون پا</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۶۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اپیلاسیون زیر بغل اپیلاسیون و اصلاح">
+                      <input type="checkbox" name="serviceIds" value="52" data-price="200000" data-duration="15" data-name="اپیلاسیون زیر بغل" />
+                      <span class="option__main">
+                        <span class="option__name">اپیلاسیون زیر بغل</span>
+                        <span class="option__meta">۱۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اپیلاسیون بیکینی اپیلاسیون و اصلاح">
+                      <input type="checkbox" name="serviceIds" value="53" data-price="500000" data-duration="30" data-name="اپیلاسیون بیکینی" />
+                      <span class="option__main">
+                        <span class="option__name">اپیلاسیون بیکینی</span>
+                        <span class="option__meta">۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اپیلاسیون فول بادی اپیلاسیون و اصلاح">
+                      <input type="checkbox" name="serviceIds" value="54" data-price="1800000" data-duration="120" data-name="اپیلاسیون فول بادی" />
+                      <span class="option__main">
+                        <span class="option__name">اپیلاسیون فول بادی</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۸۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-8" data-cat="8">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 20l4 -1l11 -11a2.1 2.1 0 0 0 -3 -3l-11 11z" />
+                        <path d="M14 6l3 3" />
+                        <path d="M4 20l1 -4" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">آرایش دائم</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۸ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="میکروبلیدینگ آرایش دائم">
+                      <input type="checkbox" name="serviceIds" value="55" data-price="5000000" data-duration="150" data-name="میکروبلیدینگ" />
+                      <span class="option__main">
+                        <span class="option__name">میکروبلیدینگ</span>
+                        <span class="option__meta">۲ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۵٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="فیبروز آرایش دائم">
+                      <input type="checkbox" name="serviceIds" value="56" data-price="4500000" data-duration="150" data-name="فیبروز" />
+                      <span class="option__main">
+                        <span class="option__name">فیبروز</span>
+                        <span class="option__meta">۲ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۴٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="شیدینگ ابرو آرایش دائم">
+                      <input type="checkbox" name="serviceIds" value="57" data-price="4800000" data-duration="150" data-name="شیدینگ ابرو" />
+                      <span class="option__main">
+                        <span class="option__name">شیدینگ ابرو</span>
+                        <span class="option__meta">۲ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۴٬۸۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="تاتو لب آرایش دائم">
+                      <input type="checkbox" name="serviceIds" value="58" data-price="5500000" data-duration="150" data-name="تاتو لب" />
+                      <span class="option__main">
+                        <span class="option__name">تاتو لب</span>
+                        <span class="option__meta">۲ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۵٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="شیدینگ لب آرایش دائم">
+                      <input type="checkbox" name="serviceIds" value="59" data-price="6000000" data-duration="180" data-name="شیدینگ لب" />
+                      <span class="option__main">
+                        <span class="option__name">شیدینگ لب</span>
+                        <span class="option__meta">۳ ساعت</span>
+                      </span>
+                      <span class="option__side">۶٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="خط چشم دائم آرایش دائم">
+                      <input type="checkbox" name="serviceIds" value="60" data-price="3500000" data-duration="120" data-name="خط چشم دائم" />
+                      <span class="option__main">
+                        <span class="option__name">خط چشم دائم</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۳٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="بن مژه آرایش دائم">
+                      <input type="checkbox" name="serviceIds" value="61" data-price="2800000" data-duration="90" data-name="بن مژه" />
+                      <span class="option__main">
+                        <span class="option__name">بن مژه</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲٬۸۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ترمیم و ریموو آرایش دائم">
+                      <input type="checkbox" name="serviceIds" value="62" data-price="2000000" data-duration="90" data-name="ترمیم و ریموو" />
+                      <span class="option__main">
+                        <span class="option__name">ترمیم و ریموو</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-9" data-cat="9">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 20c-5 0 -8 -4 -8 -8c4 0 8 3 8 8z" />
+                        <path d="M12 20c5 0 8 -4 8 -8c-4 0 -8 3 -8 8z" />
+                        <path d="M12 20c-2 -3 -2 -9 0 -13c2 4 2 10 0 13z" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">ماساژ و اسپا</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۷ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="ماساژ صورت ماساژ و اسپا">
+                      <input type="checkbox" name="serviceIds" value="63" data-price="600000" data-duration="30" data-name="ماساژ صورت" />
+                      <span class="option__main">
+                        <span class="option__name">ماساژ صورت</span>
+                        <span class="option__meta">۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۶۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ماساژ بدن ماساژ و اسپا">
+                      <input type="checkbox" name="serviceIds" value="64" data-price="1500000" data-duration="60" data-name="ماساژ بدن" />
+                      <span class="option__main">
+                        <span class="option__name">ماساژ بدن</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ماساژ ریلکسی ماساژ و اسپا">
+                      <input type="checkbox" name="serviceIds" value="65" data-price="1600000" data-duration="60" data-name="ماساژ ریلکسی" />
+                      <span class="option__main">
+                        <span class="option__name">ماساژ ریلکسی</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۶۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="ماساژ سر و گردن ماساژ و اسپا">
+                      <input type="checkbox" name="serviceIds" value="66" data-price="700000" data-duration="30" data-name="ماساژ سر و گردن" />
+                      <span class="option__main">
+                        <span class="option__name">ماساژ سر و گردن</span>
+                        <span class="option__meta">۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۷۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اسپا دست ماساژ و اسپا">
+                      <input type="checkbox" name="serviceIds" value="67" data-price="600000" data-duration="45" data-name="اسپا دست" />
+                      <span class="option__main">
+                        <span class="option__name">اسپا دست</span>
+                        <span class="option__meta">۴۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۶۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اسپا پا ماساژ و اسپا">
+                      <input type="checkbox" name="serviceIds" value="68" data-price="750000" data-duration="60" data-name="اسپا پا" />
+                      <span class="option__main">
+                        <span class="option__name">اسپا پا</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۷۵۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="اسپا بدن ماساژ و اسپا">
+                      <input type="checkbox" name="serviceIds" value="69" data-price="2500000" data-duration="90" data-name="اسپا بدن" />
+                      <span class="option__main">
+                        <span class="option__name">اسپا بدن</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-10" data-cat="10">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z" /></svg>
+                    </span>
+                    <span class="svc-pick__name">خدمات عروس</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۶ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="میکاپ عروس خدمات عروس">
+                      <input type="checkbox" name="serviceIds" value="70" data-price="9000000" data-duration="180" data-name="میکاپ عروس" />
+                      <span class="option__main">
+                        <span class="option__name">میکاپ عروس</span>
+                        <span class="option__meta">۳ ساعت</span>
+                      </span>
+                      <span class="option__side">۹٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="شینیون عروس خدمات عروس">
+                      <input type="checkbox" name="serviceIds" value="71" data-price="7000000" data-duration="150" data-name="شینیون عروس" />
+                      <span class="option__main">
+                        <span class="option__name">شینیون عروس</span>
+                        <span class="option__meta">۲ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۷٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="میکاپ و شینیون خدمات عروس">
+                      <input type="checkbox" name="serviceIds" value="72" data-price="15000000" data-duration="300" data-name="میکاپ و شینیون" />
+                      <span class="option__main">
+                        <span class="option__name">میکاپ و شینیون</span>
+                        <span class="option__meta">۵ ساعت</span>
+                      </span>
+                      <span class="option__side">۱۵٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="تست میکاپ خدمات عروس">
+                      <input type="checkbox" name="serviceIds" value="73" data-price="3000000" data-duration="120" data-name="تست میکاپ" />
+                      <span class="option__main">
+                        <span class="option__name">تست میکاپ</span>
+                        <span class="option__meta">۲ ساعت</span>
+                      </span>
+                      <span class="option__side">۳٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="تست شینیون خدمات عروس">
+                      <input type="checkbox" name="serviceIds" value="74" data-price="2500000" data-duration="90" data-name="تست شینیون" />
+                      <span class="option__main">
+                        <span class="option__name">تست شینیون</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="پکیج عروس خدمات عروس">
+                      <input type="checkbox" name="serviceIds" value="75" data-price="25000000" data-duration="480" data-name="پکیج عروس" />
+                      <span class="option__main">
+                        <span class="option__name">پکیج عروس</span>
+                        <span class="option__meta">۸ ساعت</span>
+                      </span>
+                      <span class="option__side">۲۵٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+                <details class="svc-pick" id="pick-11" data-cat="11">
+                  <summary>
+                    <span class="tile-icon tile-icon--sm">
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 3h6v3h-6z" />
+                        <path d="M8 6h8l1 3v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-10z" />
+                        <path d="M10 13h4" />
+                      </svg>
+                    </span>
+                    <span class="svc-pick__name">مراقبت و زیبایی بدن</span>
+                    <span class="svc-pick__count" data-cat-count hidden></span>
+                    <small>۵ خدمت</small>
+                  </summary>
+                  <div class="option-list">
+                    <label class="option svc-option" data-search="اسکراب بدن مراقبت و زیبایی بدن">
+                      <input type="checkbox" name="serviceIds" value="76" data-price="1200000" data-duration="60" data-name="اسکراب بدن" />
+                      <span class="option__main">
+                        <span class="option__name">اسکراب بدن</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۲۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="لایه‌برداری بدن مراقبت و زیبایی بدن">
+                      <input type="checkbox" name="serviceIds" value="77" data-price="1400000" data-duration="60" data-name="لایه‌برداری بدن" />
+                      <span class="option__main">
+                        <span class="option__name">لایه‌برداری بدن</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۴۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="آبرسانی بدن مراقبت و زیبایی بدن">
+                      <input type="checkbox" name="serviceIds" value="78" data-price="1300000" data-duration="60" data-name="آبرسانی بدن" />
+                      <span class="option__main">
+                        <span class="option__name">آبرسانی بدن</span>
+                        <span class="option__meta">۱ ساعت</span>
+                      </span>
+                      <span class="option__side">۱٬۳۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="مراقبت پوست بدن مراقبت و زیبایی بدن">
+                      <input type="checkbox" name="serviceIds" value="79" data-price="1500000" data-duration="75" data-name="مراقبت پوست بدن" />
+                      <span class="option__main">
+                        <span class="option__name">مراقبت پوست بدن</span>
+                        <span class="option__meta">۱ ساعت و ۱۵ دقیقه</span>
+                      </span>
+                      <span class="option__side">۱٬۵۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                    <label class="option svc-option" data-search="فرم‌دهی بدن مراقبت و زیبایی بدن">
+                      <input type="checkbox" name="serviceIds" value="80" data-price="2000000" data-duration="90" data-name="فرم‌دهی بدن" />
+                      <span class="option__main">
+                        <span class="option__name">فرم‌دهی بدن</span>
+                        <span class="option__meta">۱ ساعت و ۳۰ دقیقه</span>
+                      </span>
+                      <span class="option__side">۲٬۰۰۰٬۰۰۰ تومان</span>
+                      <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                    </label>
+                  </div>
+                </details>
+              </div>
+              <p class="slot-state" data-search-empty hidden>خدمتی با این نام پیدا نشد.</p>
+            </section>
+
+            <!-- قدم ۲: آرایشگر -->
+            <section class="wizard-step" data-panel="1" aria-labelledby="s1-title" hidden>
+              <div class="wizard-step__head">
+                <h2 id="s1-title">با کدام آرایشگر؟</h2>
+                <p>فقط آرایشگرانی فعال‌اند که همه خدمات انتخابی شما را انجام می‌دهند.</p>
+              </div>
+              <div class="option-list staff-list">
+                <label class="option staff-option staff-option--any">
+                  <input type="radio" name="staffId" value="" data-name="هر آرایشگری که آزاد است" checked />
+                  <span class="avatar avatar--sm avatar--any">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 3l1.9 5.8l6.1 .2l-4.9 3.7l1.8 5.9l-4.9 -3.6l-4.9 3.6l1.8 -5.9l-4.9 -3.7l6.1 -.2z" />
+                    </svg>
+                  </span>
+                  <span class="option__main">
+                    <span class="option__name">فرقی نمی‌کند</span>
+                    <span class="option__meta">زودترین ساعت آزاد را پیشنهاد می‌دهیم</span>
+                  </span>
+                  <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                </label>
+                <label class="option staff-option" data-staff-option="1" data-services="1,2,3,4,5,6,7,8,9,10,12" data-factor="1.1">
+                  <input type="radio" name="staffId" value="1" data-name="سارا محمدی" />
+                  <div class="avatar avatar--sm"><span class="avatar__ph" aria-hidden="true"></span></div>
+                  <span class="option__main">
+                    <span class="option__name">سارا محمدی</span>
+                    <span class="option__meta">متخصص رنگ و لایت</span>
+                    <span class="option__rating">
+                      <span class="stars" aria-label="امتیاز ۴.۹ از ۵">
+                        ★★★★★
+                        <span class="stars__off"></span>
+                      </span>
+                      ۴.۹
+                    </span>
+                  </span>
+                  <span class="option__side staff-option__note" data-staff-note></span>
+                  <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                </label>
+                <label class="option staff-option" data-staff-option="2" data-services="35,36,37,38,39,40,70,71,72,73,74,75,23,24,25" data-factor="1.15">
+                  <input type="radio" name="staffId" value="2" data-name="نگار رضایی" />
+                  <div class="avatar avatar--sm"><span class="avatar__ph" aria-hidden="true"></span></div>
+                  <span class="option__main">
+                    <span class="option__name">نگار رضایی</span>
+                    <span class="option__meta">میکاپ آرتیست</span>
+                    <span class="option__rating">
+                      <span class="stars" aria-label="امتیاز ۴.۸ از ۵">
+                        ★★★★★
+                        <span class="stars__off"></span>
+                      </span>
+                      ۴.۸
+                    </span>
+                  </span>
+                  <span class="option__side staff-option__note" data-staff-note></span>
+                  <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                </label>
+                <label class="option staff-option" data-staff-option="3" data-services="15,16,17,18,19,20,21,22,67,68" data-factor="1.0">
+                  <input type="radio" name="staffId" value="3" data-name="مینا کریمی" />
+                  <div class="avatar avatar--sm"><span class="avatar__ph" aria-hidden="true"></span></div>
+                  <span class="option__main">
+                    <span class="option__name">مینا کریمی</span>
+                    <span class="option__meta">ناخن‌کار</span>
+                    <span class="option__rating">
+                      <span class="stars" aria-label="امتیاز ۴.۷ از ۵">
+                        ★★★★★
+                        <span class="stars__off"></span>
+                      </span>
+                      ۴.۷
+                    </span>
+                  </span>
+                  <span class="option__side staff-option__note" data-staff-note></span>
+                  <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                </label>
+                <label
+                  class="option staff-option"
+                  data-staff-option="4"
+                  data-services="29,30,31,32,33,34,23,24,25,26,27,28,55,56,57,58,59,60,61,62"
+                  data-factor="1.1">
+                  <input type="radio" name="staffId" value="4" data-name="الهام نوری" />
+                  <div class="avatar avatar--sm"><span class="avatar__ph" aria-hidden="true"></span></div>
+                  <span class="option__main">
+                    <span class="option__name">الهام نوری</span>
+                    <span class="option__meta">متخصص مژه و ابرو</span>
+                    <span class="option__rating">
+                      <span class="stars" aria-label="امتیاز ۴.۹ از ۵">
+                        ★★★★★
+                        <span class="stars__off"></span>
+                      </span>
+                      ۴.۹
+                    </span>
+                  </span>
+                  <span class="option__side staff-option__note" data-staff-note></span>
+                  <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                </label>
+                <label
+                  class="option staff-option"
+                  data-staff-option="5"
+                  data-services="41,42,43,44,45,46,47,48,49,50,51,52,53,54,63,64,65,66,67,68,69,76,77,78,79,80"
+                  data-factor="1.05">
+                  <input type="radio" name="staffId" value="5" data-name="پریسا احمدی" />
+                  <div class="avatar avatar--sm"><span class="avatar__ph" aria-hidden="true"></span></div>
+                  <span class="option__main">
+                    <span class="option__name">پریسا احمدی</span>
+                    <span class="option__meta">متخصص پوست و فیشیال</span>
+                    <span class="option__rating">
+                      <span class="stars" aria-label="امتیاز ۴.۸ از ۵">
+                        ★★★★★
+                        <span class="stars__off"></span>
+                      </span>
+                      ۴.۸
+                    </span>
+                  </span>
+                  <span class="option__side staff-option__note" data-staff-note></span>
+                  <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                </label>
+                <label class="option staff-option" data-staff-option="6" data-services="1,8,9,10,11,12,13,14,71,74,75" data-factor="0.95">
+                  <input type="radio" name="staffId" value="6" data-name="شیما رستمی" />
+                  <div class="avatar avatar--sm"><span class="avatar__ph" aria-hidden="true"></span></div>
+                  <span class="option__main">
+                    <span class="option__name">شیما رستمی</span>
+                    <span class="option__meta">متخصص مو و عروس</span>
+                    <span class="option__rating">
+                      <span class="stars" aria-label="امتیاز ۴.۶ از ۵">
+                        ★★★★★
+                        <span class="stars__off"></span>
+                      </span>
+                      ۴.۶
+                    </span>
+                  </span>
+                  <span class="option__side staff-option__note" data-staff-note></span>
+                  <svg class="icon option__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
+                </label>
+              </div>
+              <p class="slot-state" data-no-staff hidden>
+                هیچ آرایشگری همه این خدمات را با هم انجام نمی‌دهد. «فرقی نمی‌کند» را بزنید یا خدمت‌ها را در دو نوبت جدا رزرو کنید.
+              </p>
+            </section>
+
+            <!-- قدم ۳: روز و ساعت -->
+            <section class="wizard-step" data-panel="2" aria-labelledby="s2-title" hidden>
+              <div class="wizard-step__head">
+                <h2 id="s2-title">کی می‌آیید؟</h2>
+                <p>روز را انتخاب کنید تا ساعت‌های آزاد همان روز نمایش داده شود.</p>
+              </div>
+              <div id="step-day">
+                <h3 class="mini-title">روز</h3>
+                <div class="day-strip" data-days role="group" aria-label="روزهای قابل رزرو">
+                  <button type="button" class="day" data-date="2026-11-13" aria-pressed="false" disabled title="سالن تعطیل است">
+                    <span class="day__name">امروز</span>
+                    <span class="day__num">۲۲</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-14" aria-pressed="false">
+                    <span class="day__name">فردا</span>
+                    <span class="day__num">۲۳</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-15" aria-pressed="false">
+                    <span class="day__name">یکشنبه</span>
+                    <span class="day__num">۲۴</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-16" aria-pressed="false">
+                    <span class="day__name">دوشنبه</span>
+                    <span class="day__num">۲۵</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-17" aria-pressed="false">
+                    <span class="day__name">سه‌شنبه</span>
+                    <span class="day__num">۲۶</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-18" aria-pressed="false">
+                    <span class="day__name">چهارشنبه</span>
+                    <span class="day__num">۲۷</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-19" aria-pressed="false">
+                    <span class="day__name">پنجشنبه</span>
+                    <span class="day__num">۲۸</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-20" aria-pressed="false" disabled title="سالن تعطیل است">
+                    <span class="day__name">جمعه</span>
+                    <span class="day__num">۲۹</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-21" aria-pressed="false">
+                    <span class="day__name">شنبه</span>
+                    <span class="day__num">۳۰</span>
+                    <span class="day__month">آبان</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-22" aria-pressed="false">
+                    <span class="day__name">یکشنبه</span>
+                    <span class="day__num">۱</span>
+                    <span class="day__month">آذر</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-23" aria-pressed="false">
+                    <span class="day__name">دوشنبه</span>
+                    <span class="day__num">۲</span>
+                    <span class="day__month">آذر</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-24" aria-pressed="false">
+                    <span class="day__name">سه‌شنبه</span>
+                    <span class="day__num">۳</span>
+                    <span class="day__month">آذر</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-25" aria-pressed="false">
+                    <span class="day__name">چهارشنبه</span>
+                    <span class="day__num">۴</span>
+                    <span class="day__month">آذر</span>
+                  </button>
+                  <button type="button" class="day" data-date="2026-11-26" aria-pressed="false">
+                    <span class="day__name">پنجشنبه</span>
+                    <span class="day__num">۵</span>
+                    <span class="day__month">آذر</span>
+                  </button>
+                </div>
+                <p class="slot-state" data-days-state hidden></p>
+              </div>
+              <div id="step-time" aria-disabled="true">
+                <h3 class="mini-title">ساعت</h3>
+                <div data-slots role="group" aria-label="ساعت‌های آزاد">
+                  <p class="slot-group">صبح</p>
+                  <div class="slots">
+                    <button type="button" class="slot" aria-pressed="false" data-time="10:00">۱۰:۰۰</button>
+                    <button type="button" class="slot" aria-pressed="false" data-time="10:45">۱۰:۴۵</button>
+                    <button type="button" class="slot" aria-pressed="false" data-time="11:30">۱۱:۳۰</button>
+                    <button type="button" class="slot" aria-pressed="false" data-time="12:15">۱۲:۱۵</button>
+                  </div>
+                  <p class="slot-group">بعدازظهر</p>
+                  <div class="slots">
+                    <button type="button" class="slot" aria-pressed="false" data-time="14:15">۱۴:۱۵</button>
+                    <button type="button" class="slot" aria-pressed="false" data-time="15:00">۱۵:۰۰</button>
+                    <button type="button" class="slot" aria-pressed="false" data-time="15:45">۱۵:۴۵</button>
+                    <button type="button" class="slot" aria-pressed="false" data-time="16:30">۱۶:۳۰</button>
+                    <button type="button" class="slot" aria-pressed="false" data-time="17:15">۱۷:۱۵</button>
+                    <button type="button" class="slot" aria-pressed="false" data-time="18:00">۱۸:۰۰</button>
+                  </div>
+                </div>
+                <p class="slot-state" data-slots-state aria-live="polite">ابتدا روز را انتخاب کنید.</p>
+              </div>
+            </section>
+
+            <!-- قدم ۴: مرور و ثبت -->
+            <section class="wizard-step" data-panel="3" aria-labelledby="s3-title" hidden>
+              <div class="wizard-step__head">
+                <h2 id="s3-title">مرور و ثبت نوبت</h2>
+                <p>همه چیز درست است؟ با زدن هر بخش می‌توانید آن را تغییر دهید.</p>
+              </div>
+              <ul class="review-list">
+                <li>
+                  <span>خدمات</span>
+                  <b data-sum="services">-</b>
+                  <button type="button" class="btn btn-ghost btn-sm" data-goto="0">تغییر</button>
+                </li>
+                <li>
+                  <span>آرایشگر</span>
+                  <b data-sum="staff">-</b>
+                  <button type="button" class="btn btn-ghost btn-sm" data-goto="1">تغییر</button>
+                </li>
+                <li>
+                  <span>زمان</span>
+                  <b data-sum="time">-</b>
+                  <button type="button" class="btn btn-ghost btn-sm" data-goto="2">تغییر</button>
+                </li>
+              </ul>
+              <div class="form-row cols-2 mt-4">
+                <div class="field">
+                  <label for="discountCode">کد تخفیف (اختیاری)</label>
+                  <div class="code-input">
+                    <input id="discountCode" name="discountCode" class="input ltr" autocomplete="off" maxlength="30" placeholder="WELCOME10" />
+                    <button type="button" class="btn btn-ghost" data-apply-code>اعمال</button>
+                  </div>
+                  <span class="hint" data-code-message aria-live="polite"></span>
+                </div>
+                <div class="field">
+                  <label for="note">یادداشت برای آرایشگر (اختیاری)</label>
+                  <textarea id="note" name="note" class="input" maxlength="500" rows="2" placeholder="مثلاً حساسیت پوستی دارم"></textarea>
+                </div>
+              </div>
+              <div class="notice-box mt-4">
+                <b>قوانین:</b>
+                بیعانه ۲۰٪ آنلاین پرداخت می‌شود؛ لغو یا تغییر تا ۳ ساعت قبل از نوبت با برگشت بیعانه.
+                <a href="about.html#hours">جزئیات</a>
+              </div>
+              <p class="hint mt-3">
+                برای ثبت، وارد حساب شوید؛ انتخاب‌هایتان حفظ می‌شود.
+                <a href="account/login.html">ورود</a>
+                یا
+                <a href="account/register.html">ثبت‌نام یک‌دقیقه‌ای</a>
+              </p>
+            </section>
+          </div>
+
+          <!-- خلاصه: دسکتاپ کنار مراحل؛ موبایل برگه بازشونده از نوار پایین -->
+          <aside class="summary" id="booking-summary" aria-labelledby="summary-title" data-summary>
+            <div class="summary__head">
+              <h2 id="summary-title">خلاصه نوبت</h2>
+              <button type="button" class="icon-btn summary__close" data-summary-toggle aria-label="بستن خلاصه">✕</button>
+            </div>
+            <dl>
+              <dt>خدمات</dt>
+              <dd data-sum="services">انتخاب نشده</dd>
+              <dt>آرایشگر</dt>
+              <dd data-sum="staff">فرقی نمی‌کند</dd>
+              <dt>زمان</dt>
+              <dd data-sum="time">انتخاب نشده</dd>
+              <dt>مدت</dt>
+              <dd data-sum="duration">-</dd>
+              <dt data-discount-row hidden>تخفیف</dt>
+              <dd data-sum="discount" hidden>-</dd>
+              <dt>مبلغ</dt>
+              <dd class="total" data-sum="final">-</dd>
+              <dt>بیعانه آنلاین</dt>
+              <dd data-sum="deposit">-</dd>
+            </dl>
+          </aside>
+
+          <!-- نوار اقدام: قبلی / خلاصه و مبلغ / ادامه -->
+          <div class="wizard-bar" data-wizard-bar>
+            <button type="button" class="btn btn-ghost wizard-bar__prev" data-prev hidden>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6l-6 6" /></svg>
+              <span>قبلی</span>
+            </button>
+            <button type="button" class="wizard-bar__info" data-summary-toggle aria-controls="booking-summary" aria-expanded="false">
+              <span class="wizard-bar__label" data-bar-time>هنوز خدمتی انتخاب نشده</span>
+              <strong class="wizard-bar__price" data-bar-final></strong>
+            </button>
+            <button type="button" class="btn btn-primary wizard-bar__next" data-next>
+              <span data-next-label>ادامه</span>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6l6 6" /></svg>
+            </button>
+          </div>
+          <div class="summary-backdrop" data-summary-toggle hidden></div>
+        </form>
+      </div>
+    </main>
+
+    <!-- ===== پانویس سایت ===== -->
+    <footer class="site-footer" id="contact">
+      <div class="wrap">
+        <div class="footer-box">
+          <!-- لوگو و نام -->
+          <a class="footer-brand" href="index.html" aria-label="صفحه اصلی سالن زیبایی آیدا">
+            <span class="logo" aria-hidden="true"></span>
+            <strong>سالن زیبایی آیدا</strong>
+          </a>
+          <p class="footer-tagline">زیبایی، به وقت تو</p>
+
+          <!-- تماس و فضای مجازی -->
+          <div class="footer-contact">
+            <a class="footer-phone" href="tel:02100000000">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+              </svg>
+              <span class="ltr">۰۲۱-۰۰۰۰۰۰۰۰</span>
+            </a>
+            <ul class="social-list" aria-label="فضای مجازی">
+              <li>
+                <a class="social-btn" href="https://instagram.com/aida.salon" rel="noopener" target="_blank" aria-label="اینستاگرام">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M16.5 7.5v.01" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-btn" href="https://t.me/aida_salon" rel="noopener" target="_blank" aria-label="تلگرام">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-btn" href="https://wa.me/989120000000" rel="noopener" target="_blank" aria-label="واتس‌اپ">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                    <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- نقشه: بک‌اند به‌جای .map-box__canvas، iframe نقشه بلد را می‌گذارد (data-balad-lat / data-balad-lng) -->
+          <div class="map-box" data-balad-lat="35.7000" data-balad-lng="51.4000">
+            <div class="map-box__canvas" aria-hidden="true">
+              <span class="map-box__pin">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                </svg>
+              </span>
+            </div>
+            <div class="map-box__info">
+              <span class="map-box__icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                </svg>
+              </span>
+              <div>
+                <strong>نشانی سالن</strong>
+                <p>تهران، خیابان نمونه، پلاک ۱۲ (نشانی نمونه)</p>
+                <p class="map-box__hours">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                    <path d="M12 7v5l3 3" />
+                  </svg>
+                  شنبه تا پنجشنبه، ۱۰ تا ۱۹
+                </p>
+              </div>
+              <a class="btn btn-ghost btn-sm" href="https://balad.ir" rel="noopener" target="_blank">مسیریابی با بلد</a>
+            </div>
+          </div>
+
+          <nav class="footer-links" aria-label="پیوندهای پایین صفحه">
+            <a href="services.html">خدمات</a>
+            <a href="stylists.html">آرایشگران</a>
+            <a href="about.html#hours">ساعات کاری و قوانین</a>
+            <a href="about.html">درباره ما</a>
+          </nav>
+        </div>
+        <p class="site-footer__base">© سالن زیبایی آیدا</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>خدمات سالن | سالن زیبایی آیدا</title>
+    <meta name="description" content="رزرو آنلاین نوبت سالن زیبایی آیدا: آرایشگر و ساعت آزاد را خودتان انتخاب کنید." />
+    <meta name="theme-color" content="#FBF1F0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#170F13" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/img/icon-180.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="آیدا" />
+    <link rel="preload" href="assets/fonts/vazirmatn-arabic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="assets/css/base/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base/base.css" />
+    <link rel="stylesheet" href="assets/css/layout/header.css" />
+    <link rel="stylesheet" href="assets/css/layout/footer.css" />
+    <link rel="stylesheet" href="assets/css/components/buttons.css" />
+    <link rel="stylesheet" href="assets/css/components/forms.css" />
+    <link rel="stylesheet" href="assets/css/components/cards.css" />
+    <link rel="stylesheet" href="assets/css/components/tables.css" />
+    <link rel="stylesheet" href="assets/css/components/dialog.css" />
+    <link rel="stylesheet" href="assets/css/pages/catalog.css" />
+    <link rel="stylesheet" href="assets/css/base/motion.css" />
+
+    <!-- اسکریپت‌ها -->
+    <script src="assets/js/theme-init.js"></script>
+    <script src="assets/js/common/theme.js" defer></script>
+    <script src="assets/js/common/nav.js" defer></script>
+    <script src="assets/js/common/reveal.js" defer></script>
+    <script src="assets/js/common/ui.js" defer></script>
+    <script src="assets/js/common/forms.js" defer></script>
+    <script src="assets/js/common/pwa.js" defer></script>
+    <script src="assets/js/components/select.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+
+    <!-- ===== سربرگ سایت ===== -->
+    <header class="site-header">
+      <div class="wrap site-header__bar">
+        <a class="brand" href="index.html" aria-label="صفحه اصلی سالن زیبایی آیدا">
+          <span class="logo" role="img" aria-label="آیدا"></span>
+          <span class="brand__name">
+            سالن زیبایی
+            <b>آیدا</b>
+          </span>
+        </a>
+        <nav id="site-nav" class="site-nav" aria-label="منوی اصلی">
+          <div class="site-nav__head">
+            <span class="logo" aria-hidden="true"></span>
+            <strong>منوی سالن</strong>
+            <button type="button" class="icon-btn" data-nav-close aria-label="بستن منو">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <ul>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="services.html" aria-current="page">خدمات</a></li>
+            <li><a href="stylists.html">آرایشگران</a></li>
+            <li><a href="about.html">درباره ما</a></li>
+            <li><a href="#contact">تماس</a></li>
+            <li><a href="account/login.html">ورود / ثبت‌نام</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn" data-theme-toggle aria-pressed="false" aria-label="تغییر حالت روشن و تیره">
+            <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" /></svg
+            ><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+          </button>
+          <button type="button" class="icon-btn nav-toggle" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="منو">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          </button>
+          <a class="btn btn-primary btn-book" href="booking.html">رزرو نوبت</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- ===== محتوای صفحه (داده‌ها نمونه‌اند؛ بک‌اند آن‌ها را پر می‌کند) ===== -->
+      <div class="wrap section">
+        <div class="page-head">
+          <h1>خدمات سالن</h1>
+        </div>
+        <nav class="cat-chips" aria-label="دسته‌های خدمات">
+          <a href="services.html" aria-current="page">همه</a>
+          <a href="services.html?category=1#cat-1">مو</a>
+          <a href="services.html?category=2#cat-2">ناخن</a>
+          <a href="services.html?category=3#cat-3">ابرو</a>
+          <a href="services.html?category=4#cat-4">مژه</a>
+          <a href="services.html?category=5#cat-5">میکاپ و گریم</a>
+          <a href="services.html?category=6#cat-6">پوست و فیشیال</a>
+          <a href="services.html?category=7#cat-7">اپیلاسیون و اصلاح</a>
+          <a href="services.html?category=8#cat-8">آرایش دائم</a>
+          <a href="services.html?category=9#cat-9">ماساژ و اسپا</a>
+          <a href="services.html?category=10#cat-10">خدمات عروس</a>
+          <a href="services.html?category=11#cat-11">مراقبت و زیبایی بدن</a>
+        </nav>
+        <form class="filters" role="search" data-filter method="get">
+          <div class="field">
+            <label for="q">جستجوی خدمت</label>
+            <input id="q" name="q" class="input" value="" placeholder="مثلاً بالیاژ" />
+          </div>
+          <button type="submit" class="btn btn-outline">جستجو</button>
+        </form>
+        <p class="muted">۸۰ خدمت در ۱۱ دسته. قیمت‌ها «از» هستند و بسته به آرایشگر فرق می‌کنند.</p>
+        <div class="svc-groups">
+          <section class="svc-group" id="cat-1" aria-labelledby="cat-1-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path d="M6 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path d="M8.6 8.6l10.4 10.4" />
+                  <path d="M8.6 15.4l10.4 -10.4" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-1-title">
+                  مو
+                  <span class="svc-group__en ltr">Hair</span>
+                </h2>
+                <p>کوتاهی، رنگ، لایت، صافی و شینیون</p>
+              </div>
+              <span class="chip">۱۴ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=1">
+                <span class="tile__name">کوتاهی مو</span>
+                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان · ۴۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=2">
+                <span class="tile__name">رنگ مو</span>
+                <span class="tile__meta">از ۱٬۸۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=3">
+                <span class="tile__name">رنگ ریشه</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=4">
+                <span class="tile__name">رنگساژ</span>
+                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=5">
+                <span class="tile__name">هایلایت و مش</span>
+                <span class="tile__meta">از ۳٬۲۰۰٬۰۰۰ تومان · ۳ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=6">
+                <span class="tile__name">بالیاژ و آمبره</span>
+                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان · ۴ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=7">
+                <span class="tile__name">دکلره</span>
+                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان · ۳ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=8">
+                <span class="tile__name">کراتین و احیا</span>
+                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان · ۳ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=9">
+                <span class="tile__name">صافی مو</span>
+                <span class="tile__meta">از ۴٬۰۰۰٬۰۰۰ تومان · ۳ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=10">
+                <span class="tile__name">بوتاکس مو</span>
+                <span class="tile__meta">از ۲٬۸۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=11">
+                <span class="tile__name">شینیون</span>
+                <span class="tile__meta">از ۲٬۲۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=12">
+                <span class="tile__name">براشینگ</span>
+                <span class="tile__meta">از ۳۵۰٬۰۰۰ تومان · ۴۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=13">
+                <span class="tile__name">بافت مو</span>
+                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=14">
+                <span class="tile__name">اکستنشن مو</span>
+                <span class="tile__meta">از ۶٬۰۰۰٬۰۰۰ تومان · ۴ ساعت</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-2" aria-labelledby="cat-2-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 10h6v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                  <path d="M10 10v-4h4v4" />
+                  <path d="M11 6v-3h2v3" />
+                  <path d="M11 14h2" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-2-title">
+                  ناخن
+                  <span class="svc-group__en ltr">Nails</span>
+                </h2>
+                <p>کاشت، ژلیش، مانیکور و طراحی</p>
+              </div>
+              <span class="chip">۸ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=15">
+                <span class="tile__name">کاشت ناخن</span>
+                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=16">
+                <span class="tile__name">ترمیم ناخن</span>
+                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=17">
+                <span class="tile__name">ژلیش</span>
+                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=18">
+                <span class="tile__name">لمینت ناخن</span>
+                <span class="tile__meta">از ۵۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=19">
+                <span class="tile__name">مانیکور</span>
+                <span class="tile__meta">از ۴۰۰٬۰۰۰ تومان · ۴۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=20">
+                <span class="tile__name">پدیکور</span>
+                <span class="tile__meta">از ۵۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=21">
+                <span class="tile__name">طراحی ناخن</span>
+                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=22">
+                <span class="tile__name">ریموو ناخن</span>
+                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-3" aria-labelledby="cat-3-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 11c3 -4 11 -6 18 -2" />
+                  <path d="M5 15c2 2 4.5 3 7 3s5 -1 7 -3" />
+                  <path d="M12 15m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-3-title">
+                  ابرو
+                  <span class="svc-group__en ltr">Brows</span>
+                </h2>
+                <p>اصلاح، طراحی، لیفت و لمینت</p>
+              </div>
+              <span class="chip">۶ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=23">
+                <span class="tile__name">اصلاح ابرو</span>
+                <span class="tile__meta">از ۱۵۰٬۰۰۰ تومان · ۲۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=24">
+                <span class="tile__name">طراحی ابرو</span>
+                <span class="tile__meta">از ۳۵۰٬۰۰۰ تومان · ۴۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=25">
+                <span class="tile__name">رنگ ابرو</span>
+                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=26">
+                <span class="tile__name">لیفت ابرو</span>
+                <span class="tile__meta">از ۸۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=27">
+                <span class="tile__name">لمینت ابرو</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=28">
+                <span class="tile__name">فیبروز و میکروبلیدینگ</span>
+                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-4" aria-labelledby="cat-4-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 13c3 -4 6 -6 9 -6s6 2 9 6" />
+                  <path d="M3 13c3 3 6 4.5 9 4.5s6 -1.5 9 -4.5" />
+                  <path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                  <path d="M12 7v-3" />
+                  <path d="M7.5 8.5l-1.5 -2.5" />
+                  <path d="M16.5 8.5l1.5 -2.5" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-4-title">
+                  مژه
+                  <span class="svc-group__en ltr">Lashes</span>
+                </h2>
+                <p>اکستنشن، لیفت و لمینت مژه</p>
+              </div>
+              <span class="chip">۶ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=29">
+                <span class="tile__name">اکستنشن مژه</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=30">
+                <span class="tile__name">لیفت مژه</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=31">
+                <span class="tile__name">لمینت مژه</span>
+                <span class="tile__meta">از ۹۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=32">
+                <span class="tile__name">رنگ مژه</span>
+                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان · ۲۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=33">
+                <span class="tile__name">ترمیم مژه</span>
+                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=34">
+                <span class="tile__name">ریموو مژه</span>
+                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-5" aria-labelledby="cat-5-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M3 21v-4a4 4 0 1 1 4 4h-4" />
+                  <path d="M21 3a16 16 0 0 0 -12.8 10.2" />
+                  <path d="M21 3a16 16 0 0 1 -10.2 12.8" />
+                  <path d="M10.6 9a9 9 0 0 1 4.4 4.4" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-5-title">
+                  میکاپ و گریم
+                  <span class="svc-group__en ltr">Makeup</span>
+                </h2>
+                <p>از میکاپ روزانه تا گریم تخصصی</p>
+              </div>
+              <span class="chip">۶ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=35">
+                <span class="tile__name">میکاپ روزانه</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۴۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=36">
+                <span class="tile__name">میکاپ لایت</span>
+                <span class="tile__meta">از ۱٬۳۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=37">
+                <span class="tile__name">میکاپ مجلسی</span>
+                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=38">
+                <span class="tile__name">میکاپ تخصصی</span>
+                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=39">
+                <span class="tile__name">گریم</span>
+                <span class="tile__meta">از ۳٬۰۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=40">
+                <span class="tile__name">خودآرایی</span>
+                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-6" aria-labelledby="cat-6-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0 -18" />
+                  <path d="M9 14.5c1.6 1.4 4.4 1.4 6 0" />
+                  <path d="M9 10h.01" />
+                  <path d="M15 10h.01" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-6-title">
+                  پوست و فیشیال
+                  <span class="svc-group__en ltr">Skin Care</span>
+                </h2>
+                <p>پاکسازی، فیشیال و آبرسانی</p>
+              </div>
+              <span class="chip">۷ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=41">
+                <span class="tile__name">پاکسازی پوست</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=42">
+                <span class="tile__name">فیشیال کلاسیک</span>
+                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=43">
+                <span class="tile__name">فیشیال تخصصی</span>
+                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=44">
+                <span class="tile__name">آبرسانی پوست</span>
+                <span class="tile__meta">از ۱٬۴۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=45">
+                <span class="tile__name">فیشیال ضدجوش</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=46">
+                <span class="tile__name">فیشیال روشن‌کننده</span>
+                <span class="tile__meta">از ۱٬۶۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=47">
+                <span class="tile__name">مراقبت پوست حساس</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-7" aria-labelledby="cat-7-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 4h14v4h-14z" />
+                  <path d="M7 8v2a5 5 0 0 0 10 0v-2" />
+                  <path d="M12 15v6" />
+                  <path d="M9 21h6" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-7-title">
+                  اپیلاسیون و اصلاح
+                  <span class="svc-group__en ltr">Hair Removal</span>
+                </h2>
+                <p>اصلاح و وکس صورت تا فول بادی</p>
+              </div>
+              <span class="chip">۷ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=48">
+                <span class="tile__name">اصلاح صورت</span>
+                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان · ۲۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=49">
+                <span class="tile__name">وکس صورت</span>
+                <span class="tile__meta">از ۳۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=50">
+                <span class="tile__name">اپیلاسیون دست</span>
+                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان · ۴۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=51">
+                <span class="tile__name">اپیلاسیون پا</span>
+                <span class="tile__meta">از ۶۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=52">
+                <span class="tile__name">اپیلاسیون زیر بغل</span>
+                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان · ۱۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=53">
+                <span class="tile__name">اپیلاسیون بیکینی</span>
+                <span class="tile__meta">از ۵۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=54">
+                <span class="tile__name">اپیلاسیون فول بادی</span>
+                <span class="tile__meta">از ۱٬۸۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-8" aria-labelledby="cat-8-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 20l4 -1l11 -11a2.1 2.1 0 0 0 -3 -3l-11 11z" />
+                  <path d="M14 6l3 3" />
+                  <path d="M4 20l1 -4" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-8-title">
+                  آرایش دائم
+                  <span class="svc-group__en ltr">Permanent Makeup</span>
+                </h2>
+                <p>میکروبلیدینگ، تاتو و شیدینگ</p>
+              </div>
+              <span class="chip">۸ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=55">
+                <span class="tile__name">میکروبلیدینگ</span>
+                <span class="tile__meta">از ۵٬۰۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=56">
+                <span class="tile__name">فیبروز</span>
+                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=57">
+                <span class="tile__name">شیدینگ ابرو</span>
+                <span class="tile__meta">از ۴٬۸۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=58">
+                <span class="tile__name">تاتو لب</span>
+                <span class="tile__meta">از ۵٬۵۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=59">
+                <span class="tile__name">شیدینگ لب</span>
+                <span class="tile__meta">از ۶٬۰۰۰٬۰۰۰ تومان · ۳ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=60">
+                <span class="tile__name">خط چشم دائم</span>
+                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=61">
+                <span class="tile__name">بن مژه</span>
+                <span class="tile__meta">از ۲٬۸۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=62">
+                <span class="tile__name">ترمیم و ریموو</span>
+                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-9" aria-labelledby="cat-9-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 20c-5 0 -8 -4 -8 -8c4 0 8 3 8 8z" />
+                  <path d="M12 20c5 0 8 -4 8 -8c-4 0 -8 3 -8 8z" />
+                  <path d="M12 20c-2 -3 -2 -9 0 -13c2 4 2 10 0 13z" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-9-title">
+                  ماساژ و اسپا
+                  <span class="svc-group__en ltr">Massage & Spa</span>
+                </h2>
+                <p>ماساژ ریلکسی و اسپای دست، پا و بدن</p>
+              </div>
+              <span class="chip">۷ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=63">
+                <span class="tile__name">ماساژ صورت</span>
+                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=64">
+                <span class="tile__name">ماساژ بدن</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=65">
+                <span class="tile__name">ماساژ ریلکسی</span>
+                <span class="tile__meta">از ۱٬۶۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=66">
+                <span class="tile__name">ماساژ سر و گردن</span>
+                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=67">
+                <span class="tile__name">اسپا دست</span>
+                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان · ۴۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=68">
+                <span class="tile__name">اسپا پا</span>
+                <span class="tile__meta">از ۷۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=69">
+                <span class="tile__name">اسپا بدن</span>
+                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-10" aria-labelledby="cat-10-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6l4 6l5 -4l-2 10h-14l-2 -10l5 4z" /></svg>
+              </span>
+              <div>
+                <h2 id="cat-10-title">
+                  خدمات عروس
+                  <span class="svc-group__en ltr">Bridal</span>
+                </h2>
+                <p>میکاپ، شینیون، تست و پکیج عروس</p>
+              </div>
+              <span class="chip">۶ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=70">
+                <span class="tile__name">میکاپ عروس</span>
+                <span class="tile__meta">از ۹٬۰۰۰٬۰۰۰ تومان · ۳ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=71">
+                <span class="tile__name">شینیون عروس</span>
+                <span class="tile__meta">از ۷٬۰۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=72">
+                <span class="tile__name">میکاپ و شینیون</span>
+                <span class="tile__meta">از ۱۵٬۰۰۰٬۰۰۰ تومان · ۵ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=73">
+                <span class="tile__name">تست میکاپ</span>
+                <span class="tile__meta">از ۳٬۰۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=74">
+                <span class="tile__name">تست شینیون</span>
+                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=75">
+                <span class="tile__name">پکیج عروس</span>
+                <span class="tile__meta">از ۲۵٬۰۰۰٬۰۰۰ تومان · ۸ ساعت</span>
+              </a>
+            </div>
+          </section>
+          <section class="svc-group" id="cat-11" aria-labelledby="cat-11-title">
+            <header class="svc-group__head">
+              <span class="tile-icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 3h6v3h-6z" />
+                  <path d="M8 6h8l1 3v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-10z" />
+                  <path d="M10 13h4" />
+                </svg>
+              </span>
+              <div>
+                <h2 id="cat-11-title">
+                  مراقبت و زیبایی بدن
+                  <span class="svc-group__en ltr">Body Care</span>
+                </h2>
+                <p>اسکراب، لایه‌برداری و آبرسانی بدن</p>
+              </div>
+              <span class="chip">۵ خدمت</span>
+            </header>
+            <div class="tile-grid">
+              <a class="tile" href="service.html?id=76">
+                <span class="tile__name">اسکراب بدن</span>
+                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=77">
+                <span class="tile__name">لایه‌برداری بدن</span>
+                <span class="tile__meta">از ۱٬۴۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=78">
+                <span class="tile__name">آبرسانی بدن</span>
+                <span class="tile__meta">از ۱٬۳۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+              </a>
+              <a class="tile" href="service.html?id=79">
+                <span class="tile__name">مراقبت پوست بدن</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+              </a>
+              <a class="tile" href="service.html?id=80">
+                <span class="tile__name">فرم‌دهی بدن</span>
+                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== پانویس سایت ===== -->
+    <footer class="site-footer" id="contact">
+      <div class="wrap">
+        <div class="footer-box">
+          <!-- لوگو و نام -->
+          <a class="footer-brand" href="index.html" aria-label="صفحه اصلی سالن زیبایی آیدا">
+            <span class="logo" aria-hidden="true"></span>
+            <strong>سالن زیبایی آیدا</strong>
+          </a>
+          <p class="footer-tagline">زیبایی، به وقت تو</p>
+
+          <!-- تماس و فضای مجازی -->
+          <div class="footer-contact">
+            <a class="footer-phone" href="tel:02100000000">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+              </svg>
+              <span class="ltr">۰۲۱-۰۰۰۰۰۰۰۰</span>
+            </a>
+            <ul class="social-list" aria-label="فضای مجازی">
+              <li>
+                <a class="social-btn" href="https://instagram.com/aida.salon" rel="noopener" target="_blank" aria-label="اینستاگرام">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M16.5 7.5v.01" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-btn" href="https://t.me/aida_salon" rel="noopener" target="_blank" aria-label="تلگرام">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-btn" href="https://wa.me/989120000000" rel="noopener" target="_blank" aria-label="واتس‌اپ">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                    <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- نقشه: بک‌اند به‌جای .map-box__canvas، iframe نقشه بلد را می‌گذارد (data-balad-lat / data-balad-lng) -->
+          <div class="map-box" data-balad-lat="35.7000" data-balad-lng="51.4000">
+            <div class="map-box__canvas" aria-hidden="true">
+              <span class="map-box__pin">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                </svg>
+              </span>
+            </div>
+            <div class="map-box__info">
+              <span class="map-box__icon">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                </svg>
+              </span>
+              <div>
+                <strong>نشانی سالن</strong>
+                <p>تهران، خیابان نمونه، پلاک ۱۲ (نشانی نمونه)</p>
+                <p class="map-box__hours">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                    <path d="M12 7v5l3 3" />
+                  </svg>
+                  شنبه تا پنجشنبه، ۱۰ تا ۱۹
+                </p>
+              </div>
+              <a class="btn btn-ghost btn-sm" href="https://balad.ir" rel="noopener" target="_blank">مسیریابی با بلد</a>
+            </div>
+          </div>
+
+          <nav class="footer-links" aria-label="پیوندهای پایین صفحه">
+            <a href="services.html">خدمات</a>
+            <a href="stylists.html">آرایشگران</a>
+            <a href="about.html#hours">ساعات کاری و قوانین</a>
+            <a href="about.html">درباره ما</a>
+          </nav>
+        </div>
+        <p class="site-footer__base">© سالن زیبایی آیدا</p>
+      </div>
+    </footer>
+
+    <!-- ===== منوی پایین (موبایل و تبلت) ===== -->
+    <nav class="tabbar" aria-label="منوی پایین">
+      <a class="tabbar__item" href="index.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+          <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+          <path d="M10 21v-6h4v6" />
+        </svg>
+        <span>خانه</span>
+      </a>
+      <a class="tabbar__item" href="services.html" aria-current="page">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 4h6v6h-6z" />
+          <path d="M14 4h6v6h-6z" />
+          <path d="M4 14h6v6h-6z" />
+          <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+        </svg>
+        <span>خدمات</span>
+      </a>
+      <a class="tabbar__book" href="booking.html">
+        <span class="tabbar__fab">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+            <path d="M16 3v4" />
+            <path d="M8 3v4" />
+            <path d="M4 11h16" />
+            <path d="M12 14v4" />
+            <path d="M10 16h4" />
+          </svg>
+        </span>
+        <span>رزرو نوبت</span>
+      </a>
+      <a class="tabbar__item" href="stylists.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+          <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+        </svg>
+        <span>آرایشگران</span>
+      </a>
+      <a class="tabbar__item" href="account/login.html">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+          <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+        </svg>
+        <span>ورود</span>
+      </a>
+    </nav>
+  </body>
+</html>

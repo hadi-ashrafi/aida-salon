@@ -1,0 +1,6 @@
+/* ورود، ثبت‌نام و صفحه‌های تأیید */
+
+.auth { max-width: 460px; margin: var(--s6) auto; }
+.auth .panel { padding: var(--s6) var(--s5); }
+.auth h1 { font-size: 1.6rem; text-align: center; }
+.auth__alt { text-align: center; margin-top: var(--s4); }
