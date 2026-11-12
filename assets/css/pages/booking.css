@@ -132,7 +132,7 @@
 .notice-box { padding: var(--s3) var(--s4); border-radius: 16px; background: var(--accent-soft); font-size: .88rem; line-height: 1.9; }
 
 /* ================= خلاصه ================= */
-.summary { padding: var(--s5); border-radius: 26px; background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); }
+.summary { padding: var(--s5); border-radius: 26px; background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
 .summary__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--s3); }
 .summary__head h2 { margin: 0; font-size: 1.05rem; }
 .summary__close { display: none; }
@@ -159,7 +159,7 @@
   position: sticky; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 40; grid-column: 1 / -1;
   display: flex; align-items: center; gap: var(--s2); padding: var(--s2); border-radius: 22px;
   background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--shadow);
-  -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
 }
 @media (min-width: 1000px) { .wizard-bar { grid-column: 1; } }
 .wizard-bar__info {

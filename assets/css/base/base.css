@@ -7,10 +7,12 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip
 /* پس‌زمینه ثابت: لکه‌های رنگی که پشت سطح‌های شیشه‌ای مات دیده می‌شوند */
 body::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  /* تنها پس‌زمینه سایت: ثابت و یکپارچه، بدون لایه جدا برای هیرو یا بخش‌ها (درز نمی‌سازد). */
   background:
-    radial-gradient(40vmax 40vmax at 8% 4%, var(--mesh-a), transparent 70%),
-    radial-gradient(36vmax 36vmax at 96% 26%, var(--mesh-b), transparent 70%),
-    radial-gradient(42vmax 42vmax at 30% 100%, var(--mesh-c), transparent 70%),
+    radial-gradient(70vmax 46vmax at 50% -8%, var(--mesh-top), transparent 72%),
+    radial-gradient(44vmax 44vmax at 4% 10%, var(--mesh-a), transparent 70%),
+    radial-gradient(40vmax 40vmax at 98% 34%, var(--mesh-b), transparent 70%),
+    radial-gradient(46vmax 46vmax at 24% 104%, var(--mesh-c), transparent 70%),
     var(--bg);
 }
 body {

@@ -1,7 +1,7 @@
 /* حرکت: ورود عناصر هنگام اسکرول، کاهش حرکت و حالت چاپ */
 
 @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-@keyframes from-blur { from { opacity: 0; transform: translateY(24px) scale(.97); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes from-blur { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: none; } }
 @keyframes settle { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }
 

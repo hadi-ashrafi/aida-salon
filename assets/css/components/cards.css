@@ -32,14 +32,11 @@
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
 .avatar--sm { width: 44px; height: 44px; border-radius: var(--r-sm); font-size: 1.1rem; flex-shrink: 0; }
 
-.glow { position: relative; isolation: isolate; overflow: clip; }
-.glow::before, .glow::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; filter: blur(80px); opacity: .85; pointer-events: none; }
-.glow::before { width: 520px; height: 520px; background: var(--glow-a); inset-inline-start: -140px; top: -180px; }
-.glow::after { width: 460px; height: 460px; background: var(--glow-b); inset-inline-end: -160px; bottom: -220px; }
+.glow { position: relative; }
 .glass {
   background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
 }
@@ -121,8 +118,8 @@
   background: var(--glass-bg);
   border-color: var(--glass-border);
   box-shadow: var(--glass-shadow);
-  -webkit-backdrop-filter: blur(var(--blur)) saturate(160%);
-  backdrop-filter: blur(var(--blur)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(140%);
+  backdrop-filter: blur(var(--blur)) saturate(140%);
 }
 /* داخل یک سطح شیشه‌ای، مات کردن دوباره لازم نیست. */
 .svc-group .tile, .panel .appt, .step .option { -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; background: var(--glass-soft); }

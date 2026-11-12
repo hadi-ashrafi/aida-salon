@@ -47,13 +47,12 @@
      سایه فقط برای چیزهای شناور: سربرگ، منوی پایین، کشو و پنجره‌ها. */
   --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
   --float-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 30px -16px rgba(163, 46, 84, 0.3);
-  --blur: 18px;
+  --blur: 10px;
   /* لکه‌های رنگی پس‌زمینه کل سایت */
+  --mesh-top: #F9D3DE;
   --mesh-a: #F7C1D1;
   --mesh-b: #FAD9C1;
   --mesh-c: #E6D2F5;
-  --glow-a: #F7C9D4;
-  --glow-b: #F6E3CF;
 
   --font: "Vazirmatn", Tahoma, sans-serif;
   --r-xs: 8px;
@@ -92,15 +91,14 @@
   --glass-bg: rgba(52, 34, 43, 0.5);
   --glass-strong: rgba(38, 25, 32, 0.72);
   --glass-soft: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.11);
+  --glass-border: rgba(255, 255, 255, 0.12);
   --glass-ring: rgba(23, 15, 19, 0.9);
   --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
   --float-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 12px 30px -16px rgba(0, 0, 0, 0.7);
-  --mesh-a: #5A1F37;
-  --mesh-b: #4A2A1C;
-  --mesh-c: #34204F;
-  --glow-a: #6B2A43;
-  --glow-b: #4A3226;
+  --mesh-top: #5C2039;
+  --mesh-a: #6A2442;
+  --mesh-b: #553020;
+  --mesh-c: #3B2459;
   --shadow-sm: none;
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
   color-scheme: dark;
