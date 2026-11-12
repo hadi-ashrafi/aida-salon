@@ -43,7 +43,10 @@
   --glass-soft: rgba(255, 255, 255, 0.45);
   --glass-border: rgba(255, 255, 255, 0.85);
   --glass-ring: rgba(255, 255, 255, 0.9);
-  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 18px 40px -18px rgba(163, 46, 84, 0.28);
+  /* سطح‌ها سایه بیرونی ندارند (در اسکرول افقی بریده می‌شد)؛ فقط خط نور بالایی.
+     سایه فقط برای چیزهای شناور: سربرگ، منوی پایین، کشو و پنجره‌ها. */
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+  --float-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 30px -16px rgba(163, 46, 84, 0.3);
   --blur: 18px;
   /* لکه‌های رنگی پس‌زمینه کل سایت */
   --mesh-a: #F7C1D1;
@@ -59,7 +62,7 @@
   --r-lg: 22px;
 
   --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 40px; --s7: 64px; --s8: 96px;
-  --shadow-sm: 0 1px 2px rgba(58, 35, 48, 0.06), 0 2px 8px rgba(58, 35, 48, 0.04);
+  --shadow-sm: none;
   --shadow: 0 16px 40px rgba(194, 59, 101, 0.12);
   --ease: cubic-bezier(.2, .7, .2, 1);
   --ease-out: cubic-bezier(.16, 1, .3, 1);
@@ -91,13 +94,14 @@
   --glass-soft: rgba(255, 255, 255, 0.06);
   --glass-border: rgba(255, 255, 255, 0.11);
   --glass-ring: rgba(23, 15, 19, 0.9);
-  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 18px 40px -18px rgba(0, 0, 0, 0.7);
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+  --float-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 12px 30px -16px rgba(0, 0, 0, 0.7);
   --mesh-a: #5A1F37;
   --mesh-b: #4A2A1C;
   --mesh-c: #34204F;
   --glow-a: #6B2A43;
   --glow-b: #4A3226;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: none;
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
   color-scheme: dark;
 }

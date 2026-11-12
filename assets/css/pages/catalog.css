@@ -105,7 +105,7 @@
 .about { display: grid; gap: var(--s6); align-items: center; }
 @media (min-width: 900px) { .about { grid-template-columns: .95fr 1.05fr; gap: var(--s7); } }
 .about__media { position: relative; margin: 0; }
-.about__media img { width: 100%; aspect-ratio: 8 / 9; object-fit: cover; border-radius: 36px; box-shadow: 0 0 0 8px var(--glass-soft), var(--shadow); }
+.about__media img { width: 100%; aspect-ratio: 8 / 9; object-fit: cover; border-radius: 36px; box-shadow: 0 0 0 8px var(--glass-soft); }
 .about__badge {
   position: absolute; inset: auto auto -18px 20px; display: grid; padding: var(--s3) var(--s5); border-radius: 20px; border: 1px solid var(--glass-border);
 }

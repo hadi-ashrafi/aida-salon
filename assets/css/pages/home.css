@@ -16,6 +16,9 @@
 .hero__bg {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: radial-gradient(120% 80% at 50% 0%, color-mix(in srgb, var(--pink) 55%, transparent), transparent 70%);
+  /* پایین پس‌زمینه هیرو محو می‌شود تا زیر «پرطرفدارترین خدمات» لبه رنگی تیز دیده نشود. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
 }
 .hero__blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .8; animation: hero-drift 16s ease-in-out infinite alternate; }
 .hero__blob--a { width: 460px; height: 460px; background: var(--glow-a); inset-inline-start: -120px; top: -160px; }

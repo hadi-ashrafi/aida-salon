@@ -22,7 +22,7 @@
 }
 .site-header__bar::before {
   content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 22px;
-  background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+  background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--float-shadow);
   -webkit-backdrop-filter: blur(22px) saturate(170%); backdrop-filter: blur(22px) saturate(170%);
 }
 
@@ -63,7 +63,7 @@
   .header-actions { margin-inline-start: auto; }
 
   .site-nav {
-    position: fixed; z-index: 60; top: 12px; bottom: 12px; left: 12px; width: 84vw; max-width: 320px;
+    position: fixed; z-index: 60; top: 12px; bottom: 12px; left: 12px; width: 78vw; max-width: 310px;
     display: flex; flex-direction: column; gap: var(--s4); margin: 0; padding: var(--s4); overflow-y: auto;
     border-radius: 26px; background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--shadow);
     -webkit-backdrop-filter: blur(26px) saturate(170%); backdrop-filter: blur(26px) saturate(170%);
@@ -91,7 +91,7 @@
   .tabbar {
     position: fixed; z-index: 30; left: 12px; right: 12px; bottom: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
     display: grid; grid-template-columns: repeat(5, 1fr); align-items: end; height: 70px; padding: 0 var(--s1);
-    border-radius: 24px; background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+    border-radius: 24px; background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--float-shadow);
     -webkit-backdrop-filter: blur(22px) saturate(170%); backdrop-filter: blur(22px) saturate(170%);
   }
   .tabbar__item, .tabbar__book {
@@ -105,20 +105,30 @@
   .tabbar__item[aria-current="page"]::after {
     content: ""; position: absolute; bottom: 4px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent);
   }
-  .tabbar__book { color: var(--accent-ink); font-weight: 800; }
+  /* فاصله برچسب «رزرو نوبت» از دکمه گرد بیشتر از بقیه است تا به آیکن نچسبد. */
+  .tabbar__book { gap: 11px; color: var(--accent-ink); font-weight: 800; }
   .tabbar__fab {
-    display: grid; place-items: center; width: 60px; height: 60px; margin-top: -30px; border-radius: 20px;
+    display: grid; place-items: center; width: 56px; height: 56px; margin-top: -34px; border-radius: 19px;
     background: linear-gradient(135deg, var(--accent), var(--plum)); color: var(--on-accent);
     box-shadow: 0 0 0 5px var(--glass-ring), 0 14px 26px -10px var(--accent);
     transition: transform .25s var(--ease-out);
   }
-  .tabbar__fab .icon { width: 28px; height: 28px; }
+  .tabbar__fab .icon { width: 26px; height: 26px; }
   .tabbar__book:hover .tabbar__fab { transform: translateY(-3px) rotate(-4deg); }
   body.has-tabbar { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
 }
 
-/* گوشی‌های خیلی کوچک: همه‌چیز در یک ردیف جا شود */
+/* گوشی‌های خیلی کوچک (آیفون SE و ۳۲۰ پیکسلی): همه‌چیز در یک ردیف جا شود */
 @media (max-width: 380px) {
+  .site-header { padding-top: var(--s2); }
+  .site-header__bar { width: calc(100% - 16px); min-height: 58px; border-radius: 18px; }
+  .tabbar { left: 8px; right: 8px; bottom: 8px; bottom: calc(8px + env(safe-area-inset-bottom)); height: 62px; border-radius: 20px; }
+  .tabbar__item, .tabbar__book { padding-bottom: 8px; font-size: .66rem; }
+  .tabbar__item .icon { width: 21px; height: 21px; }
+  .tabbar__book { gap: 9px; }
+  .tabbar__fab { width: 50px; height: 50px; margin-top: -30px; border-radius: 17px; box-shadow: 0 0 0 4px var(--glass-ring), 0 12px 22px -10px var(--accent); }
+  .tabbar__fab .icon { width: 24px; height: 24px; }
+  body.has-tabbar { padding-bottom: calc(86px + env(safe-area-inset-bottom)); }
   .site-header__bar { gap: var(--s2); padding-inline: var(--s3); }
   .brand { gap: var(--s2); min-width: 0; }
   .brand .logo { height: 34px; }

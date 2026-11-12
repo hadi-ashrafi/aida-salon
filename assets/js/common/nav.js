@@ -1,5 +1,5 @@
 // منوی اصلی در موبایل و تبلت: کشویی از سمت چپ.
-//   <button data-nav-toggle> باز و بسته می‌کند، <button data-nav-close> و کلیک روی پس‌زمینه یا Esc می‌بندد.
+//   <button data-nav-toggle> باز و بسته می‌کند؛ <button data-nav-close>، Esc و لمس هر جای صفحه بیرون از کشو آن را می‌بندد.
 (function () {
   "use strict";
 
@@ -24,7 +24,15 @@
   const isOpen = () => nav.classList.contains("is-open");
 
   toggle.addEventListener("click", () => setOpen(!isOpen()));
-  backdrop.addEventListener("click", () => setOpen(false));
+  // لمس هر جایی بیرون از کشو (پس‌زمینه، سربرگ، منوی پایین) منو را می‌بندد.
+  // در مرحله capture گرفته می‌شود تا همان لمس، لینک یا دکمه زیرش را اجرا نکند.
+  function closeOnOutside(e) {
+    if (!isOpen() || nav.contains(e.target) || toggle.contains(e.target)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setOpen(false);
+  }
+  document.addEventListener("click", closeOnOutside, true);
   nav.querySelectorAll("[data-nav-close]").forEach((btn) => btn.addEventListener("click", () => setOpen(false)));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && isOpen()) setOpen(false); });
 

@@ -41,7 +41,7 @@
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow);
+  box-shadow: var(--glass-shadow);
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .glass { background: var(--surface); } }
 
@@ -69,7 +69,7 @@
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm);
   transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out), border-color .2s var(--ease);
 }
-.tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); color: var(--ink); }
+.tile:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); color: var(--ink); }
 .tile:hover .tile-icon { background: var(--accent); color: var(--on-accent); }
 .tile__name { font-weight: 700; line-height: 1.5; }
 .tile__meta { font-size: .82rem; color: var(--muted); margin-top: calc(-1 * var(--s2)); }
@@ -86,15 +86,22 @@
 
 .team, .team-row { display: grid; grid-auto-rows: 1fr; gap: var(--s5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
 @media (max-width: 640px) {
-  .team-row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--s2); }
+  /* نوار افقی تا لبه صفحه می‌رود تا کارت‌ها وسط کار بریده نشوند. */
+  .team-row {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(62%, 240px); gap: var(--s3);
+    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-inline: calc(-1 * var(--s4)); padding: 2px var(--s4) var(--s2); scroll-padding-inline: var(--s4);
+  }
+  .team-row::-webkit-scrollbar { display: none; }
   .team-row > * { scroll-snap-align: start; }
 }
+@media (max-width: 360px) { .team-row { margin-inline: -12px; padding-inline: 12px; scroll-padding-inline: 12px; } }
 .team-card {
   display: grid; gap: var(--s2); padding: var(--s3) var(--s3) var(--s4); text-decoration: none; color: inherit;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm);
   transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out);
 }
-.team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); color: inherit; }
+.team-card:hover { transform: translateY(-4px); color: inherit; }
 .team-card :is(h2, h3) { margin: var(--s2) var(--s1) 0; transition: color .2s var(--ease); }
 .team-card:hover :is(h2, h3) { color: var(--accent-ink); }
 .team-card p { margin: 0 var(--s1); color: var(--muted); font-size: .92rem; }

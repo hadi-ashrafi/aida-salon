@@ -1,7 +1,8 @@
 // سرویس‌ورکر وب‌اپ: فایل‌های سایت را ذخیره می‌کند تا سریع و حتی بدون اینترنت باز شود.
-// هر بار فایلی تغییر کرد، VERSION را بالا ببرید تا گوشی‌ها نسخه تازه را بگیرند.
+// هر بار فایلی تغییر کرد، VERSION را بالا ببرید تا گوشی‌ها نسخه تازه را بگیرند
+// (فایل‌ها با cache: "reload" مستقیم از سرور گرفته می‌شوند، نه از حافظه مرورگر).
 // صفحه‌ها «اول شبکه» (تا همیشه تازه باشند) و بقیه فایل‌ها «اول حافظه» (برای سرعت) خوانده می‌شوند.
-const VERSION = "aida-v1";
+const VERSION = "aida-v2";
 const PRECACHE = [
   "./",
   "404.html",
@@ -85,7 +86,7 @@ const PRECACHE = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(PRECACHE)).then(() => self.skipWaiting()));
+  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(PRECACHE.map((url) => new Request(url, { cache: "reload" })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", (event) => {
