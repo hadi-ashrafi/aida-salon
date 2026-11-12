@@ -116,13 +116,29 @@ button:disabled, input:disabled, select:disabled, .btn[aria-disabled="true"] { c
   :root[data-theme="dark"] { --glass-bg: rgba(40, 27, 33, .92); --glass-strong: rgba(32, 22, 27, .97); }
 }
 /* جلوگیری از بزرگ‌نمایی خودکار iOS روی فیلدها و انتخاب ناخواسته با لمس */
-@media (max-width: 640px) { .input, select, textarea { font-size: 16px; } }
+/* همه فیلدها ۱۶px تا آیفون موقع لمس صفحه را زوم نکند (کمتر از ۱۶px = زوم خودکار). */
+@media (max-width: 640px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea, .input { font-size: 16px !important; }
+}
 button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-/* گوشی‌های خیلی کوچک (۳۲۰ پیکسل) */
-@media (max-width: 360px) {
+/* ================= گوشی: اندازه‌ها یک پله کوچک‌تر تا صفحه «زوم‌شده» دیده نشود ================= */
+@media (max-width: 640px) {
   html { font-size: 15px; }
+  h1 { font-size: 1.55rem; }
+  h2 { font-size: 1.22rem; }
+  h3, .h3 { font-size: 1rem; }
+  .section { padding-block: var(--s6); }
+  .section--tight { padding-block: var(--s5) 0; }
+  .section__head { gap: var(--s2); margin-bottom: var(--s4); }
+  .section__head p { font-size: .9rem; }
+  .section__head .btn { min-height: 38px; padding-inline: var(--s3); font-size: .85rem; }
+  .split { gap: var(--s5); }
+}
+/* گوشی‌های خیلی کوچک (آیفون SE نسل اول و ۳۲۰ پیکسلی) */
+@media (max-width: 360px) {
+  html { font-size: 14.5px; }
   .wrap { padding-inline: 12px; }
   .btn-lg { padding-inline: var(--s4); }
-  .section { padding-block: var(--s6); }
-  h1 { font-size: 1.45rem; }
+  .section { padding-block: var(--s5); }
+  h1 { font-size: 1.4rem; }
 }

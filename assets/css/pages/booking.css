@@ -189,3 +189,10 @@ legend.step__title + * { clear: both; }
 .step[aria-disabled="true"] { opacity: .55; pointer-events: none; }
 @media (max-width: 480px) { .step { padding: var(--s4) var(--s3); } }
 @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }
+
+/* گوشی: ویزارد رزرو جمع‌وجورتر */
+@media (max-width: 640px) {
+  .stepper { margin-bottom: var(--s4); padding: 4px; border-radius: 16px; }
+  .stepper li { min-height: 38px; border-radius: 12px; font-size: .82rem; }
+  .wizard-step, .summary { padding: var(--s4); border-radius: 20px; }
+}

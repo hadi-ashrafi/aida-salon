@@ -125,7 +125,7 @@
 }
 .cat-tile .tile__name { font-size: .92rem; line-height: 1.5; }
 .cat-tile .tile__meta { font-size: .76rem; }
-@media (max-width: 640px) { .cat-tile .tile-icon { width: 62px; height: 62px; border-radius: 20px; } .cat-tile .tile-icon .icon { width: 28px; height: 28px; } }
+@media (max-width: 640px) { .cat-grid { gap: var(--s3) var(--s2); } .cat-tile { gap: 4px; } .cat-tile .tile-icon { width: 54px; height: 54px; border-radius: 17px; } .cat-tile .tile-icon .icon { width: 24px; height: 24px; } .cat-tile .tile__name { font-size: .86rem; } }
 .cat-tile:hover { transform: translateY(-4px); color: var(--ink); }
 .cat-tile:hover .tile-icon { background: var(--accent); color: var(--on-accent); }
 .cat-tile .tile__meta { margin: 0; }
@@ -188,3 +188,28 @@
 .review-slider__dots { display: flex; gap: 6px; }
 .review-slider__dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 99px; background: color-mix(in srgb, var(--ink) 18%, transparent); transition: width .35s var(--ease-out), background .2s var(--ease); }
 .review-slider__dot[aria-current="true"] { width: 26px; background: var(--accent); }
+
+/* ================= گوشی: صفحه اصلی جمع‌وجور ================= */
+@media (max-width: 640px) {
+  .hero { padding-block: var(--s5) var(--s6); }
+  .hero__card { padding: var(--s5) var(--s4); border-radius: 24px; }
+  .hero__eyebrow { margin-bottom: var(--s3); font-size: .8rem; }
+  .hero__lead { font-size: .95rem; }
+  .hero__actions { margin-top: var(--s4); }
+  .hero__stats { margin-top: var(--s5); padding: var(--s3) var(--s1); border-radius: 16px; }
+  .hero__stats strong { font-size: 1.3rem; }
+  .hero__stats span { font-size: .75rem; }
+  .hero__cat { min-height: 38px; font-size: .84rem; }
+  .today { border-radius: 20px; }
+  .today__grid { gap: var(--s3); padding-block: var(--s4); }
+  .today__value { font-size: .98rem; }
+  .review-slide { gap: var(--s2); padding: var(--s5) var(--s4) var(--s4); border-radius: 22px; }
+  .review-slide__quote { font-size: 3rem; height: 22px; }
+  .review-slide blockquote p { font-size: 1rem; line-height: 1.85; }
+  .review-slider__nav .icon-btn { width: 40px; height: 40px; border-radius: 12px; }
+  .closing { padding-block: var(--s5) var(--s6); }
+  .closing__inner { gap: var(--s4); padding: var(--s5) var(--s4); border-radius: 22px; }
+  .closing p { font-size: .9rem; }
+  .closing .cluster { width: 100%; }
+  .closing .cluster .btn { flex: 1 1 auto; }
+}

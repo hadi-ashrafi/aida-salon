@@ -152,3 +152,10 @@
 .stylist-card__services { margin: 0; font-size: .85rem; color: var(--muted); }
 .stylist-card__rating { margin: 0; display: flex; align-items: center; gap: 6px; font-weight: 700; }
 .stylist-card__rating small { font-weight: 400; color: var(--muted); }
+
+/* گوشی: کارت‌ها و اعداد بزرگ یک پله کوچک‌تر */
+@media (max-width: 640px) {
+  .next-card__time { font-size: 2.4rem; }
+  .avatar { font-size: 1.8rem; }
+  .stylist-card { gap: var(--s2); }
+}
