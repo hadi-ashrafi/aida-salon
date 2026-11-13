@@ -155,7 +155,10 @@
 /* ================= فیلتر زنده‌ی آرایشگران و خدمات (assets/js/pages/list-filter.js) ================= */
 /* با جاوااسکریپت فیلتر همان لحظه اعمال می‌شود؛ دکمه «فیلتر/جستجو» فقط بدون JS لازم است. */
 .filters.is-live [type="submit"] { display: none; }
-.list-status { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s3); margin-bottom: var(--s4); }
+.list-status { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s3); }
+/* نتیجه و «پاک کردن فیلترها» پایین همان کادر فیلتر، جدا با یک خط */
+.filters .list-status { flex: 1 1 100%; padding-top: var(--s3); border-top: 1px solid var(--line); }
+.filters .list-status[hidden] { display: none; }
 .list-status__count { margin: 0; font-weight: 700; color: var(--accent-ink); }
 .list-empty {
   margin: 0 0 var(--s5); padding: var(--s6) var(--s4); text-align: center; color: var(--muted);

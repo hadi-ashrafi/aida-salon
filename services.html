@@ -114,12 +114,12 @@
             <input id="q" name="q" class="input" value="" placeholder="مثلاً بالیاژ" />
           </div>
           <button type="submit" class="btn btn-outline">جستجو</button>
+          <div class="list-status" data-list-status hidden>
+            <p class="list-status__count" data-list-count aria-live="polite"></p>
+            <button type="button" class="btn btn-ghost btn-sm" data-list-reset>پاک کردن فیلترها</button>
+          </div>
         </form>
         <p class="muted">۸۰ خدمت در ۱۱ دسته. قیمت‌ها «از» هستند و بسته به آرایشگر فرق می‌کنند.</p>
-        <div class="list-status" data-list-status hidden>
-          <p class="list-status__count" data-list-count aria-live="polite"></p>
-          <button type="button" class="btn btn-ghost btn-sm" data-list-reset>پاک کردن فیلترها</button>
-        </div>
         <p class="list-empty" data-list-empty hidden>خدمتی با این نام پیدا نشد؛ نام دیگری امتحان کنید یا فیلترها را پاک کنید.</p>
         <div class="svc-groups" data-list>
           <section class="svc-group" id="cat-1" aria-labelledby="cat-1-title">
