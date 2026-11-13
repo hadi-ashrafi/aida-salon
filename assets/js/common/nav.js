@@ -37,5 +37,9 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && isOpen()) setOpen(false); });
 
   // اگر صفحه بزرگ شد و منو دیگر کشویی نیست، حالت باز را پاک کن.
-  matchMedia("(min-width: 1181px)").addEventListener("change", (e) => { if (e.matches && isOpen()) setOpen(false); });
+  const wide = matchMedia("(min-width: 1181px)");
+  const onWide = (e) => { if (e.matches && isOpen()) setOpen(false); };
+  // آیفون‌های قدیمی (iOS 13 و پایین‌تر) فقط addListener را دارند.
+  if (wide.addEventListener) wide.addEventListener("change", onWide);
+  else if (wide.addListener) wide.addListener(onWide);
 })();

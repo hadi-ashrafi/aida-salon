@@ -242,11 +242,17 @@
 @media (max-width: 1180px) { body.has-tabbar .save-bar { bottom: calc(96px + env(safe-area-inset-bottom)); } }
 
 /* دیالوگ فرم */
-dialog.dialog-form { max-width: min(560px, calc(100vw - 24px)); padding: 0; border-radius: 26px; }
+dialog.dialog-form { max-width: min(560px, calc(100vw - 24px)); max-height: calc(100vh - 24px); padding: 0; border-radius: 26px; overflow: hidden; }
+@supports (height: 100dvh) { dialog.dialog-form { max-height: calc(100dvh - 24px); } }
+/* سربرگ و دکمه‌های پایین ثابت؛ فقط وسط دیالوگ اسکرول می‌شود تا «بستن» و «ذخیره» همیشه دیده شوند. */
+dialog.dialog-form > form { display: flex; flex-direction: column; max-height: inherit; }
+dialog.dialog-form .dialog-form__body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 .dialog-form__head { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); padding: var(--s4) var(--s5); border-bottom: 1px solid var(--line); }
 .dialog-form__head h2 { margin: 0; font-size: 1.1rem; }
 .dialog-form__body { padding: var(--s5); }
-.dialog-form__foot { display: flex; gap: var(--s2); padding: 0 var(--s5) var(--s5); }
+.dialog-form__foot { display: flex; gap: var(--s2); padding: var(--s4) var(--s5) var(--s5); border-top: 1px solid var(--line); }
+.dialog-form__foot .btn { flex: 1 1 auto; }
+@media (max-width: 400px) { .dialog-form__head { padding: var(--s3) var(--s4); } .dialog-form__body { padding: var(--s4); } .dialog-form__foot { padding: var(--s3) var(--s4) var(--s4); } }
 
 /* کارت‌های دسته و آرایشگر در پنل */
 .mini-cards { display: grid; gap: var(--s3); grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); grid-auto-rows: 1fr; }
@@ -313,4 +319,31 @@ dialog.dialog-form { max-width: min(560px, calc(100vw - 24px)); padding: 0; bord
   .stat { padding: var(--s3); border-radius: 18px; }
   .next-appt { gap: var(--s3); padding: var(--s4); border-radius: 22px; }
   .next-appt__time { font-size: 1.6rem; }
+}
+
+/* ================= گوشی و تبلت کوچک: فاصله و جداسازی کادرها در پنل‌ها ================= */
+@media (max-width: 760px) {
+  /* جدول‌هایی که کارت‌کارت می‌شوند: فاصله از فیلترها و از هم، با پس‌زمینه شیشه‌ای مثل بقیه */
+  .card--flush .table-wrap { padding: var(--s4) var(--s3); }
+  .table--stack tr {
+    margin-bottom: var(--s4); padding: var(--s3) var(--s4); border-radius: 18px;
+    background: var(--glass-soft); border-color: var(--glass-border);
+  }
+  .table--stack tr:last-child { margin-bottom: 0; }
+  .table--stack tr:hover td { background: none; }
+  .card--flush .table--stack td:first-child { padding-inline-start: 0; }
+  /* ردیف اول (کد یا نام) سرتیتر کارت است و با خط از بقیه جدا می‌شود */
+  .table--stack td:first-child { margin-bottom: var(--s2); padding-bottom: var(--s2); border-bottom: 1px solid var(--line); font-weight: 700; }
+  .table--stack td { padding-block: 6px; }
+  .table--stack td.actions { margin-top: var(--s2); padding-top: var(--s3); border-top: 1px solid var(--line); }
+  .table--stack td.actions .btn { flex: 1 1 auto; }
+
+  .toolbar { gap: var(--s3); padding: var(--s4); }
+  .chips-filter { gap: var(--s2); padding-block: var(--s3); }
+  .appt-list, .mini-cards { gap: var(--s4); }
+  .grid { gap: var(--s5); }
+  .stats { gap: var(--s3); margin-bottom: var(--s5); }
+  .mini-card { gap: var(--s3); padding: var(--s4); }
+  .tabs { margin-bottom: var(--s4); }
+  [role="tabpanel"] > * + * { margin-top: var(--s4); }
 }

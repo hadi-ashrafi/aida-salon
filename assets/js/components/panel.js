@@ -1,7 +1,8 @@
 // رفتارهای مشترک پنل‌ها (فقط رابط کاربری، بدون سرور):
 //   تب‌ها:      <div class="tabs" role="tablist"><button role="tab" aria-controls="panel-id">…  + <section role="tabpanel" id="panel-id">
 //               تب فعال در آدرس (#panel-id) می‌ماند تا با رفرش یا لینک مستقیم همان تب باز شود.
-//   دیالوگ:     <button data-open="dialog-id"> باز می‌کند، [data-close] داخل دیالوگ می‌بندد.
+//   دیالوگ:     <button data-open="dialog-id"> باز می‌کند، [data-close] داخل دیالوگ می‌بندد؛
+//               data-title عنوان را عوض می‌کند، data-fill فیلدها را پر می‌کند و data-icon آیکن دسته را علامت می‌زند.
 //   جستجوی جدول: <input data-table-search="table-id"> ردیف‌های همان جدول را فیلتر می‌کند.
 //   فیلتر وضعیت: <div class="chips-filter" data-filter-for="table-id"><button data-value="Pending"> و هر <tr data-status="Pending">
 // بک‌اند: جستجو و فیلتر الان روی همین ردیف‌های نمونه است؛ با داده واقعی بهتر است سمت سرور (query string) انجام شود.
@@ -42,6 +43,21 @@
       const dialog = document.getElementById(opener.dataset.open);
       if (dialog && dialog.showModal) {
         if (opener.dataset.title) dialog.querySelector("h2").textContent = opener.dataset.title;
+        // data-fill='{"name":"value"}': فرم دیالوگ خالی و با مقدارهای همین ردیف پر می‌شود (برای «ویرایش»).
+        if ("fill" in opener.dataset) {
+          const form = dialog.querySelector("form");
+          if (form) form.reset();
+          let values = {};
+          try { values = JSON.parse(opener.dataset.fill || "{}"); } catch (err) { values = {}; }
+          Object.keys(values).forEach((name) => {
+            const field = dialog.querySelector('[name="' + name + '"]');
+            if (field) field.value = values[name];
+          });
+        }
+        // data-icon: آیکن فعلی در انتخابگر آیکن علامت بخورد ("" یعنی دسته تازه، هیچ‌کدام).
+        if ("icon" in opener.dataset) {
+          dialog.querySelectorAll('input[name="catIcon"]').forEach((r) => { r.checked = r.value === opener.dataset.icon; });
+        }
         dialog.showModal();
       }
       return;

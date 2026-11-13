@@ -145,12 +145,12 @@
 /* زیر ۱۰۰۰ پیکسل: برگه‌ای که از پایین بالا می‌آید */
 @media (max-width: 999px) {
   .summary {
-    position: fixed; z-index: 45; inset: auto 8px calc(96px + env(safe-area-inset-bottom)) 8px; max-height: 70vh; overflow-y: auto;
+    position: fixed; z-index: 45; top: auto; right: 8px; bottom: 96px; bottom: calc(96px + env(safe-area-inset-bottom)); left: 8px; max-height: 70vh; overflow-y: auto;
     transform: translateY(calc(100% + 120px)); visibility: hidden; transition: transform .35s var(--ease-out), visibility 0s .35s;
   }
   .summary.is-open { transform: none; visibility: visible; transition: transform .35s var(--ease-out); }
   .summary__close { display: inline-grid; }
-  .summary-backdrop { position: fixed; inset: 0; z-index: 44; background: rgba(29, 20, 24, .35); }
+  .summary-backdrop { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 44; background: rgba(29, 20, 24, .35); }
 }
 @media (min-width: 1000px) { .summary-backdrop { display: none !important; } }
 

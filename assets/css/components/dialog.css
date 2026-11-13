@@ -5,7 +5,7 @@ dialog::backdrop { background: rgba(29, 20, 24, .5); }
 
 /* پیام شناور پایین صفحه (assets/js/common/ui.js) */
 .toast {
-  position: fixed; inset: auto 0 var(--s5) 0; z-index: 50; width: fit-content; max-width: calc(100vw - 32px); margin-inline: auto;
+  position: fixed; top: auto; right: 0; bottom: var(--s5); left: 0; z-index: 50; width: fit-content; max-width: calc(100vw - 32px); margin-inline: auto;
   padding: var(--s3) var(--s5); border-radius: var(--r-md); background: var(--ink); color: var(--bg); font-weight: 600; font-size: .95rem;
   box-shadow: var(--shadow); opacity: 0; transform: translateY(12px); pointer-events: none;
   transition: opacity .3s var(--ease-out), transform .3s var(--ease-out);

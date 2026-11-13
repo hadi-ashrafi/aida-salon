@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>نظرات و پیام‌ها | سالن زیبایی آیدا</title>
+    <title>نظرات | سالن زیبایی آیدا</title>
     <meta name="robots" content="noindex" />
     <meta name="theme-color" content="#FBF1F0" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#170F13" media="(prefers-color-scheme: dark)" />
@@ -196,7 +196,7 @@
                     <path d="M8 13h6" />
                     <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
                   </svg>
-                  <span>نظرات و پیام‌ها</span>
+                  <span>نظرات</span>
                   <span class="side-nav__badge">۳</span>
                 </a>
               </li>
@@ -267,22 +267,11 @@
           <header class="p-head">
             <div>
               <p class="p-head__eyebrow">پنل مدیریت</p>
-              <h1>نظرات و پیام‌ها</h1>
-              <p class="p-head__sub">تأیید نظر مشتری‌ها، پاسخ به پیام‌ها و پیامک‌های فرستاده‌شده</p>
+              <h1>نظرات مشتری‌ها</h1>
+              <p class="p-head__sub">نظرهایی که مشتری‌ها بعد از نوبت ثبت می‌کنند؛ تا تأیید نشوند در سایت دیده نمی‌شوند</p>
             </div>
           </header>
-          <div class="tabs" role="tablist" aria-label="بخش‌ها">
-            <button type="button" role="tab" id="tab-t-reviews" aria-controls="t-reviews" aria-selected="true">
-              نظرات
-              <span class="count">۱</span>
-            </button>
-            <button type="button" role="tab" id="tab-t-messages" aria-controls="t-messages" aria-selected="false">
-              پیام‌های مشتری
-              <span class="count">۲</span>
-            </button>
-            <button type="button" role="tab" id="tab-t-sms" aria-controls="t-sms" aria-selected="false">پیامک‌ها</button>
-          </div>
-          <section role="tabpanel" id="t-reviews" aria-labelledby="tab-t-reviews">
+          <section id="t-reviews" aria-label="نظرات مشتری‌ها">
             <div class="chips-filter" data-filter-for="rev-list" role="group" aria-label="فیلتر">
               <button type="button" data-value="" aria-pressed="true">
                 همه
@@ -381,141 +370,6 @@
                 </div>
               </article>
             </div>
-          </section>
-          <section role="tabpanel" id="t-messages" aria-labelledby="tab-t-messages">
-            <div class="appt-list">
-              <article class="msg msg--unread">
-                <div class="msg__head">
-                  <div class="person">
-                    <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
-                    <span>
-                      <b>شیوا قاسمی</b>
-                      <small>امروز، ۱۱:۲۰</small>
-                    </span>
-                  </div>
-                  <span class="chip chip--pending">تازه</span>
-                </div>
-                <p>سلام، برای شینیون عروس وقت خارج از ساعت کاری هم دارید؟</p>
-                <div class="msg__actions">
-                  <a class="btn btn-ghost btn-sm" href="tel:09129012345">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                    </svg>
-                    تماس
-                  </a>
-                  <button type="button" class="btn btn-ghost btn-sm" data-act="read">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
-                    خوانده شد
-                  </button>
-                </div>
-              </article>
-              <article class="msg msg--unread">
-                <div class="msg__head">
-                  <div class="person">
-                    <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
-                    <span>
-                      <b>رویا جعفری</b>
-                      <small>دیروز، ۱۸:۰۵</small>
-                    </span>
-                  </div>
-                  <span class="chip chip--pending">تازه</span>
-                </div>
-                <p>می‌خواستم بدانم برای بالیاژ باید قبلش تست حساسیت بدهم؟</p>
-                <div class="msg__actions">
-                  <a class="btn btn-ghost btn-sm" href="tel:09120123456">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                    </svg>
-                    تماس
-                  </a>
-                  <button type="button" class="btn btn-ghost btn-sm" data-act="read">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg>
-                    خوانده شد
-                  </button>
-                </div>
-              </article>
-              <article class="msg">
-                <div class="msg__head">
-                  <div class="person">
-                    <div class="avatar"><span class="avatar__ph" aria-hidden="true"></span></div>
-                    <span>
-                      <b>مریم کاظمی</b>
-                      <small>۱۸ آبان</small>
-                    </span>
-                  </div>
-                </div>
-                <p>از برخورد خوب خانم رضایی ممنونم.</p>
-                <div class="msg__actions">
-                  <a class="btn btn-ghost btn-sm" href="tel:09122345678">
-                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                    </svg>
-                    تماس
-                  </a>
-                </div>
-              </article>
-            </div>
-          </section>
-          <section role="tabpanel" id="t-sms" aria-labelledby="tab-t-sms">
-            <section class="card card--flush">
-              <div class="card__head">
-                <div>
-                  <h2>پیامک‌های اخیر</h2>
-                  <p>یادآوری‌ها و تأییدها خودکار فرستاده می‌شوند</p>
-                </div>
-              </div>
-              <div class="table-wrap">
-                <table class="table table--stack" id="sms">
-                  <thead>
-                    <tr>
-                      <th scope="col">گیرنده</th>
-                      <th scope="col">متن</th>
-                      <th scope="col">زمان</th>
-                      <th scope="col">وضعیت</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td data-label="گیرنده">
-                        نازنین رحیمی
-                        <small class="ltr">۰۹۱۲۱۲۳۴۵۶۷</small>
-                      </td>
-                      <td data-label="متن">یادآوری: نوبت شما فردا ساعت ۱۰:۳۰ با سارا محمدی.</td>
-                      <td data-label="زمان" class="num">امروز، ۱۰:۳۰</td>
-                      <td data-label="وضعیت"><span class="chip chip--confirmed">رسید</span></td>
-                    </tr>
-                    <tr>
-                      <td data-label="گیرنده">
-                        سحر موسوی
-                        <small class="ltr">۰۹۱۲۴۵۶۷۸۹۰</small>
-                      </td>
-                      <td data-label="متن">نوبت شما برای ۲۱ آبان ساعت ۱۲:۱۵ قطعی شد.</td>
-                      <td data-label="زمان" class="num">دیروز، ۱۹:۴۰</td>
-                      <td data-label="وضعیت"><span class="chip chip--confirmed">رسید</span></td>
-                    </tr>
-                    <tr>
-                      <td data-label="گیرنده">
-                        پریا نیک‌نام
-                        <small class="ltr">۰۹۱۲۷۸۹۰۱۲۳</small>
-                      </td>
-                      <td data-label="متن">نوبت ۲۱ آبان لغو شد؛ بیعانه برگردانده می‌شود.</td>
-                      <td data-label="زمان" class="num">دیروز، ۱۴:۰۲</td>
-                      <td data-label="وضعیت"><span class="chip chip--confirmed">رسید</span></td>
-                    </tr>
-                    <tr>
-                      <td data-label="گیرنده">
-                        زهرا امینی
-                        <small class="ltr">۰۹۱۲۸۹۰۱۲۳۴</small>
-                      </td>
-                      <td data-label="متن">یادآوری: نوبت شما امروز ساعت ۱۷:۰۰.</td>
-                      <td data-label="زمان" class="num">امروز، ۹:۰۰</td>
-                      <td data-label="وضعیت"><span class="chip chip--cancelled">ناموفق</span></td>
-                    </tr>
-                    <tr class="table-empty-row" hidden><td colspan="4" class="table-empty">موردی پیدا نشد.</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
           </section>
         </div>
       </div>

@@ -128,7 +128,7 @@
 }
 
 /* ================= آواتار پیش‌فرض (بدون عکس) ================= */
-.avatar__ph { position: absolute; inset: 0; background: url("../../img/avatar.svg") center / cover no-repeat; }
+.avatar__ph { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: url("../../img/avatar.svg") center / cover no-repeat; }
 :root[data-theme="dark"] .avatar__ph { background-image: url("../../img/avatar-dark.svg"); }
 .avatar--sm .avatar__ph { border-radius: inherit; }
 

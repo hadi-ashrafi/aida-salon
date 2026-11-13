@@ -67,7 +67,7 @@
 /* نشانگر شعار: نوار فعال در طول نمایش شعار پر می‌شود. */
 .hero__dots { display: flex; justify-content: center; gap: var(--s1); min-height: 24px; margin: var(--s3) 0 var(--s4); }
 .hero__dot { position: relative; width: 40px; height: 24px; padding: 0; border: 0; background: none; }
-.hero__dot::before, .hero__dot::after { content: ""; position: absolute; inset: 10px 0; border-radius: 4px; }
+.hero__dot::before, .hero__dot::after { content: ""; position: absolute; top: 10px; right: 0; bottom: 10px; left: 0; border-radius: 4px; }
 .hero__dot::before { background: color-mix(in srgb, var(--ink) 14%, transparent); }
 .hero__dot::after { background: var(--accent); transform: scaleX(0); transform-origin: right center; }
 .hero__dot.is-active::after { animation: hero-fill var(--slogan-ms, 3800ms) linear forwards; }
@@ -104,6 +104,7 @@
 .hero__cat .icon { color: var(--accent); }
 .hero__cat:hover { transform: translateY(-2px); color: var(--accent-ink); }
 @media (max-width: 700px) { .hero__cats { flex-wrap: nowrap; justify-content: flex-start; margin-inline: calc(-1 * var(--s4)); padding-inline: var(--s4); } }
+@media (max-width: 360px) { .hero__cats { margin-inline: -12px; padding-inline: 12px; } }
 
 /* ================= دسته‌های خدمات ================= */
 /* دسته‌ها بدون باکس دور؛ فقط آیکن و نام. موبایل سه‌تایی. */
