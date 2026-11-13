@@ -151,3 +151,13 @@
   .about__media img { aspect-ratio: 4 / 3; box-shadow: 0 0 0 5px var(--glass-soft); }
   .svc-hero, .svc-group { padding: var(--s4); }
 }
+
+/* ================= فیلتر زنده‌ی آرایشگران و خدمات (assets/js/pages/list-filter.js) ================= */
+/* با جاوااسکریپت فیلتر همان لحظه اعمال می‌شود؛ دکمه «فیلتر/جستجو» فقط بدون JS لازم است. */
+.filters.is-live [type="submit"] { display: none; }
+.list-status { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s3); margin-bottom: var(--s4); }
+.list-status__count { margin: 0; font-weight: 700; color: var(--accent-ink); }
+.list-empty {
+  margin: 0 0 var(--s5); padding: var(--s6) var(--s4); text-align: center; color: var(--muted);
+  border: 1px dashed var(--glass-border); border-radius: var(--r-lg); background: var(--glass-soft);
+}

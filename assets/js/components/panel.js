@@ -3,7 +3,8 @@
 //               تب فعال در آدرس (#panel-id) می‌ماند تا با رفرش یا لینک مستقیم همان تب باز شود.
 //   دیالوگ:     <button data-open="dialog-id"> باز می‌کند، [data-close] داخل دیالوگ می‌بندد؛
 //               data-title عنوان را عوض می‌کند، data-fill فیلدها را پر می‌کند و data-icon آیکن دسته را علامت می‌زند.
-//   جستجوی جدول: <input data-table-search="table-id"> ردیف‌های همان جدول را فیلتر می‌کند.
+//   جستجوی جدول: <input data-table-search="table-id"> ردیف‌های همان جدول را فیلتر می‌کند؛ select و فیلد تاریخِ
+//               همان .toolbar هم (با متن گزینه و «روز ماه») فیلتر می‌کنند. رقم فارسی و لاتین یکی حساب می‌شوند.
 //   فیلتر وضعیت: <div class="chips-filter" data-filter-for="table-id"><button data-value="Pending"> و هر <tr data-status="Pending">
 // بک‌اند: جستجو و فیلتر الان روی همین ردیف‌های نمونه است؛ با داده واقعی بهتر است سمت سرور (query string) انجام شود.
 (function () {
@@ -69,18 +70,37 @@
   document.querySelectorAll("dialog.dialog-form").forEach((d) => d.addEventListener("click", (e) => { if (e.target === d) d.close(); }));
 
   // ---------- جستجو و فیلتر جدول ----------
-  const filters = new Map(); // table → { q, status }
+  const filters = new Map(); // table → { q, status, terms }
+
+  // رقم فارسی/عربی → لاتین، ی و ک عربی → فارسی، نیم‌فاصله → فاصله؛
+  // تا «0912» و «۰۹۱۲» یا «#38» و «#۳۸» هر دو پیدا شوند.
+  const norm = (s) => (s || "")
+    .replace(/[۰-۹]/g, (d) => String(d.charCodeAt(0) - 0x06f0))
+    .replace(/[٠-٩]/g, (d) => String(d.charCodeAt(0) - 0x0660))
+    .replace(/ي/g, "ی").replace(/ك/g, "ک").replace(/[\u200c\s]+/g, " ").trim().toLowerCase();
+
+  const MONTHS = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
+  // تاریخ «1405/08/21» → «21 آبان» (همان شکلی که در جدول نوشته شده)
+  function dateTerm(value) {
+    const m = norm(value).match(/^(\d{4})[\/\-.](\d{1,2})[\/\-.](\d{1,2})$/);
+    if (!m || +m[2] < 1 || +m[2] > 12) return value ? norm(value) : "";
+    return String(+m[3]) + " " + MONTHS[+m[2] - 1];
+  }
 
   function apply(table) {
     const f = filters.get(table) || {};
+    const q = norm(f.q);
+    const terms = (f.terms || []).filter(Boolean);
     let shown = 0;
     // جدول: ردیف‌ها؛ هر ظرف دیگر: فرزندهای دارای data-status (مثل کارت نظرها)
     const items = table.tagName === "TABLE" ? table.querySelectorAll("tbody tr") : table.querySelectorAll(":scope > [data-status]");
     items.forEach((tr) => {
       if (tr.classList.contains("table-empty-row")) return;
-      const okQ = !f.q || tr.textContent.includes(f.q);
+      const text = norm(tr.textContent);
+      const okQ = !q || text.includes(q);
       const okS = !f.status || tr.dataset.status === f.status;
-      tr.hidden = !(okQ && okS);
+      const okT = terms.every((t) => text.includes(t));
+      tr.hidden = !(okQ && okS && okT);
       if (!tr.hidden) shown++;
     });
     const empty = table.querySelector(".table-empty-row");
@@ -92,10 +112,21 @@
   document.querySelectorAll("[data-table-search]").forEach((input) => {
     const table = document.getElementById(input.dataset.tableSearch);
     if (!table) return;
-    input.addEventListener("input", () => {
-      filters.set(table, Object.assign(filters.get(table) || {}, { q: input.value.trim() }));
-      apply(table);
+    const update = (patch) => { filters.set(table, Object.assign(filters.get(table) || {}, patch)); apply(table); };
+    input.addEventListener("input", () => update({ q: input.value }));
+
+    // بقیه فیلدهای همان نوار ابزار (مثل «آرایشگر» و «تاریخ») هم جدول را فیلتر می‌کنند:
+    // select با متن گزینه انتخاب‌شده، فیلد تاریخ با «روز ماه».
+    const bar = input.closest(".toolbar");
+    if (!bar) return;
+    const fields = Array.from(bar.querySelectorAll("select, input:not([data-table-search])"));
+    const readTerms = () => fields.map((el) => {
+      if (el.tagName === "SELECT") return el.value ? norm(el.options[el.selectedIndex].text) : "";
+      return el.name === "date" ? dateTerm(el.value.trim()) : norm(el.value);
     });
+    fields.forEach((el) => el.addEventListener(el.tagName === "SELECT" ? "change" : "input", () => update({ terms: readTerms() })));
+    // فرم نوار ابزار با Enter به سرور نرود؛ فیلتر همین‌جا اعمال شده است.
+    if (bar.tagName === "FORM") bar.addEventListener("submit", (e) => { e.preventDefault(); update({ terms: readTerms() }); });
   });
 
   document.querySelectorAll("[data-filter-for]").forEach((box) => {

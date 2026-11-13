@@ -38,6 +38,7 @@
     <script src="assets/js/common/forms.js" defer></script>
     <script src="assets/js/common/pwa.js" defer></script>
     <script src="assets/js/components/select.js" defer></script>
+    <script src="assets/js/pages/list-filter.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
@@ -93,7 +94,7 @@
         <div class="page-head">
           <h1>خدمات سالن</h1>
         </div>
-        <nav class="cat-chips" aria-label="دسته‌های خدمات">
+        <nav class="cat-chips" aria-label="دسته‌های خدمات" data-chip-param="category">
           <a href="services.html" aria-current="page">همه</a>
           <a href="services.html?category=1#cat-1">مو</a>
           <a href="services.html?category=2#cat-2">ناخن</a>
@@ -107,7 +108,7 @@
           <a href="services.html?category=10#cat-10">خدمات عروس</a>
           <a href="services.html?category=11#cat-11">مراقبت و زیبایی بدن</a>
         </nav>
-        <form class="filters" role="search" data-filter method="get">
+        <form class="filters" role="search" data-filter method="get" data-list-filter="services">
           <div class="field">
             <label for="q">جستجوی خدمت</label>
             <input id="q" name="q" class="input" value="" placeholder="مثلاً بالیاژ" />
@@ -115,7 +116,12 @@
           <button type="submit" class="btn btn-outline">جستجو</button>
         </form>
         <p class="muted">۸۰ خدمت در ۱۱ دسته. قیمت‌ها «از» هستند و بسته به آرایشگر فرق می‌کنند.</p>
-        <div class="svc-groups">
+        <div class="list-status" data-list-status hidden>
+          <p class="list-status__count" data-list-count aria-live="polite"></p>
+          <button type="button" class="btn btn-ghost btn-sm" data-list-reset>پاک کردن فیلترها</button>
+        </div>
+        <p class="list-empty" data-list-empty hidden>خدمتی با این نام پیدا نشد؛ نام دیگری امتحان کنید یا فیلترها را پاک کنید.</p>
+        <div class="svc-groups" data-list>
           <section class="svc-group" id="cat-1" aria-labelledby="cat-1-title">
             <header class="svc-group__head">
               <span class="tile-icon">
@@ -138,59 +144,59 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=1">
                 <span class="tile__name">کوتاهی مو</span>
-                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان · ۴۵ دقیقه</span>
+                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان، ۴۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=2">
                 <span class="tile__name">رنگ مو</span>
-                <span class="tile__meta">از ۱٬۸۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۱٬۸۰۰٬۰۰۰ تومان، ۲ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=3">
                 <span class="tile__name">رنگ ریشه</span>
-                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=4">
                 <span class="tile__name">رنگساژ</span>
-                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=5">
                 <span class="tile__name">هایلایت و مش</span>
-                <span class="tile__meta">از ۳٬۲۰۰٬۰۰۰ تومان · ۳ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۳٬۲۰۰٬۰۰۰ تومان، ۳ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=6">
                 <span class="tile__name">بالیاژ و آمبره</span>
-                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان · ۴ ساعت</span>
+                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان، ۴ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=7">
                 <span class="tile__name">دکلره</span>
-                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان · ۳ ساعت</span>
+                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان، ۳ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=8">
                 <span class="tile__name">کراتین و احیا</span>
-                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان · ۳ ساعت</span>
+                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان، ۳ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=9">
                 <span class="tile__name">صافی مو</span>
-                <span class="tile__meta">از ۴٬۰۰۰٬۰۰۰ تومان · ۳ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۴٬۰۰۰٬۰۰۰ تومان، ۳ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=10">
                 <span class="tile__name">بوتاکس مو</span>
-                <span class="tile__meta">از ۲٬۸۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲٬۸۰۰٬۰۰۰ تومان، ۲ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=11">
                 <span class="tile__name">شینیون</span>
-                <span class="tile__meta">از ۲٬۲۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۲٬۲۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=12">
                 <span class="tile__name">براشینگ</span>
-                <span class="tile__meta">از ۳۵۰٬۰۰۰ تومان · ۴۰ دقیقه</span>
+                <span class="tile__meta">از ۳۵۰٬۰۰۰ تومان، ۴۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=13">
                 <span class="tile__name">بافت مو</span>
-                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=14">
                 <span class="tile__name">اکستنشن مو</span>
-                <span class="tile__meta">از ۶٬۰۰۰٬۰۰۰ تومان · ۴ ساعت</span>
+                <span class="tile__meta">از ۶٬۰۰۰٬۰۰۰ تومان، ۴ ساعت</span>
               </a>
             </div>
           </section>
@@ -216,35 +222,35 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=15">
                 <span class="tile__name">کاشت ناخن</span>
-                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=16">
                 <span class="tile__name">ترمیم ناخن</span>
-                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=17">
                 <span class="tile__name">ژلیش</span>
-                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=18">
                 <span class="tile__name">لمینت ناخن</span>
-                <span class="tile__meta">از ۵۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۵۵۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=19">
                 <span class="tile__name">مانیکور</span>
-                <span class="tile__meta">از ۴۰۰٬۰۰۰ تومان · ۴۵ دقیقه</span>
+                <span class="tile__meta">از ۴۰۰٬۰۰۰ تومان، ۴۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=20">
                 <span class="tile__name">پدیکور</span>
-                <span class="tile__meta">از ۵۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۵۵۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=21">
                 <span class="tile__name">طراحی ناخن</span>
-                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان، ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=22">
                 <span class="tile__name">ریموو ناخن</span>
-                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان، ۳۰ دقیقه</span>
               </a>
             </div>
           </section>
@@ -269,27 +275,27 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=23">
                 <span class="tile__name">اصلاح ابرو</span>
-                <span class="tile__meta">از ۱۵۰٬۰۰۰ تومان · ۲۰ دقیقه</span>
+                <span class="tile__meta">از ۱۵۰٬۰۰۰ تومان، ۲۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=24">
                 <span class="tile__name">طراحی ابرو</span>
-                <span class="tile__meta">از ۳۵۰٬۰۰۰ تومان · ۴۰ دقیقه</span>
+                <span class="tile__meta">از ۳۵۰٬۰۰۰ تومان، ۴۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=25">
                 <span class="tile__name">رنگ ابرو</span>
-                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان، ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=26">
                 <span class="tile__name">لیفت ابرو</span>
-                <span class="tile__meta">از ۸۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۸۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=27">
                 <span class="tile__name">لمینت ابرو</span>
-                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=28">
                 <span class="tile__name">فیبروز و میکروبلیدینگ</span>
-                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان، ۲ ساعت و ۳۰ دقیقه</span>
               </a>
             </div>
           </section>
@@ -317,27 +323,27 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=29">
                 <span class="tile__name">اکستنشن مژه</span>
-                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=30">
                 <span class="tile__name">لیفت مژه</span>
-                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=31">
                 <span class="tile__name">لمینت مژه</span>
-                <span class="tile__meta">از ۹۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۹۵۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=32">
                 <span class="tile__name">رنگ مژه</span>
-                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان · ۲۰ دقیقه</span>
+                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان، ۲۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=33">
                 <span class="tile__name">ترمیم مژه</span>
-                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=34">
                 <span class="tile__name">ریموو مژه</span>
-                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲۵۰٬۰۰۰ تومان، ۳۰ دقیقه</span>
               </a>
             </div>
           </section>
@@ -363,27 +369,27 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=35">
                 <span class="tile__name">میکاپ روزانه</span>
-                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۴۵ دقیقه</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان، ۴۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=36">
                 <span class="tile__name">میکاپ لایت</span>
-                <span class="tile__meta">از ۱٬۳۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۱٬۳۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=37">
                 <span class="tile__name">میکاپ مجلسی</span>
-                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=38">
                 <span class="tile__name">میکاپ تخصصی</span>
-                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=39">
                 <span class="tile__name">گریم</span>
-                <span class="tile__meta">از ۳٬۰۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۳٬۰۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=40">
                 <span class="tile__name">خودآرایی</span>
-                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
             </div>
           </section>
@@ -409,31 +415,31 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=41">
                 <span class="tile__name">پاکسازی پوست</span>
-                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+                <span class="tile__meta">از ۹۰۰٬۰۰۰ تومان، ۱ ساعت و ۱۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=42">
                 <span class="tile__name">فیشیال کلاسیک</span>
-                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان، ۱ ساعت و ۱۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=43">
                 <span class="tile__name">فیشیال تخصصی</span>
-                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=44">
                 <span class="tile__name">آبرسانی پوست</span>
-                <span class="tile__meta">از ۱٬۴۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۱٬۴۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=45">
                 <span class="tile__name">فیشیال ضدجوش</span>
-                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان، ۱ ساعت و ۱۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=46">
                 <span class="tile__name">فیشیال روشن‌کننده</span>
-                <span class="tile__meta">از ۱٬۶۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+                <span class="tile__meta">از ۱٬۶۰۰٬۰۰۰ تومان، ۱ ساعت و ۱۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=47">
                 <span class="tile__name">مراقبت پوست حساس</span>
-                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
             </div>
           </section>
@@ -459,31 +465,31 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=48">
                 <span class="tile__name">اصلاح صورت</span>
-                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان · ۲۰ دقیقه</span>
+                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان، ۲۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=49">
                 <span class="tile__name">وکس صورت</span>
-                <span class="tile__meta">از ۳۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۳۰۰٬۰۰۰ تومان، ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=50">
                 <span class="tile__name">اپیلاسیون دست</span>
-                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان · ۴۰ دقیقه</span>
+                <span class="tile__meta">از ۴۵۰٬۰۰۰ تومان، ۴۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=51">
                 <span class="tile__name">اپیلاسیون پا</span>
-                <span class="tile__meta">از ۶۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۶۵۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=52">
                 <span class="tile__name">اپیلاسیون زیر بغل</span>
-                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان · ۱۵ دقیقه</span>
+                <span class="tile__meta">از ۲۰۰٬۰۰۰ تومان، ۱۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=53">
                 <span class="tile__name">اپیلاسیون بیکینی</span>
-                <span class="tile__meta">از ۵۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۵۰۰٬۰۰۰ تومان، ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=54">
                 <span class="tile__name">اپیلاسیون فول بادی</span>
-                <span class="tile__meta">از ۱٬۸۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۱٬۸۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
             </div>
           </section>
@@ -508,35 +514,35 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=55">
                 <span class="tile__name">میکروبلیدینگ</span>
-                <span class="tile__meta">از ۵٬۰۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۵٬۰۰۰٬۰۰۰ تومان، ۲ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=56">
                 <span class="tile__name">فیبروز</span>
-                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۴٬۵۰۰٬۰۰۰ تومان، ۲ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=57">
                 <span class="tile__name">شیدینگ ابرو</span>
-                <span class="tile__meta">از ۴٬۸۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۴٬۸۰۰٬۰۰۰ تومان، ۲ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=58">
                 <span class="tile__name">تاتو لب</span>
-                <span class="tile__meta">از ۵٬۵۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۵٬۵۰۰٬۰۰۰ تومان، ۲ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=59">
                 <span class="tile__name">شیدینگ لب</span>
-                <span class="tile__meta">از ۶٬۰۰۰٬۰۰۰ تومان · ۳ ساعت</span>
+                <span class="tile__meta">از ۶٬۰۰۰٬۰۰۰ تومان، ۳ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=60">
                 <span class="tile__name">خط چشم دائم</span>
-                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۳٬۵۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=61">
                 <span class="tile__name">بن مژه</span>
-                <span class="tile__meta">از ۲٬۸۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲٬۸۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=62">
                 <span class="tile__name">ترمیم و ریموو</span>
-                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
             </div>
           </section>
@@ -561,31 +567,31 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=63">
                 <span class="tile__name">ماساژ صورت</span>
-                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان، ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=64">
                 <span class="tile__name">ماساژ بدن</span>
-                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=65">
                 <span class="tile__name">ماساژ ریلکسی</span>
-                <span class="tile__meta">از ۱٬۶۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۱٬۶۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=66">
                 <span class="tile__name">ماساژ سر و گردن</span>
-                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان · ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۷۰۰٬۰۰۰ تومان، ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=67">
                 <span class="tile__name">اسپا دست</span>
-                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان · ۴۵ دقیقه</span>
+                <span class="tile__meta">از ۶۰۰٬۰۰۰ تومان، ۴۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=68">
                 <span class="tile__name">اسپا پا</span>
-                <span class="tile__meta">از ۷۵۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۷۵۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=69">
                 <span class="tile__name">اسپا بدن</span>
-                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
             </div>
           </section>
@@ -606,27 +612,27 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=70">
                 <span class="tile__name">میکاپ عروس</span>
-                <span class="tile__meta">از ۹٬۰۰۰٬۰۰۰ تومان · ۳ ساعت</span>
+                <span class="tile__meta">از ۹٬۰۰۰٬۰۰۰ تومان، ۳ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=71">
                 <span class="tile__name">شینیون عروس</span>
-                <span class="tile__meta">از ۷٬۰۰۰٬۰۰۰ تومان · ۲ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۷٬۰۰۰٬۰۰۰ تومان، ۲ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=72">
                 <span class="tile__name">میکاپ و شینیون</span>
-                <span class="tile__meta">از ۱۵٬۰۰۰٬۰۰۰ تومان · ۵ ساعت</span>
+                <span class="tile__meta">از ۱۵٬۰۰۰٬۰۰۰ تومان، ۵ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=73">
                 <span class="tile__name">تست میکاپ</span>
-                <span class="tile__meta">از ۳٬۰۰۰٬۰۰۰ تومان · ۲ ساعت</span>
+                <span class="tile__meta">از ۳٬۰۰۰٬۰۰۰ تومان، ۲ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=74">
                 <span class="tile__name">تست شینیون</span>
-                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲٬۵۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=75">
                 <span class="tile__name">پکیج عروس</span>
-                <span class="tile__meta">از ۲۵٬۰۰۰٬۰۰۰ تومان · ۸ ساعت</span>
+                <span class="tile__meta">از ۲۵٬۰۰۰٬۰۰۰ تومان، ۸ ساعت</span>
               </a>
             </div>
           </section>
@@ -651,23 +657,23 @@
             <div class="tile-grid">
               <a class="tile" href="service.html?id=76">
                 <span class="tile__name">اسکراب بدن</span>
-                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۱٬۲۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=77">
                 <span class="tile__name">لایه‌برداری بدن</span>
-                <span class="tile__meta">از ۱٬۴۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۱٬۴۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=78">
                 <span class="tile__name">آبرسانی بدن</span>
-                <span class="tile__meta">از ۱٬۳۰۰٬۰۰۰ تومان · ۱ ساعت</span>
+                <span class="tile__meta">از ۱٬۳۰۰٬۰۰۰ تومان، ۱ ساعت</span>
               </a>
               <a class="tile" href="service.html?id=79">
                 <span class="tile__name">مراقبت پوست بدن</span>
-                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان · ۱ ساعت و ۱۵ دقیقه</span>
+                <span class="tile__meta">از ۱٬۵۰۰٬۰۰۰ تومان، ۱ ساعت و ۱۵ دقیقه</span>
               </a>
               <a class="tile" href="service.html?id=80">
                 <span class="tile__name">فرم‌دهی بدن</span>
-                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان · ۱ ساعت و ۳۰ دقیقه</span>
+                <span class="tile__meta">از ۲٬۰۰۰٬۰۰۰ تومان، ۱ ساعت و ۳۰ دقیقه</span>
               </a>
             </div>
           </section>
