@@ -1,6 +1,7 @@
 // صفحه رزرو نوبت: چهار قدم (خدمت ← آرایشگر ← زمان ← تأیید) با خلاصه زنده.
-// فقط رابط کاربری است: جمع مبلغ از data-price و data-duration گزینه‌ها و ضریب قیمت آرایشگر (data-factor) حساب می‌شود.
-// بک‌اند: مبلغ نهایی، تخفیف و آزاد بودن ساعت را حتماً سمت سرور دوباره حساب و بررسی کنید.
+// جمع مبلغ برای نمایش است: اگر بک‌اند روی گزینه آرایشگر data-prices="شناسه:قیمت:دقیقه,…" گذاشته باشد همان قیمت‌های
+// دقیق آرایشگر، وگرنه data-price خدمت × ضریب آرایشگر (data-factor). مبلغ نهایی، تخفیف و آزاد بودن ساعت را سرور
+// دوباره حساب می‌کند. کد تخفیف با بک‌اند از سرور بررسی می‌شود (_act=applyCode).
 (function () {
   "use strict";
 
@@ -39,14 +40,33 @@
     var opt = s && s.closest("[data-factor]");
     return opt ? Number(opt.getAttribute("data-factor")) : 1;
   }
+  // قیمت و مدت دقیق آرایشگر انتخاب‌شده (اگر بک‌اند داده باشد)
+  function staffPrices() {
+    var s = staffInput();
+    var raw = s && s.closest("[data-prices]") && s.closest("[data-prices]").getAttribute("data-prices");
+    if (!raw) return null;
+    var map = {};
+    raw.split(",").forEach(function (p) { var a = p.split(":"); map[a[0]] = { price: Number(a[1]), minutes: Number(a[2]) }; });
+    return map;
+  }
+  var discount = 0; // مبلغ تخفیف تأییدشده از سرور برای همین انتخاب‌ها
   function totals() {
     var list = chosen();
-    var base = list.reduce(function (s, i) { return s + Number(i.getAttribute("data-price")); }, 0);
-    var total = Math.round((base * factor()) / 10000) * 10000;
+    var map = staffPrices();
+    var total, minutes;
+    if (map && list.every(function (i) { return map[i.value]; })) {
+      total = list.reduce(function (s, i) { return s + map[i.value].price; }, 0);
+      minutes = list.reduce(function (s, i) { return s + map[i.value].minutes; }, 0);
+    } else {
+      var base = list.reduce(function (s, i) { return s + Number(i.getAttribute("data-price")); }, 0);
+      total = Math.round((base * factor()) / 10000) * 10000;
+      minutes = list.reduce(function (s, i) { return s + Number(i.getAttribute("data-duration")); }, 0);
+    }
+    total = Math.max(0, total - discount);
     return {
       list: list,
       total: total,
-      minutes: list.reduce(function (s, i) { return s + Number(i.getAttribute("data-duration")); }, 0),
+      minutes: minutes,
       deposit: Math.ceil((total * depositPercent) / 100 / 1000) * 1000
     };
   }
@@ -135,6 +155,11 @@
     setSum("time", pick.date ? pick.dayLabel + "، ساعت " + (pick.timeLabel || "انتخاب نشده") : "انتخاب نشده");
     setSum("duration", any ? duration(t.minutes) : "-");
     setSum("final", any ? price(t.total) : "-");
+    setSum("discount", discount ? "−" + price(discount) : "-");
+    $$("[data-discount-row]", form).forEach(function (dt) {
+      dt.hidden = !discount;
+      if (dt.nextElementSibling) dt.nextElementSibling.hidden = !discount;
+    });
     setSum("deposit", any ? (t.deposit ? price(t.deposit) : "ندارد") : "-");
 
     $("[data-bar-time]", form).textContent = !any ? "هنوز خدمتی انتخاب نشده"
@@ -211,10 +236,39 @@
 
   // ---------- رویدادها ----------
   var picker = window.SalonSlotPicker.mount(form, function (p) { pick = p; update(); });
-  function changed() { refreshStaff(chosen()); picker.reset(); update(); }
+  function clearDiscount() {
+    if (!discount) return;
+    discount = 0;
+    var msg = $("[data-code-message]", form);
+    if (msg) msg.textContent = "انتخاب‌ها عوض شد؛ کد تخفیف را دوباره اعمال کنید.";
+  }
+  function changed() { clearDiscount(); refreshStaff(chosen()); picker.reset(); update(); }
+
+  // ---------- کد تخفیف ----------
+  var codeBtn = $("[data-apply-code]", form);
+  if (codeBtn) codeBtn.addEventListener("click", function () {
+    var ui = window.SalonUI;
+    if (!ui || !ui.backend) { if (ui) ui.notConnected(); return; }
+    var code = $("[name=discountCode]", form).value.trim();
+    var msg = $("[data-code-message]", form);
+    var staff = staffInput();
+    codeBtn.disabled = true;
+    ui.send({
+      _act: "applyCode",
+      code: code,
+      serviceIds: chosen().map(function (i) { return i.value; }).join(","),
+      staffId: staff ? staff.value : ""
+    }).then(function (data) {
+      discount = data.ok ? Number(data.discount) || 0 : 0;
+      msg.textContent = data.message || "";
+      update();
+    }).catch(function () {
+      msg.textContent = "ارتباط با سرور برقرار نشد.";
+    }).then(function () { codeBtn.disabled = false; });
+  });
 
   $$("input[name=serviceIds]", form).forEach(function (i) { i.addEventListener("change", changed); });
-  $$("input[name=staffId]", form).forEach(function (i) { i.addEventListener("change", function () { picker.reset(); update(); }); });
+  $$("input[name=staffId]", form).forEach(function (i) { i.addEventListener("change", function () { clearDiscount(); picker.reset(); update(); }); });
 
   // پیش‌انتخاب از آدرس: booking.html?service=2,5&staff=1
   var params = new URLSearchParams(location.search);
