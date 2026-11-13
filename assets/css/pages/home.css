@@ -103,8 +103,7 @@
 }
 .hero__cat .icon { color: var(--accent); }
 .hero__cat:hover { transform: translateY(-2px); color: var(--accent-ink); }
-@media (max-width: 700px) { .hero__cats { flex-wrap: nowrap; justify-content: flex-start; margin-inline: calc(-1 * var(--s4)); padding-inline: var(--s4); } }
-@media (max-width: 360px) { .hero__cats { margin-inline: -12px; padding-inline: 12px; } }
+@media (max-width: 700px) { .hero__cats { flex-wrap: nowrap; justify-content: flex-start; margin-inline: 0; padding-inline: 0; } }
 
 /* ================= دسته‌های خدمات ================= */
 /* دسته‌ها بدون باکس دور؛ فقط آیکن و نام. موبایل سه‌تایی. */

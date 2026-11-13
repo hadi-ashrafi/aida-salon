@@ -83,16 +83,14 @@
 
 .team, .team-row { display: grid; grid-auto-rows: 1fr; gap: var(--s5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
 @media (max-width: 640px) {
-  /* نوار افقی تا لبه صفحه می‌رود تا کارت‌ها وسط کار بریده نشوند. */
   .team-row {
     grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(62%, 240px); gap: var(--s3);
     overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
-    margin-inline: calc(-1 * var(--s4)); padding: 2px var(--s4) var(--s2); scroll-padding-inline: var(--s4);
+    padding: 2px 0 var(--s2);
   }
   .team-row::-webkit-scrollbar { display: none; }
   .team-row > * { scroll-snap-align: start; }
 }
-@media (max-width: 360px) { .team-row { margin-inline: -12px; padding-inline: 12px; scroll-padding-inline: 12px; } }
 .team-card {
   display: grid; gap: var(--s2); padding: var(--s3) var(--s3) var(--s4); text-decoration: none; color: inherit;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm);

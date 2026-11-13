@@ -136,3 +136,7 @@
   .header-actions { gap: 4px; }
   .header-actions .icon-btn { width: 38px; height: 38px; border-radius: 12px; }
 }
+
+/* «خروج از حساب» در منوی کشویی (بک‌اند برای کاربر واردشده اضافه می‌کند) */
+.site-nav a[data-logout] { color: var(--danger); }
+.site-nav a[data-logout]:hover { background: var(--danger-soft); color: var(--danger); }

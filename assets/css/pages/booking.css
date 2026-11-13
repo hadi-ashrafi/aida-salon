@@ -39,9 +39,8 @@
 
 /* ================= قدم ۱: خدمت ================= */
 .booking-search { margin-bottom: var(--s3); }
-.cat-jumps { display: flex; gap: 6px; margin: 0 calc(-1 * var(--s5)) var(--s3); padding: 2px var(--s5) var(--s2); overflow-x: auto; scrollbar-width: none; }
+.cat-jumps { display: flex; gap: 6px; margin: 0 0 var(--s3); padding: 2px 0 var(--s2); overflow-x: auto; scrollbar-width: none; }
 .cat-jumps::-webkit-scrollbar { display: none; }
-@media (max-width: 480px) { .cat-jumps { margin-inline: calc(-1 * var(--s3)); padding-inline: var(--s3); } }
 .cat-jump { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 var(--s3); border-radius: 99px; font: inherit; font-size: .84rem; font-weight: 600; color: var(--ink); background: var(--glass-soft); border: 1px solid var(--glass-border); cursor: pointer; white-space: nowrap; }
 .cat-jump .icon { width: 18px; height: 18px; color: var(--accent); }
 .cat-jump:hover { border-color: var(--accent); }

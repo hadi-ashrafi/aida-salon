@@ -65,6 +65,15 @@ button:disabled, input:disabled, select:disabled, .btn[aria-disabled="true"] { c
   fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
 }
 
+/* ---------- نوارهای افقیِ قابل‌کشیدن ----------
+   داخل همان لبه‌ی محتوا می‌مانند (از کادر بیرون نمی‌زنند)؛ سمت چپ کمی محو می‌شود تا معلوم باشد ادامه دارد. */
+@media (max-width: 760px) {
+  .cat-jumps, .cat-chips, .hero__cats, .team-row, .day-strip {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22px);
+    mask-image: linear-gradient(to right, transparent 0, #000 22px);
+  }
+}
+
 /* ---------- چیدمان عمومی ---------- */
 .stack { display: grid; gap: var(--s4); }
 .cluster { display: flex; flex-wrap: wrap; gap: var(--s2); align-items: center; }

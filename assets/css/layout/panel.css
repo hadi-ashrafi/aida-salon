@@ -39,7 +39,11 @@
   /* نوار افقی: همه بخش‌ها در یک ردیف قابل اسکرول، گروه‌ها با فاصله از هم */
   .side-nav { display: flex; align-items: center; gap: var(--s1); padding: 6px; overflow-x: auto; border-radius: 20px; scrollbar-width: none; }
   .side-nav::-webkit-scrollbar { display: none; }
-  .side-nav__user, .side-nav__title, .side-nav__logout-item { display: none; }
+  .side-nav__user, .side-nav__title { display: none; }
+  /* «خروج» آخر نوار می‌ماند، با خط جدا و رنگ قرمز ملایم */
+  .side-nav__logout-item { padding-inline-start: var(--s1); border-inline-start: 1px solid var(--line); }
+  .side-nav__logout { color: var(--danger) !important; }
+  .side-nav__logout .icon { color: var(--danger) !important; }
   .side-nav__group, .side-nav ul { display: flex; gap: 2px; }
   .side-nav__group + .side-nav__group { padding-inline-start: var(--s1); border-inline-start: 1px solid var(--line); }
   .side-nav a { white-space: nowrap; min-height: 40px; gap: 6px; font-size: .88rem; }
