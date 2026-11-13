@@ -2,29 +2,18 @@
 // هر بار فایلی تغییر کرد، VERSION را بالا ببرید تا گوشی‌ها نسخه تازه را بگیرند
 // (فایل‌ها با cache: "reload" مستقیم از سرور گرفته می‌شوند، نه از حافظه مرورگر).
 // صفحه‌ها «اول شبکه» (تا همیشه تازه باشند) و بقیه فایل‌ها «اول حافظه» (برای سرعت) خوانده می‌شوند.
-const VERSION = "aida-v5";
+const VERSION = "aida-v6";
+// صفحه‌های شخصی (پنل‌ها و حساب کاربری) هیچ‌وقت در حافظه گوشی ذخیره نمی‌شوند:
+// با بک‌اند، محتوایشان مال همان کاربر است و بعد از خروج نباید روی دستگاه بماند.
+const PRIVATE = /\/(admin|stylist|customer)\/|\/account\/(profile|notifications)\.html/;
 const PRECACHE = [
   "./",
   "404.html",
   "about.html",
   "account/forgot-password.html",
   "account/login.html",
-  "account/notifications.html",
-  "account/profile.html",
   "account/register.html",
   "account/reset-password.html",
-  "admin/appointment.html",
-  "admin/appointments.html",
-  "admin/discounts.html",
-  "admin/index.html",
-  "admin/reports.html",
-  "admin/reviews.html",
-  "admin/service-edit.html",
-  "admin/services.html",
-  "admin/settings.html",
-  "admin/staff-edit.html",
-  "admin/staff.html",
-  "admin/users.html",
   "assets/css/base/base.css",
   "assets/css/base/motion.css",
   "assets/css/base/tokens.css",
@@ -68,10 +57,6 @@ const PRECACHE = [
   "assets/js/theme-init.js",
   "booking-done.html",
   "booking.html",
-  "customer/appointments.html",
-  "customer/index.html",
-  "customer/reschedule.html",
-  "customer/review.html",
   "index.html",
   "manifest.webmanifest",
   "pay.html",
@@ -79,9 +64,6 @@ const PRECACHE = [
   "service.html",
   "services.html",
   "stylist.html",
-  "stylist/appointment.html",
-  "stylist/history.html",
-  "stylist/index.html",
   "stylists.html"
 ];
 
@@ -105,7 +87,14 @@ self.addEventListener("fetch", (event) => {
   if (req.mode === "navigate") {
     event.respondWith(
       fetch(req)
-        .then((res) => { const copy = res.clone(); caches.open(VERSION).then((c) => c.put(req, copy)); return res; })
+        .then((res) => {
+          // فقط صفحه عمومی و سالم ذخیره شود (نه redirect به صفحه ورود، نه صفحه شخصی)
+          if (res.ok && !res.redirected && !PRIVATE.test(new URL(req.url).pathname)) {
+            const copy = res.clone();
+            caches.open(VERSION).then((c) => c.put(req, copy));
+          }
+          return res;
+        })
         .catch(() => caches.match(req, { ignoreSearch: true }).then((r) => r || caches.match("index.html")))
     );
     return;
