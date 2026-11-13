@@ -2,7 +2,7 @@
 
 .form { display: grid; gap: var(--s4); }
 .form-row { display: grid; gap: var(--s4); }
-@media (min-width: 640px) { .form-row.cols-2 { grid-template-columns: 1fr 1fr; } .form-row.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 640px) { .form-row.cols-2 { grid-template-columns: 1fr 1fr; } }
 .field { display: grid; gap: var(--s1); }
 .field > label, .field-label { font-weight: 600; font-size: .95rem; }
 .field .hint { font-size: .85rem; color: var(--muted); }
@@ -17,14 +17,9 @@ textarea.input { min-height: 110px; resize: vertical; }
 .input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); outline: none; }
 .input:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
 .input.ltr, .ltr { direction: ltr; text-align: end; }
-.input-validation-error { border-color: var(--danger) !important; }
-.field-validation-error, .text-danger { color: var(--danger); font-size: .88rem; }
-.validation-summary-errors ul { margin: 0; padding-inline-start: var(--s4); }
-.validation-summary-valid { display: none; }
 .check { display: inline-flex; align-items: center; gap: var(--s2); min-height: 44px; }
 .check input { width: 20px; height: 20px; accent-color: var(--accent); }
 
-.icon-picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: var(--s2); }
 .icon-picker__item {
   position: relative; display: grid; place-items: center; aspect-ratio: 1; border: 1px solid var(--line); border-radius: var(--r-sm);
   background: var(--surface); color: var(--muted); transition: border-color .2s var(--ease), background .2s var(--ease), color .2s var(--ease);

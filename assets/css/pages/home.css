@@ -65,9 +65,9 @@
 @media (prefers-reduced-motion: reduce) { .hero__word { transform: none !important; } }
 
 /* نشانگر شعار: نوار فعال در طول نمایش شعار پر می‌شود. */
-.hero__dots { display: flex; justify-content: center; gap: var(--s1); min-height: 24px; margin: var(--s3) 0 var(--s4); }
-.hero__dot { position: relative; width: 40px; height: 24px; padding: 0; border: 0; background: none; }
-.hero__dot::before, .hero__dot::after { content: ""; position: absolute; top: 10px; right: 0; bottom: 10px; left: 0; border-radius: 4px; }
+.hero__dots { display: flex; justify-content: center; gap: var(--s1); min-height: 36px; margin: var(--s3) 0 var(--s4); }
+.hero__dot { position: relative; width: 40px; height: 36px; padding: 0; border: 0; background: none; }
+.hero__dot::before, .hero__dot::after { content: ""; position: absolute; top: 16px; right: 0; bottom: 16px; left: 0; border-radius: 4px; }
 .hero__dot::before { background: color-mix(in srgb, var(--ink) 14%, transparent); }
 .hero__dot::after { background: var(--accent); transform: scaleX(0); transform-origin: right center; }
 .hero__dot.is-active::after { animation: hero-fill var(--slogan-ms, 3800ms) linear forwards; }
@@ -126,10 +126,6 @@
 
 @keyframes hero-pulse { from { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); } to { box-shadow: 0 0 0 10px transparent; } }
 @keyframes hero-fill { to { transform: scaleX(1); } }
-@keyframes hero-sheen { 0%, 55% { transform: translateX(60%); } 100% { transform: translateX(-60%); } }
-@keyframes hero-draw { to { stroke-dashoffset: 0; } }
-@keyframes hero-twinkle { 0%, 100% { opacity: .25; transform: scale(.7) rotate(0deg); } 50% { opacity: 1; transform: scale(1) rotate(20deg); } }
-@keyframes hero-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 /* ================= نوار «امروز در سالن» ================= */
 .today { max-width: calc(var(--wrap) - 48px); margin: 0 auto; width: calc(100% - 32px); border: 1px solid var(--glass-border); border-radius: 24px; }
@@ -162,7 +158,7 @@
 /* ================= اسلایدر نظرات: هر بار یک نظر ================= */
 .reviews-title { text-align: center; }
 .review-slider { max-width: 720px; margin-inline: auto; }
-.review-slider__track { display: grid; }
+.review-slider__track { display: grid; overflow: hidden; } /* اسلایدهای غیرفعالِ جابه‌جاشده از کادر بیرون نزنند */
 .review-slide {
   grid-area: 1 / 1; display: grid; justify-items: center; gap: var(--s3); margin: 0; padding: var(--s6) var(--s5) var(--s5);
   border: 1px solid var(--glass-border); border-radius: 28px; text-align: center;
@@ -179,7 +175,8 @@
 .review-slide figcaption small { color: var(--muted); }
 .review-slider__nav { display: flex; align-items: center; justify-content: center; gap: var(--s3); margin-top: var(--s4); }
 .review-slider__dots { display: flex; gap: 6px; }
-.review-slider__dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 99px; background: color-mix(in srgb, var(--ink) 18%, transparent); transition: width .35s var(--ease-out), background .2s var(--ease); }
+.review-slider__dot { position: relative; width: 8px; height: 8px; padding: 0; border: 0; border-radius: 99px; background: color-mix(in srgb, var(--ink) 18%, transparent); transition: width .35s var(--ease-out), background .2s var(--ease); }
+.review-slider__dot::after { content: ""; position: absolute; top: -16px; right: -4px; bottom: -16px; left: -4px; } /* ناحیه لمس بزرگ‌تر */
 .review-slider__dot[aria-current="true"] { width: 26px; background: var(--accent); }
 
 /* ================= گوشی: صفحه اصلی جمع‌وجور ================= */

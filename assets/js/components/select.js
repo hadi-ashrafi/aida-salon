@@ -183,7 +183,7 @@
     return api;
   }
 
-  const all = Array.from(document.querySelectorAll("select.input:not([multiple]):not([data-native])")).map(enhance);
+  document.querySelectorAll("select.input:not([multiple]):not([data-native])").forEach(enhance);
 
   document.addEventListener("pointerdown", (e) => {
     if (openOne && !openOne.panel.contains(e.target) && !openOne.wrap.contains(e.target)) openOne.close();
@@ -191,5 +191,4 @@
   addEventListener("resize", () => openOne && openOne.place());
   addEventListener("scroll", (e) => { if (openOne && !openOne.panel.contains(e.target)) openOne.place(); }, true);
 
-  window.SalonSelect = { all };
 })();

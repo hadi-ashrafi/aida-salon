@@ -15,5 +15,4 @@
   .table--stack td.actions { justify-content: flex-start; padding-top: var(--s2); }
   .table--stack td.actions::before { content: none; }
 }
-.pager { display: flex; gap: var(--s2); justify-content: center; margin-top: var(--s5); flex-wrap: wrap; }
 

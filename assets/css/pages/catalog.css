@@ -9,12 +9,11 @@
 .menu__price { font-weight: 700; white-space: nowrap; }
 
 .crumbs { display: flex; flex-wrap: wrap; gap: var(--s2); font-size: .9rem; color: var(--muted); margin-bottom: var(--s5); }
-.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a { display: inline-flex; align-items: center; min-height: 36px; color: var(--muted); text-decoration: none; }
 .crumbs a:hover { color: var(--accent-ink); }
 
 .svc-hero { display: grid; gap: var(--s5); align-items: center; padding: var(--s5); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); }
 @media (min-width: 700px) { .svc-hero { grid-template-columns: auto 1fr; padding: var(--s6); } }
-.svc-hero__img { width: 120px; height: 120px; object-fit: cover; border-radius: var(--r-lg); }
 .svc-hero h1 { margin-bottom: var(--s2); }
 .svc-hero p { color: var(--muted); max-width: 60ch; }
 .facts { display: flex; flex-wrap: wrap; gap: var(--s3); margin: 0; }
@@ -42,7 +41,8 @@
 
 .filters { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: end; margin-bottom: var(--s5); }
 .filters .field { flex: 1 1 200px; }
-.cat-chips { display: flex; gap: var(--s2); overflow-x: auto; padding-bottom: var(--s2); margin-bottom: var(--s4); }
+.cat-chips { display: flex; gap: var(--s2); overflow-x: auto; scrollbar-width: none; padding-bottom: var(--s2); margin-bottom: var(--s4); }
+.cat-chips::-webkit-scrollbar { display: none; }
 .cat-chips a {
   display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--s4); white-space: nowrap;
   border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); text-decoration: none;
@@ -50,7 +50,6 @@
 }
 .cat-chips a:hover { border-color: var(--accent); color: var(--accent-ink); }
 .cat-chips a[aria-current="page"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
-.price { font-weight: 800; }
 
 /* ================= خدمات: گروه هر دسته ================= */
 .svc-groups { display: grid; gap: var(--s5); }

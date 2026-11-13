@@ -2,8 +2,6 @@
 
 .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: var(--s5); box-shadow: var(--shadow-sm); }
 .panel + .panel { margin-top: var(--s5); }
-.panel__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin-bottom: var(--s4); }
-.panel__head h2, .panel__head h3 { margin: 0; }
 
 .chip {
   display: inline-flex; align-items: center; gap: var(--s1); padding: 2px var(--s3);
@@ -13,15 +11,10 @@
 .chip--confirmed { background: var(--success-soft); color: var(--success); }
 .chip--completed { background: var(--cream); color: var(--muted); }
 .chip--cancelled, .chip--noshow { background: var(--danger-soft); color: var(--danger); }
-.chip--test { background: var(--accent-soft); color: var(--accent-ink); }
 
 .flash { border-radius: var(--r-sm); padding: var(--s3) var(--s4); margin-bottom: var(--s4); border: 1px solid var(--glass-border); }
 .flash--ok { background: var(--success-soft); border-color: var(--success); color: var(--success); }
 .flash--err { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
-
-.empty { text-align: center; padding: var(--s6) var(--s4); color: var(--muted); border: 1px dashed var(--line); border-radius: var(--r-lg); background: var(--surface); }
-.empty p { margin-bottom: var(--s3); }
-.notice-test { background: var(--accent-soft); border: 1px dashed var(--accent); color: var(--ink); border-radius: var(--r-sm); padding: var(--s3) var(--s4); font-size: .92rem; word-break: break-all; }
 
 .avatar {
   position: relative; display: grid; place-items: center; overflow: hidden;
@@ -44,15 +37,9 @@
 
 .next-card { width: 100%; max-width: 380px; justify-self: center; padding: var(--s5); border-radius: var(--r-lg); display: grid; gap: var(--s3); }
 .next-card p { margin: 0; }
-.next-card__head { display: flex; align-items: center; gap: var(--s2); }
-.next-card__icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--r-xs); background: var(--accent-soft); color: var(--accent-ink); }
 .next-card__label { margin: 0; font-size: .95rem; font-weight: 600; color: var(--muted); }
 .next-card__time { font-size: clamp(3rem, 9vw, 4rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; }
-.next-card__time--none { font-size: 1.6rem; }
 .next-card__day { color: var(--muted); }
-.next-card__who { display: flex; align-items: center; gap: var(--s3); padding: var(--s3); border-radius: var(--r-md); background: color-mix(in srgb, var(--surface) 70%, transparent); border: 1px solid var(--line); }
-.next-card__who strong { display: block; line-height: 1.4; }
-.next-card__who small { font-size: .82rem; }
 
 .glow > .wrap > .next-card { margin-inline: auto; text-align: center; }
 .next-card h1.next-card__label { font-size: 1rem; }
@@ -91,15 +78,6 @@
   .team-row::-webkit-scrollbar { display: none; }
   .team-row > * { scroll-snap-align: start; }
 }
-.team-card {
-  display: grid; gap: var(--s2); padding: var(--s3) var(--s3) var(--s4); text-decoration: none; color: inherit;
-  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm);
-  transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out);
-}
-.team-card:hover { transform: translateY(-4px); color: inherit; }
-.team-card :is(h2, h3) { margin: var(--s2) var(--s1) 0; transition: color .2s var(--ease); }
-.team-card:hover :is(h2, h3) { color: var(--accent-ink); }
-.team-card p { margin: 0 var(--s1); color: var(--muted); font-size: .92rem; }
 
 .quote-list { display: grid; gap: var(--s4); }
 @media (min-width: 768px) { .quote-list { grid-template-columns: repeat(2, 1fr); } }
@@ -107,12 +85,10 @@
 .quote footer { font-size: .88rem; color: var(--muted); margin-top: var(--s2); }
 .stars { color: var(--accent); letter-spacing: 2px; }
 .stars__off { color: var(--line); }
-.pad-card { padding: var(--s4) 20px; }
 .center-card { margin-inline: auto; text-align: center; }
 
 /* ================= گلس‌مورفیسم: سطح‌های اصلی پشتشان را مات می‌کنند ================= */
-.panel, .glass, .tile, .team-card, .stylist-card, .quote, .step, .kpi, .side-nav, .offer, .svc-hero, .svc-group,
-.appt, .week__day, .empty, .today, .footer-box, .review-slide, .profile, dialog, .filters, .cat-chips a {
+.panel, .glass, .tile, .stylist-card, .quote, .step, .side-nav, .offer, .svc-hero, .svc-group, .appt, .week__day, .today, .footer-box, .review-slide, .profile, dialog, .filters, .cat-chips a {
   background: var(--glass-bg);
   border-color: var(--glass-border);
   box-shadow: var(--glass-shadow);
@@ -153,4 +129,18 @@
   .next-card__time { font-size: 2.4rem; }
   .avatar { font-size: 1.8rem; }
   .stylist-card { gap: var(--s2); }
+}
+
+/* گوشی: در فهرست آرایشگران (صفحه آرایشگران) کارت افقی است؛ عکس کوچک کنار مشخصات، دکمه زیرش.
+   (نوار افقی صفحه اصلی، team-row، همان کارت عمودی را نگه می‌دارد.) */
+@media (max-width: 560px) {
+  .team { grid-auto-rows: auto; gap: var(--s3); }
+  .team .stylist-card {
+    display: grid; grid-template-columns: 88px minmax(0, 1fr); grid-template-areas: "av body" "btn btn";
+    align-items: start; gap: var(--s3); padding: var(--s3); height: auto;
+  }
+  .team .stylist-card .avatar { grid-area: av; width: 88px; border-radius: 16px; }
+  .team .stylist-card__body { grid-area: body; gap: 4px; padding: 0; }
+  .team .stylist-card__services { min-height: 0; }
+  .team .stylist-card > .btn { grid-area: btn; min-height: 40px; }
 }

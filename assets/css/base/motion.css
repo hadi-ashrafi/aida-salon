@@ -2,10 +2,8 @@
 
 @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes from-blur { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: none; } }
-@keyframes settle { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }
 
-.enter { animation: fade-up .7s var(--ease-out) both; animation-delay: calc(var(--d, 0) * .1s); }
 .enter-soft { animation: from-blur 1s var(--ease-out) .35s both; }
 
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
@@ -17,11 +15,10 @@
   transition-delay: calc(min(var(--i, 0), 10) * 50ms), calc(min(var(--i, 0), 10) * 50ms), 0s, 0s;
 }
 .js .reveal[data-stagger].is-visible > * { opacity: 1; transform: none; }
-.js .reveal[data-stagger].is-visible > :is(.tile, .team-card):hover { transform: translateY(-4px); transition-delay: 0s; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
   .js .reveal, .js .reveal[data-stagger] > * { opacity: 1; transform: none; }
 }
-@media print { .site-header, .site-footer, .side-nav, .btn, .book-bar, .booking-bar { display: none !important; } }
+@media print { .site-header, .site-footer, .side-nav, .btn { display: none !important; } }

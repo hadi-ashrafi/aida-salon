@@ -16,15 +16,14 @@
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent-ink); }
 .btn-danger { background: transparent; color: var(--danger); border-color: var(--danger); }
 .btn-danger:hover { background: var(--danger); color: var(--bg); }
-.btn-sm { min-height: 44px; padding: var(--s1) var(--s3); font-size: .9rem; }
+.btn-sm { min-width: 44px; min-height: 44px; padding: var(--s1) var(--s3); font-size: .9rem; }
 .btn-lg { min-height: 54px; padding-inline: var(--s6); font-size: 1.02rem; border-radius: var(--r-md); }
 .btn:disabled, .btn[aria-disabled="true"] { opacity: .5; transform: none; box-shadow: none; }
 .btn-block { width: 100%; }
-.btn.is-busy { opacity: .7; pointer-events: none; }
 
 /* گوشی: دکمه‌ها جمع‌وجورتر (هنوز بالای ۴۰px برای لمس راحت) */
 @media (max-width: 640px) {
   .btn { min-height: 42px; padding-inline: var(--s4); font-size: .95rem; }
-  .btn-sm { min-height: 38px; padding-inline: var(--s3); font-size: .85rem; }
+  .btn-sm { min-width: 38px; min-height: 38px; padding-inline: var(--s3); font-size: .85rem; }
   .btn-lg { min-height: 46px; padding-inline: var(--s5); font-size: .98rem; border-radius: var(--r-sm); }
 }

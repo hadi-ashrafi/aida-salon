@@ -6,7 +6,7 @@
 .p-head__eyebrow { margin: 0 0 2px; font-size: .82rem; font-weight: 700; color: var(--accent-ink); }
 .p-head__sub { margin: 4px 0 0; color: var(--muted); }
 .p-head__actions { display: flex; flex-wrap: wrap; gap: var(--s2); }
-.back-link { display: inline-flex; align-items: center; gap: 4px; margin-bottom: var(--s2); color: var(--muted); font-size: .88rem; font-weight: 600; text-decoration: none; }
+.back-link { display: inline-flex; align-items: center; gap: 4px; min-height: 40px; margin-bottom: var(--s2); color: var(--muted); font-size: .88rem; font-weight: 600; text-decoration: none; }
 .back-link:hover { color: var(--accent-ink); }
 
 /* ================= کارت عمومی پنل ================= */
@@ -14,14 +14,13 @@
 .card__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s3); margin-bottom: var(--s4); }
 .card__head h2, .card__head h3 { margin: 0; font-size: 1.05rem; }
 .card__head p { margin: 2px 0 0; font-size: .85rem; color: var(--muted); }
-.card__link { font-size: .88rem; font-weight: 700; text-decoration: none; }
+.card__link { display: inline-flex; align-items: center; min-height: 40px; padding-inline: 4px; font-size: .88rem; font-weight: 700; text-decoration: none; }
 .card--flush { padding: 0; overflow: hidden; }
 .card--flush > .card__head { padding: var(--s4) var(--s5) 0; }
 .card .card { box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--glass-soft); }
 
 .grid { display: grid; gap: var(--s4); }
 .grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
-.grid--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
 @media (min-width: 1200px) { .grid--main { grid-template-columns: 1.6fr 1fr; align-items: start; } }
 .grid > * { min-width: 0; }
 .stack-lg { display: grid; gap: var(--s5); }
@@ -53,6 +52,9 @@
 /* ================= نمودارها (SVG ساده؛ داده دقیق در جدول زیر هر نمودار) ================= */
 .chart { display: block; width: 100%; height: auto; overflow: visible; }
 .chart text { fill: var(--muted); font-family: var(--font); font-size: 11px; }
+/* نمودار با viewBox کوچک می‌شود؛ روی صفحه کوچک نوشته‌ها بزرگ‌تر تا بعد از کوچک شدن هنوز خوانا باشند (حدود ۱۰ پیکسل). */
+@media (max-width: 900px) { .chart text { font-size: 15px; } }
+@media (max-width: 560px) { .chart text { font-size: 20px; } }
 .chart .grid-line { stroke: var(--line); stroke-dasharray: 3 4; }
 .chart .area { fill: url(#area-grad); }
 .chart .line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
@@ -64,7 +66,7 @@
 .chart-legend li { display: inline-flex; align-items: center; gap: 6px; }
 .chart-legend i { width: 10px; height: 10px; border-radius: 3px; background: var(--c, var(--accent)); }
 .chart-data { margin-top: var(--s3); font-size: .85rem; }
-.chart-data summary { color: var(--muted); font-weight: 600; }
+.chart-data summary { display: flex; align-items: center; min-height: 40px; color: var(--muted); font-weight: 600; cursor: pointer; }
 
 .donut-wrap { display: grid; gap: var(--s4); align-items: center; grid-template-columns: 150px 1fr; }
 @media (max-width: 420px) { .donut-wrap { grid-template-columns: 1fr; justify-items: center; } }
@@ -129,15 +131,8 @@
 .person { display: flex; align-items: center; gap: var(--s3); min-width: 0; }
 .person .avatar { width: 38px; border-radius: 12px; flex-shrink: 0; }
 .person span { display: grid; line-height: 1.45; min-width: 0; }
-.row-actions { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
 
 /* گروه‌های بازشونده (مثلاً خدمات هر دسته) */
-.fold { border-top: 1px solid var(--line); }
-.fold > summary { display: flex; align-items: center; gap: var(--s3); min-height: 60px; padding: 0 var(--s4); list-style: none; cursor: pointer; font-weight: 700; }
-.fold > summary::-webkit-details-marker { display: none; }
-.fold > summary::after { content: ""; width: 9px; height: 9px; border: solid var(--muted); border-width: 0 0 2px 2px; transform: rotate(-45deg); transition: transform .25s var(--ease); margin-inline-start: auto; }
-.fold[open] > summary::after { transform: rotate(135deg); }
-.fold > summary small { color: var(--muted); font-weight: 500; }
 
 /* ================= نوبت‌ها: کارت و تایم‌لاین ================= */
 .appt-list { display: grid; gap: var(--s3); }
@@ -195,7 +190,6 @@
 .week__day { display: grid; align-content: start; gap: 6px; min-height: 200px; padding: var(--s3); border-radius: 18px; background: var(--glass-soft); border: 1px solid var(--glass-border); }
 .week__day h3 { display: flex; justify-content: space-between; margin: 0 0 4px; font-size: .88rem; }
 .week__day h3 small { color: var(--muted); font-weight: 500; }
-.week__day--today { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
 .week__day--off { opacity: .55; }
 .week__item { display: grid; padding: 6px var(--s2); border-radius: 10px; background: var(--accent-soft); font-size: .78rem; color: var(--ink); text-decoration: none; line-height: 1.5; }
 .week__item b { color: var(--accent-ink); }
