@@ -68,7 +68,7 @@
 .tile-icon--lg { width: 120px; height: 120px; border-radius: var(--r-lg); }
 .tile-icon--lg .icon { width: 58px; height: 58px; }
 
-.team, .team-row { display: grid; grid-auto-rows: 1fr; gap: var(--s5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
+.team, .team-row { display: grid; grid-auto-rows: 1fr; gap: var(--s5); grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr)); }
 @media (max-width: 640px) {
   .team-row {
     grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(62%, 240px); gap: var(--s3);
@@ -131,9 +131,9 @@
   .stylist-card { gap: var(--s2); }
 }
 
-/* گوشی: در فهرست آرایشگران (صفحه آرایشگران) کارت افقی است؛ عکس کوچک کنار مشخصات، دکمه زیرش.
-   (نوار افقی صفحه اصلی، team-row، همان کارت عمودی را نگه می‌دارد.) */
-@media (max-width: 560px) {
+/* گوشی و تبلت کوچک: در فهرست آرایشگران (صفحه آرایشگران) کارت افقی است؛ عکس کوچک کنار مشخصات، دکمه زیرش.
+   تا ۵۶۰ پیکسل یک ستون، از ۵۶۱ تا ۷۶۰ دو ستون. (نوار افقی صفحه اصلی، team-row، کارت عمودی را نگه می‌دارد.) */
+@media (max-width: 760px) {
   .team { grid-auto-rows: auto; gap: var(--s3); }
   .team .stylist-card {
     display: grid; grid-template-columns: 88px minmax(0, 1fr); grid-template-areas: "av body" "btn btn";
@@ -144,3 +144,11 @@
   .team .stylist-card__services { min-height: 0; }
   .team .stylist-card > .btn { grid-area: btn; min-height: 40px; }
 }
+@media (min-width: 561px) and (max-width: 760px) {
+  .team { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; }
+  .team .stylist-card { grid-template-columns: 72px minmax(0, 1fr); height: 100%; }
+  .team .stylist-card .avatar { width: 72px; }
+  .team .stylist-card > .btn { align-self: end; }
+}
+.team .stylist-card__rating { flex-wrap: wrap; row-gap: 0; }
+.team .stylist-card__rating small { white-space: nowrap; }

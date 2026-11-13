@@ -41,7 +41,7 @@
     <script src="../assets/js/components/select.js" defer></script>
     <script src="../assets/js/components/panel.js" defer></script>
   </head>
-  <body>
+  <body class="no-footer">
     <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
 
     <!-- ===== سربرگ سایت ===== -->
@@ -68,7 +68,7 @@
             <li><a href="../services.html">خدمات</a></li>
             <li><a href="../stylists.html">آرایشگران</a></li>
             <li><a href="../about.html">درباره ما</a></li>
-            <li><a href="#contact">تماس</a></li>
+            <li><a href="../index.html#contact">تماس</a></li>
             <li><a href="../admin/index.html">پنل من</a></li>
           </ul>
         </nav>
@@ -375,92 +375,5 @@
       </div>
     </main>
 
-    <!-- ===== پانویس سایت ===== -->
-    <footer class="site-footer" id="contact">
-      <div class="wrap">
-        <div class="footer-box">
-          <!-- لوگو و نام -->
-          <a class="footer-brand" href="../index.html" aria-label="صفحه اصلی سالن زیبایی آیدا">
-            <span class="logo" aria-hidden="true"></span>
-            <strong>سالن زیبایی آیدا</strong>
-          </a>
-          <p class="footer-tagline">زیبایی، به وقت تو</p>
-
-          <!-- تماس و فضای مجازی -->
-          <div class="footer-contact">
-            <a class="footer-phone" href="tel:02100000000">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-              </svg>
-              <span class="ltr">۰۲۱-۰۰۰۰۰۰۰۰</span>
-            </a>
-            <ul class="social-list" aria-label="فضای مجازی">
-              <li>
-                <a class="social-btn" href="https://instagram.com/aida.salon" rel="noopener" target="_blank" aria-label="اینستاگرام">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
-                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-                    <path d="M16.5 7.5v.01" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a class="social-btn" href="https://t.me/aida_salon" rel="noopener" target="_blank" aria-label="تلگرام">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>
-                </a>
-              </li>
-              <li>
-                <a class="social-btn" href="https://wa.me/989120000000" rel="noopener" target="_blank" aria-label="واتس‌اپ">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-                    <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- نقشه: بک‌اند به‌جای .map-box__canvas، iframe نقشه بلد را می‌گذارد (data-balad-lat / data-balad-lng) -->
-          <div class="map-box" data-balad-lat="35.7000" data-balad-lng="51.4000">
-            <div class="map-box__canvas" aria-hidden="true">
-              <span class="map-box__pin">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-                </svg>
-              </span>
-            </div>
-            <div class="map-box__info">
-              <span class="map-box__icon">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-                </svg>
-              </span>
-              <div>
-                <strong>نشانی سالن</strong>
-                <p>تهران، خیابان نمونه، پلاک ۱۲ (نشانی نمونه)</p>
-                <p class="map-box__hours">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                    <path d="M12 7v5l3 3" />
-                  </svg>
-                  شنبه تا پنجشنبه، ۱۰ تا ۱۹
-                </p>
-              </div>
-              <a class="btn btn-ghost btn-sm" href="https://balad.ir" rel="noopener" target="_blank">مسیریابی با بلد</a>
-            </div>
-          </div>
-
-          <nav class="footer-links" aria-label="پیوندهای پایین صفحه">
-            <a href="../services.html">خدمات</a>
-            <a href="../stylists.html">آرایشگران</a>
-            <a href="../about.html#hours">ساعات کاری و قوانین</a>
-            <a href="../about.html">درباره ما</a>
-          </nav>
-        </div>
-        <p class="site-footer__base">© سالن زیبایی آیدا</p>
-      </div>
-    </footer>
   </body>
 </html>

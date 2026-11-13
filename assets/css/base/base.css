@@ -22,6 +22,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 main { flex: 1; }
+/* صفحه‌های بدون پانویس (پنل‌ها، حساب، رزرو): فاصله پایین تا محتوا به لبه صفحه نچسبد */
+body.no-footer main { padding-bottom: var(--s6); }
 img { max-width: 100%; height: auto; display: block; }
 h1, h2, h3, h4 { line-height: 1.4; margin: 0 0 var(--s3); font-weight: 800; letter-spacing: -0.005em; }
 h1 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); }
