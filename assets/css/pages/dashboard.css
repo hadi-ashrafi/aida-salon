@@ -53,8 +53,13 @@
 .chart { display: block; width: 100%; height: auto; overflow: visible; }
 .chart text { fill: var(--muted); font-family: var(--font); font-size: 11px; }
 /* نمودار با viewBox کوچک می‌شود؛ روی صفحه کوچک نوشته‌ها بزرگ‌تر تا بعد از کوچک شدن هنوز خوانا باشند (حدود ۱۰ پیکسل). */
-@media (max-width: 900px) { .chart text { font-size: 15px; } }
-@media (max-width: 560px) { .chart text { font-size: 20px; } }
+@media (max-width: 900px) { .chart text { font-size: 15px; } .chart text.bar-val { font-size: 16px; } }
+@media (max-width: 560px) { .chart text { font-size: 20px; } .chart text.bar-val { font-size: 19px; } }
+/* بهتر: اندازه نوشته از عرض خود کارت نمودار، نه صفحه (نمودار در کادر نیمه‌عرض دسکتاپ هم خوانا بماند) */
+.card:has(> svg.chart) { container-type: inline-size; }
+@container (min-width: 701px) { .chart text { font-size: 11px; } .chart text.bar-val { font-size: 12px; } }
+@container (max-width: 700px) { .chart text { font-size: 15px; } .chart text.bar-val { font-size: 16px; } }
+@container (max-width: 460px) { .chart text { font-size: 20px; } .chart text.bar-val { font-size: 19px; } }
 .chart .grid-line { stroke: var(--line); stroke-dasharray: 3 4; }
 .chart .area { fill: url(#area-grad); }
 .chart .line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
@@ -62,6 +67,9 @@
 .chart .bar { fill: var(--accent); opacity: .85; transition: opacity .2s var(--ease); }
 .chart .bar--alt { fill: var(--plum); opacity: .35; }
 .chart .bar:hover { opacity: 1; }
+/* عدد هر ستون بالای آن */
+.chart .bar-val { fill: var(--ink); font-weight: 800; font-size: 12px; }
+.chart .bar-val--alt { fill: var(--muted); font-weight: 600; }
 .chart-legend { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); margin: var(--s3) 0 0; padding: 0; font-size: .82rem; color: var(--muted); }
 .chart-legend li { display: inline-flex; align-items: center; gap: 6px; }
 .chart-legend i { width: 10px; height: 10px; border-radius: 3px; background: var(--c, var(--accent)); }
