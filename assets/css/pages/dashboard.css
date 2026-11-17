@@ -135,7 +135,9 @@
 /* گروه‌های بازشونده (مثلاً خدمات هر دسته) */
 
 /* ================= نوبت‌ها: کارت و تایم‌لاین ================= */
-.appt-list { display: grid; gap: var(--s3); }
+/* چیدمان کارت نوبت از عرض خود فهرست تعیین می‌شود، نه عرض صفحه؛
+   تا در کادرهای نیمه‌عرض (مثل «منتظر نظر شما» در داشبورد) متن‌ها فشرده و شکسته نشوند. */
+.appt-list { display: grid; gap: var(--s3); container-type: inline-size; }
 .appt {
   display: grid; grid-template-columns: auto 1fr; gap: var(--s3) var(--s4); align-items: center; padding: var(--s4);
   border-radius: 20px; background: var(--glass-soft); border: 1px solid var(--glass-border);
@@ -146,12 +148,19 @@
 .appt__body { display: grid; gap: 4px; min-width: 0; }
 .appt__body h3 { margin: 0; font-size: 1rem; }
 .appt__meta { display: flex; flex-wrap: wrap; gap: 4px var(--s3); margin: 0; font-size: .85rem; color: var(--muted); }
-.appt__meta span { display: inline-flex; align-items: center; gap: 4px; }
+.appt__meta span { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
 .appt__meta .icon { width: 16px; height: 16px; }
 .appt__actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--s2); padding-top: var(--s3); border-top: 1px solid var(--line); }
-@media (min-width: 760px) {
+@container (min-width: 600px) {
   .appt { grid-template-columns: auto 1fr auto; }
   .appt__actions { grid-column: auto; padding-top: 0; border-top: 0; justify-content: flex-end; }
+}
+/* مرورگرهای قدیمی بدون container query: همان رفتار قبلی بر اساس عرض صفحه */
+@supports not (container-type: inline-size) {
+  @media (min-width: 760px) {
+    .appt { grid-template-columns: auto 1fr auto; }
+    .appt__actions { grid-column: auto; padding-top: 0; border-top: 0; justify-content: flex-end; }
+  }
 }
 
 /* نوبت بعدی مشتری */

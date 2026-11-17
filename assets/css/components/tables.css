@@ -5,7 +5,9 @@
 .table th, .table td { padding: var(--s3); text-align: start; border-bottom: 1px solid var(--line); vertical-align: middle; }
 .table th { font-size: .85rem; color: var(--muted); font-weight: 600; white-space: nowrap; }
 .table tr:hover td { background: color-mix(in srgb, var(--accent-soft) 50%, transparent); }
-.table .actions { display: flex; flex-wrap: wrap; gap: var(--s2); justify-content: flex-end; }
+/* ستون دکمه‌ها خودِ سلول جدول می‌ماند (display: flex آن را از ردیف جدا می‌کرد و هایلایت ردیف پله‌پله می‌شد). */
+.table td.actions { white-space: nowrap; text-align: end; }
+.table td.actions > * + * { margin-inline-start: var(--s2); }
 @media (max-width: 760px) {
   .table--stack thead { display: none; }
   .table--stack, .table--stack tbody, .table--stack tr, .table--stack td { display: block; width: 100%; }
