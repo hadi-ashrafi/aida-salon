@@ -282,20 +282,22 @@
             </div>
           </header>
           <section class="card mb-3">
-            <form class="cluster" method="get" style="align-items: flex-end">
-              <div class="field" style="flex: 1 1 150px">
-                <label for="from">از تاریخ</label>
-                <input id="from" name="from" class="input ltr" value="1405/08/01" placeholder="1405/08/01" />
-              </div>
-              <div class="field" style="flex: 1 1 150px">
-                <label for="to">تا تاریخ</label>
-                <input id="to" name="to" class="input ltr" value="1405/08/21" placeholder="1405/08/21" />
-              </div>
-              <button type="submit" class="btn btn-primary">نمایش</button>
-              <div class="tabs" style="margin: 0">
+            <form class="report-range" method="get">
+              <div class="tabs report-range__presets" role="group" aria-label="بازه آماده">
                 <a href="?range=7">۷ روز</a>
                 <a href="?range=30" aria-current="page">این ماه</a>
                 <a href="?range=90">۳ ماه</a>
+              </div>
+              <div class="report-range__custom">
+                <div class="field">
+                  <label for="from">از تاریخ</label>
+                  <input id="from" name="from" class="input ltr" value="1405/08/01" placeholder="1405/08/01" inputmode="numeric" />
+                </div>
+                <div class="field">
+                  <label for="to">تا تاریخ</label>
+                  <input id="to" name="to" class="input ltr" value="1405/08/21" placeholder="1405/08/21" inputmode="numeric" />
+                </div>
+                <button type="submit" class="btn btn-primary">نمایش</button>
               </div>
             </form>
           </section>
