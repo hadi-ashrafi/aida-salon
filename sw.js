@@ -2,7 +2,7 @@
 // هر بار فایلی تغییر کرد، VERSION را بالا ببرید تا گوشی‌ها نسخه تازه را بگیرند
 // (فایل‌ها با cache: "reload" مستقیم از سرور گرفته می‌شوند، نه از حافظه مرورگر).
 // صفحه‌ها «اول شبکه» (تا همیشه تازه باشند) و بقیه فایل‌ها «اول حافظه» (برای سرعت) خوانده می‌شوند.
-const VERSION = "aida-v15";
+const VERSION = "aida-v16";
 // صفحه‌های شخصی (پنل‌ها و حساب کاربری) هیچ‌وقت در حافظه گوشی ذخیره نمی‌شوند:
 // با بک‌اند، محتوایشان مال همان کاربر است و بعد از خروج نباید روی دستگاه بماند.
 const PRIVATE = /\/(admin|stylist|customer)\/|\/account\/(profile|notifications)\.html/;
@@ -51,7 +51,6 @@ const PRECACHE = [
   "assets/js/components/select.js",
   "assets/js/components/slot-picker.js",
   "assets/js/pages/booking.js",
-  "assets/js/pages/home-hero.js",
   "assets/js/pages/home-reviews.js",
   "assets/js/pages/list-filter.js",
   "assets/js/pages/reschedule.js",

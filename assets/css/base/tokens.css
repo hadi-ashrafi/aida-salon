@@ -16,14 +16,14 @@
 }
 
 :root {
-  --bg: #FBF1F0;
+  --bg: #F7F3F2;
   /* سطح‌ها نیمه‌شفاف‌اند (گلس‌مورفیسم)؛ مات شدن پشتشان در cards.css است. */
-  --surface: rgba(255, 255, 255, 0.58);
-  --cream: rgba(255, 240, 234, 0.65);
-  --pink: #F7D9DF;
+  --surface: rgba(255, 255, 255, 0.8);
+  --cream: rgba(58, 35, 48, 0.04);
+  --pink: #ECE5E4;
   --ink: #3A2330;
   --muted: #6E5562;
-  --line: rgba(163, 46, 84, 0.12);
+  --line: rgba(58, 35, 48, 0.10);
   --plum: #A32E54;
   --accent: #C23B65;
   --accent-soft: rgba(194, 59, 101, 0.10);
@@ -33,25 +33,20 @@
   --success-soft: rgba(47, 107, 69, 0.12);
   --danger: #9F1F2A;
   --danger-soft: rgba(159, 31, 42, 0.08);
-  --tile-from: #FDE7EC;
-  --tile-to: #FBEFE6;
+  --tile-from: #F3EDEC;
+  --tile-to: #F3EDEC;
 
   /* گلس‌مورفیسم */
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-strong: rgba(255, 250, 251, 0.72);
-  --glass-soft: rgba(255, 255, 255, 0.45);
-  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-strong: rgba(255, 255, 255, 0.86);
+  --glass-soft: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(58, 35, 48, 0.08);
   --glass-ring: rgba(255, 255, 255, 0.9);
   /* سطح‌ها سایه بیرونی ندارند (در اسکرول افقی بریده می‌شد)؛ فقط خط نور بالایی.
      سایه فقط برای چیزهای شناور: سربرگ، منوی پایین، کشو و پنجره‌ها. */
   --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
   --float-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 30px -16px rgba(163, 46, 84, 0.3);
   --blur: 10px;
-  /* لکه‌های رنگی پس‌زمینه کل سایت */
-  --mesh-top: #F9D3DE;
-  --mesh-a: #F7C1D1;
-  --mesh-b: #FAD9C1;
-  --mesh-c: #E6D2F5;
 
   --font: "Vazirmatn", Tahoma, sans-serif;
   --r-xs: 8px;
@@ -69,35 +64,31 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #170F13;
-  --surface: rgba(52, 34, 43, 0.52);
-  --cream: rgba(255, 255, 255, 0.06);
-  --pink: #3B2530;
-  --ink: #FBEFF2;
-  --muted: #CDB4BE;
-  --line: rgba(255, 255, 255, 0.09);
-  --plum: #F2A9C0;
+  --bg: #131213;
+  --surface: rgba(255, 255, 255, 0.05);
+  --cream: rgba(255, 255, 255, 0.05);
+  --pink: #2A2729;
+  --ink: #F4F1F2;
+  --muted: #B6AFB3;
+  --line: rgba(255, 255, 255, 0.08);
+  --plum: #E8849F;
   --accent: #F28AAB;
-  --accent-soft: rgba(242, 138, 171, 0.14);
+  --accent-soft: rgba(242, 138, 171, 0.10);
   --accent-ink: #F28AAB;
   --on-accent: #1D1418;
   --success: #8FCB9F;
   --success-soft: rgba(143, 203, 159, 0.12);
   --danger: #F29B9B;
   --danger-soft: rgba(242, 155, 155, 0.12);
-  --tile-from: #3E2530;
-  --tile-to: #33242A;
-  --glass-bg: rgba(52, 34, 43, 0.5);
-  --glass-strong: rgba(38, 25, 32, 0.72);
-  --glass-soft: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-ring: rgba(23, 15, 19, 0.9);
+  --tile-from: #222022;
+  --tile-to: #222022;
+  --glass-bg: rgba(31, 29, 31, 0.78);
+  --glass-strong: rgba(24, 23, 24, 0.9);
+  --glass-soft: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-ring: rgba(19, 18, 19, 0.95);
   --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
   --float-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 12px 30px -16px rgba(0, 0, 0, 0.7);
-  --mesh-top: #5C2039;
-  --mesh-a: #6A2442;
-  --mesh-b: #553020;
-  --mesh-c: #3B2459;
   --shadow-sm: none;
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
   color-scheme: dark;

@@ -10,15 +10,26 @@
   position: relative; isolation: isolate;
   padding-block: clamp(40px, 7vw, 88px) clamp(56px, 8vw, 104px);
 }
-:root[data-theme="dark"] .hero { --mirror-a: #B8486D; --mirror-b: #5E2038; --mirror-c: #B5733F; --hero-warm: #F3C19B; }
+:root[data-theme="dark"] .hero { --mirror-a: #B8486D; --mirror-b: #5E2038; --mirror-c: #B5733F; --hero-warm: #F28AAB; }
 
 /* پس‌زمینه هیرو جدا نیست؛ همان پس‌زمینه یکپارچه کل سایت (body::before) پشتش است تا لبه و درز دیده نشود. */
 
 /* کارت شیشه‌ای وسط هیرو */
 .hero__card {
   position: relative; max-width: 860px; margin-inline: auto; padding: clamp(28px, 6vw, 64px) clamp(20px, 5vw, 64px);
-  border-radius: 32px; text-align: center; border: 1px solid var(--glass-border);
+  border-radius: 32px; text-align: center; border: 1px solid rgba(194, 59, 101, 0.18);
+  /* تنها سطح رنگی صفحه، روی پس‌زمینه ساده */
+  background: linear-gradient(160deg, #FBE4EB 0%, #F5CFDB 100%);
 }
+.hero__card .hero__eyebrow,
+.hero__card .hero__stats { background: rgba(255, 255, 255, 0.55); border-color: rgba(255, 255, 255, 0.8); }
+.hero__card .hero__stats li + li { border-color: rgba(163, 46, 84, 0.15); }
+.hero__card .btn-ghost { background: rgba(255, 255, 255, 0.7); border-color: rgba(163, 46, 84, 0.18); }
+:root[data-theme="dark"] .hero__card { background: linear-gradient(160deg, #3B1F2B 0%, #2B1720 100%); border-color: rgba(242, 138, 171, 0.18); }
+:root[data-theme="dark"] .hero__card .hero__eyebrow,
+:root[data-theme="dark"] .hero__card .hero__stats { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.10); }
+:root[data-theme="dark"] .hero__card .hero__stats li + li { border-color: rgba(255, 255, 255, 0.10); }
+:root[data-theme="dark"] .hero__card .btn-ghost { background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.14); }
 /* خط نور ظریف بالای کارت هیرو */
 .hero__card::before {
   content: ""; position: absolute; top: -1px; left: 18%; right: 18%; height: 1px; pointer-events: none;
@@ -38,42 +49,52 @@
 }
 .hero__pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: hero-pulse 2s ease-out infinite; }
 
-/* شعارها روی هم در یک خانه گرید می‌نشینند تا با عوض شدنشان صفحه نپرد؛ اندازه طوری است که هر شعار یک خط شود. */
-.hero__title { display: grid; justify-items: center; margin: 0; font-size: clamp(1.7rem, 7.4vw, 4rem); font-weight: 900; line-height: 1.35; letter-spacing: 0; }
-.hero__slogan { grid-area: 1 / 1; visibility: hidden; }
-.hero__slogan.is-active, .hero__slogan.is-leaving { visibility: visible; }
-/* رنگ گرادیان: قبل از اجرای جاوااسکریپت روی <em>؛ بعد از جدا شدن کلمه‌ها فقط روی خود کلمه‌ها.
-   اگر <em> هم گرادیان بماند، متن کلمه‌ها جدا از حرکتشان روی هم دیده می‌شود (همان باگ نمایش). */
-.hero__slogan em { font-style: normal; }
-.hero__title.is-split .hero__slogan em { color: inherit; background: none; -webkit-background-clip: border-box; background-clip: border-box; }
-.hero__title:not(.is-split) .hero__slogan em, .hero__slogan em .hero__word {
-  color: transparent;
+/* یک شعار ثابت زیر تصویر؛ بخش داخل <em> گرادیانی است. */
+.hero__title { margin: 0 0 var(--s2); font-size: clamp(1.6rem, 6vw, 2.6rem); font-weight: 900; line-height: 1.35; letter-spacing: 0; }
+.hero__title em {
+  font-style: normal; color: transparent;
   background: linear-gradient(100deg, var(--accent) 10%, var(--plum) 55%, var(--hero-warm) 105%);
   -webkit-background-clip: text; background-clip: text;
 }
 
-/* هر کلمه جدا وارد و خارج می‌شود (کلمه‌ها را home-hero.js می‌سازد).
-   خروج کامل می‌شود و بعد شعار تازه وارد می‌شود تا کلمه‌ها روی هم نیفتند.
-   از filter: blur استفاده نشده چون روی متن گرادیانی در کروم چشمک می‌زند. */
-.hero__word {
-  display: inline-block; padding-block: .08em; opacity: 0; transform: translateY(.45em) scale(.96);
-  transition: opacity .55s var(--ease-out), transform .7s var(--ease-out);
-  will-change: opacity, transform;
+/* تصویر متحرک سالن بالای شعار (SVG داخل index.html) */
+.hero-art { max-width: 460px; margin: var(--s2) auto var(--s3); }
+.hero-art__svg { display: block; width: 100%; height: auto; overflow: visible; }
+.hero-art { --ha-glass-a: #FFFFFF; --ha-glass-b: #F6D6E0; --ha-halo: rgba(194, 59, 101, 0.12); --ha-pink: #E78AA6; --ha-deep: #C23B65; --ha-soft: #F9E3EA; --ha-leaf: #6FA88A; }
+:root[data-theme="dark"] .hero-art { --ha-glass-a: #4A2A38; --ha-glass-b: #2C1821; --ha-halo: rgba(242, 138, 171, 0.10); --ha-pink: #F28AAB; --ha-deep: #E8849F; --ha-soft: #5A3443; --ha-leaf: #7FB89A; }
+.ha-halo { fill: var(--ha-halo); animation: ha-breathe 6s ease-in-out infinite; transform-origin: 180px 112px; }
+.ha-pink { fill: var(--ha-pink); }
+.ha-deep { fill: var(--ha-deep); }
+.ha-soft { fill: var(--ha-soft); }
+.ha-leaf { fill: var(--ha-leaf); }
+.ha-leaf--2 { opacity: .85; }
+.ha-leaf--3 { opacity: .7; }
+.ha-stroke { fill: none; stroke: var(--ha-deep); stroke-width: 3; stroke-linecap: round; }
+.ha-teeth { stroke: var(--ha-deep); stroke-width: 2.5; stroke-linecap: round; }
+.ha-glint { fill: none; stroke: #fff; stroke-opacity: .6; stroke-width: 3; stroke-linecap: round; }
+.ha-spark { fill: #F3CF97; transform-box: fill-box; transform-origin: center; animation: ha-twinkle 3.2s ease-in-out var(--d) infinite; }
+.ha-shine { animation: ha-sweep 5s ease-in-out infinite; }
+.ha-plant { transform-box: fill-box; transform-origin: 50% 100%; animation: ha-sway 5s ease-in-out infinite; }
+.ha-float { animation: ha-float 4.5s ease-in-out infinite; }
+.ha-comb { animation-delay: -2s; animation-duration: 5.5s; }
+.ha-bottle { transform-box: fill-box; transform-origin: 50% 100%; animation: ha-pop 6s ease-in-out infinite; }
+.ha-petal { fill: var(--ha-pink); opacity: 0; animation: ha-fall 7.5s linear var(--d) infinite; }
+@keyframes ha-sweep { 0%, 35% { transform: translateX(0) rotate(20deg); } 75%, 100% { transform: translateX(150px) rotate(20deg); } }
+@keyframes ha-twinkle { 0%, 100% { opacity: .2; transform: scale(.5) rotate(0deg); } 50% { opacity: 1; transform: scale(1.1) rotate(25deg); } }
+@keyframes ha-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes ha-float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-9px) rotate(-4deg); } }
+@keyframes ha-pop { 0%, 80%, 100% { transform: scale(1); } 88% { transform: scale(1.08, .94); } }
+@keyframes ha-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@keyframes ha-fall {
+  0% { opacity: 0; transform: translate(var(--x), -10px) rotate(0deg); }
+  10% { opacity: .9; }
+  85% { opacity: .7; }
+  100% { opacity: 0; transform: translate(calc(var(--x) + 30px), 230px) rotate(240deg); }
 }
-.hero__slogan.is-active .hero__word { opacity: 1; transform: none; transition-delay: calc(.45s + var(--w, 0) * .08s); }
-.hero__slogan.is-leaving .hero__word { opacity: 0; transform: translateY(-.35em); transition-duration: .3s; transition-delay: calc(var(--w, 0) * .03s); }
-@media (prefers-reduced-motion: reduce) { .hero__word { transform: none !important; } }
-
-/* نشانگر شعار: نوار فعال در طول نمایش شعار پر می‌شود. */
-.hero__dots { display: flex; justify-content: center; gap: var(--s1); min-height: 36px; margin: var(--s3) 0 var(--s4); }
-.hero__dot { position: relative; width: 40px; height: 36px; padding: 0; border: 0; background: none; }
-.hero__dot::before, .hero__dot::after { content: ""; position: absolute; top: 16px; right: 0; bottom: 16px; left: 0; border-radius: 4px; }
-.hero__dot::before { background: color-mix(in srgb, var(--ink) 14%, transparent); }
-.hero__dot::after { background: var(--accent); transform: scaleX(0); transform-origin: right center; }
-.hero__dot.is-active::after { animation: hero-fill var(--slogan-ms, 3800ms) linear forwards; }
-.hero__dots.is-paused .hero__dot.is-active::after { animation: none; transform: none; }
-
-.hero__lead { max-width: 52ch; margin: 0 auto; font-size: 1.1rem; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-art * { animation: none !important; }
+  .ha-petal { display: none; }
+}
 .hero__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s3); margin-top: var(--s5); }
 .hero__actions .icon { transition: transform .25s var(--ease-out); }
 .hero__actions .btn:hover .icon { transform: translateX(-4px); }
@@ -125,7 +146,6 @@
 .cat-tile .tile__meta { margin: 0; }
 
 @keyframes hero-pulse { from { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); } to { box-shadow: 0 0 0 10px transparent; } }
-@keyframes hero-fill { to { transform: scaleX(1); } }
 
 /* ================= نوار «امروز در سالن» ================= */
 .today { max-width: calc(var(--wrap) - 48px); margin: 0 auto; width: calc(100% - 32px); border: 1px solid var(--glass-border); border-radius: 24px; }
@@ -181,14 +201,19 @@
 
 /* ================= گوشی: صفحه اصلی جمع‌وجور ================= */
 @media (max-width: 640px) {
-  .hero { padding-block: var(--s5) var(--s6); }
-  .hero__card { padding: var(--s5) var(--s4); border-radius: 24px; }
-  .hero__eyebrow { margin-bottom: var(--s3); font-size: .8rem; }
-  .hero__lead { font-size: .95rem; }
-  .hero__actions { margin-top: var(--s4); }
-  .hero__stats { margin-top: var(--s5); padding: var(--s3) var(--s1); border-radius: 16px; }
-  .hero__stats strong { font-size: 1.3rem; }
-  .hero__stats span { font-size: .75rem; }
+  /* کادر هیرو جمع‌وجور تا کامل بالای منوی پایین جا شود */
+  .hero { padding-block: var(--s3) var(--s5); }
+  .hero__card { padding: var(--s4) var(--s3) var(--s3); border-radius: 22px; }
+  .hero__card > * { animation-duration: .45s; }
+  .hero__eyebrow { margin-bottom: 0; padding: 4px 12px; font-size: .78rem; }
+  .hero-art { margin: var(--s1) auto var(--s2); }
+  .hero-art__svg { max-height: min(190px, 25svh); }
+  .hero__title { margin-bottom: 0; font-size: clamp(1.35rem, 6.4vw, 1.75rem); }
+  .hero__actions { flex-wrap: nowrap; gap: var(--s2); margin-top: var(--s3); }
+  .hero__actions .btn { flex: 1 1 0; min-height: 46px; padding-inline: var(--s3); font-size: .92rem; }
+  .hero__stats { margin-top: var(--s3); padding: var(--s2) var(--s1); border-radius: 16px; }
+  .hero__stats strong { font-size: 1.15rem; }
+  .hero__stats span { font-size: .72rem; }
   .hero__cat { min-height: 38px; font-size: .84rem; }
   .today { border-radius: 20px; }
   .today__grid { gap: var(--s3); padding-block: var(--s4); }

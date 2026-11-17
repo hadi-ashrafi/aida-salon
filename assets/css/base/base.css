@@ -4,16 +4,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; } /* کشوی پنهان منو و لکه‌های تزئینی اسکرول افقی نسازند */
-/* پس‌زمینه ثابت: لکه‌های رنگی که پشت سطح‌های شیشه‌ای مات دیده می‌شوند */
+/* پس‌زمینه ثابت: یک رنگ ساده و یکپارچه، بدون لکه‌های رنگی */
 body::before {
   content: ""; position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; pointer-events: none;
-  /* تنها پس‌زمینه سایت: ثابت و یکپارچه، بدون لایه جدا برای هیرو یا بخش‌ها (درز نمی‌سازد). */
-  background:
-    radial-gradient(70vmax 46vmax at 50% -8%, var(--mesh-top), transparent 72%),
-    radial-gradient(44vmax 44vmax at 4% 10%, var(--mesh-a), transparent 70%),
-    radial-gradient(40vmax 40vmax at 98% 34%, var(--mesh-b), transparent 70%),
-    radial-gradient(46vmax 46vmax at 24% 104%, var(--mesh-c), transparent 70%),
-    var(--bg);
+  background: var(--bg);
 }
 body {
   margin: 0; font-family: var(--font); font-size: 16px; line-height: 1.8;
@@ -114,7 +108,7 @@ button:disabled, input:disabled, select:disabled, .btn[aria-disabled="true"] { c
 /* بدون backdrop-filter سطح‌ها کمی مات‌ترند تا متن خوانا بماند */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   :root { --glass-bg: rgba(255, 252, 252, .9); --glass-strong: rgba(255, 252, 252, .96); }
-  :root[data-theme="dark"] { --glass-bg: rgba(40, 27, 33, .92); --glass-strong: rgba(32, 22, 27, .97); }
+  :root[data-theme="dark"] { --glass-bg: rgba(31, 29, 31, .94); --glass-strong: rgba(24, 23, 24, .97); }
 }
 /* جلوگیری از بزرگ‌نمایی خودکار iOS روی فیلدها و انتخاب ناخواسته با لمس */
 /* همه فیلدها ۱۶px تا آیفون موقع لمس صفحه را زوم نکند (کمتر از ۱۶px = زوم خودکار). */

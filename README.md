@@ -31,7 +31,7 @@ frontend/
     │   ├── theme-init.js        اعمال تم ذخیره‌شده پیش از نمایش صفحه
     │   ├── common/              theme · nav · reveal · ui · forms  (در همه صفحه‌ها)
     │   ├── components/          slot-picker.js  (انتخاب روز و ساعت)
-    │   └── pages/               home-hero.js · booking.js · reschedule.js
+    │   └── pages/               booking.js · reschedule.js
     ├── img/     نشان لوگو (روشن و تیره)، تصویر پیش‌فرض آواتار (روشن و تیره) و favicon
     └── fonts/   وزیرمتن
 ```
@@ -80,22 +80,16 @@ frontend/
 - **نمودارها** SVG ساده از داده نمونه‌اند و زیر هر نمودار جدول داده (`<details>`) هست؛ بک‌اند همان مقادیر را می‌سازد یا یک کتابخانه نمودار جایگزین می‌کند.
 - منوی پنل در صفحه‌های `account/` منوی مشتری است؛ بک‌اند منوی نقش کاربر را بگذارد.
 
-## شعارهای هیرو
+## هیروی صفحه اصلی
 
-در `index.html`، داخل `<h1 data-slogans>`:
+در `index.html` یک شعار ثابت زیر تصویر متحرک سالن است:
 
 ```html
-<h1 id="hero-title" class="hero__title" data-slogans data-interval="3800">
-  <span class="hero__slogan is-active"><em>زیبایی</em> رو رزرو کن</span>
-  <span class="hero__slogan">برای زیبایی، <em>منتظر نمون</em></span>
-  <span class="hero__slogan">زیبایی، <em>به وقت تو</em></span>
-</h1>
+<h1 id="hero-title" class="hero__title">زیبایی، <em>به وقت تو</em></h1>
 ```
 
-- هر `span` یک شعار است؛ کم و زیاد کردنش کافی است، نشانگرها خودکار ساخته می‌شوند.
-- بخشِ داخل `<em>` رنگی می‌شود.
-- `data-interval` فاصله‌ی عوض شدن شعارها به میلی‌ثانیه است.
-- حرکت‌ها در `assets/css/pages/home.css` و منطق در `assets/js/pages/home-hero.js` است.
+- بخشِ داخل `<em>` گرادیانی می‌شود.
+- تصویر، یک SVG داخل `.hero-art` است؛ رنگ‌ها و حرکت‌هایش (کلاس‌های `ha-*`) در `assets/css/pages/home.css` است و با «کاهش حرکت» سیستم متوقف می‌شود.
 
 ## وصل کردن بک‌اند
 

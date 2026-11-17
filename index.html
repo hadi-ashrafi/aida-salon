@@ -38,7 +38,6 @@
     <script src="assets/js/common/forms.js" defer></script>
     <script src="assets/js/common/pwa.js" defer></script>
     <script src="assets/js/components/select.js" defer></script>
-    <script src="assets/js/pages/home-hero.js" defer></script>
     <script src="assets/js/pages/home-reviews.js" defer></script>
   </head>
   <body>
@@ -99,24 +98,90 @@
               رزرو آنلاین سالن زیبایی آیدا
             </p>
 
-            <!-- سه شعار؛ هر بار یکی دیده می‌شود (assets/js/pages/home-hero.js) -->
-            <h1 id="hero-title" class="hero__title" data-slogans data-interval="3800">
-              <span class="hero__slogan is-active">
-                <em>زیبایی</em>
-                رو رزرو کن
-              </span>
-              <span class="hero__slogan">
-                برای زیبایی،
-                <em>منتظر نمون</em>
-              </span>
-              <span class="hero__slogan">
-                زیبایی،
-                <em>به وقت تو</em>
-              </span>
-            </h1>
-            <div class="hero__dots" data-slogan-dots role="group" aria-label="انتخاب شعار"></div>
+            <!-- تصویر متحرک سالن (استایل و حرکت‌ها در assets/css/pages/home.css) -->
+            <div class="hero-art" aria-hidden="true">
+              <svg viewBox="0 0 360 250" class="hero-art__svg">
+                <defs>
+                  <linearGradient id="ha-glass" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="var(--ha-glass-a)" />
+                    <stop offset="1" stop-color="var(--ha-glass-b)" />
+                  </linearGradient>
+                  <linearGradient id="ha-gold" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#F3CF97" />
+                    <stop offset="1" stop-color="#D4A062" />
+                  </linearGradient>
+                  <linearGradient id="ha-shine" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                    <stop offset=".5" stop-color="#fff" stop-opacity=".75" />
+                    <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                  </linearGradient>
+                  <clipPath id="ha-mirror"><path d="M138 168 V96 a42 42 0 0 1 84 0 V168 Z" /></clipPath>
+                </defs>
 
-            <p class="hero__lead">تجربه‌ای فراتر از یک مراجعه معمولی؛ خدمات حرفه‌ای، متخصصان باتجربه و فضایی اختصاصی برای توجه به زیبایی شما. همین حالا قرار زیبایی خود را رزرو کنید.</p>
+                <!-- هاله پشت آینه -->
+                <circle class="ha-halo" cx="180" cy="112" r="92" />
+
+                <!-- آینه طاقی با درخشش -->
+                <path d="M130 172 V96 a50 50 0 0 1 100 0 V172 Z" fill="url(#ha-gold)" />
+                <path d="M138 168 V96 a42 42 0 0 1 84 0 V168 Z" fill="url(#ha-glass)" />
+                <g clip-path="url(#ha-mirror)">
+                  <rect class="ha-shine" x="90" y="40" width="34" height="160" fill="url(#ha-shine)" transform="rotate(20 180 110)" />
+                  <path d="M152 92 q6 -18 22 -24" class="ha-glint" />
+                </g>
+
+                <!-- میز -->
+                <rect x="96" y="172" width="168" height="10" rx="5" fill="url(#ha-gold)" />
+                <rect x="108" y="182" width="6" height="40" rx="3" fill="url(#ha-gold)" />
+                <rect x="246" y="182" width="6" height="40" rx="3" fill="url(#ha-gold)" />
+
+                <!-- عطر، رژ، ظرف -->
+                <g class="ha-bottle">
+                  <rect x="236" y="146" width="20" height="26" rx="6" class="ha-pink" />
+                  <rect x="242" y="138" width="8" height="9" rx="2" fill="url(#ha-gold)" />
+                </g>
+                <rect x="222" y="154" width="7" height="18" rx="3" class="ha-deep" />
+                <rect x="222" y="150" width="7" height="6" rx="2" fill="url(#ha-gold)" />
+                <ellipse cx="118" cy="166" rx="14" ry="6" class="ha-soft" />
+                <rect x="104" y="156" width="28" height="11" rx="5" class="ha-soft" />
+
+                <!-- گلدان و برگ‌های تاب‌خور -->
+                <g class="ha-plant">
+                  <path d="M62 150 q-14 -30 4 -52 q8 26 -4 52" class="ha-leaf" />
+                  <path d="M66 152 q10 -34 32 -40 q-8 28 -32 40" class="ha-leaf ha-leaf--2" />
+                  <path d="M64 152 q-24 -18 -30 -40 q24 8 30 40" class="ha-leaf ha-leaf--3" />
+                </g>
+                <path d="M50 150 h30 l-5 30 h-20 z" fill="url(#ha-gold)" />
+
+                <!-- قیچی و شانه شناور -->
+                <g class="ha-float ha-scissors">
+                  <circle cx="300" cy="74" r="7" class="ha-stroke" />
+                  <circle cx="314" cy="88" r="7" class="ha-stroke" />
+                  <path d="M305 79 l26 -22 M309 83 l26 -6" class="ha-stroke" />
+                </g>
+                <g class="ha-float ha-comb">
+                  <rect x="30" y="58" width="44" height="10" rx="4" class="ha-deep" />
+                  <path d="M36 68 v10 M43 68 v10 M50 68 v10 M57 68 v10 M64 68 v10" class="ha-teeth" />
+                </g>
+
+                <!-- برق‌ها -->
+                <g class="ha-sparkles">
+                  <path class="ha-spark" style="--d: 0s" d="M118 54 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 z" />
+                  <path class="ha-spark" style="--d: .8s" d="M250 40 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5 z" />
+                  <path class="ha-spark" style="--d: 1.6s" d="M268 128 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z" />
+                  <path class="ha-spark" style="--d: 2.3s" d="M96 120 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z" />
+                </g>
+
+                <!-- گلبرگ‌های در حال افتادن -->
+                <ellipse class="ha-petal" style="--x: 150px; --d: 0s" cx="0" cy="0" rx="4" ry="2.4" />
+                <ellipse class="ha-petal" style="--x: 210px; --d: 2.2s" cx="0" cy="0" rx="3.4" ry="2" />
+                <ellipse class="ha-petal" style="--x: 280px; --d: 4.1s" cx="0" cy="0" rx="4" ry="2.4" />
+                <ellipse class="ha-petal" style="--x: 80px; --d: 5.6s" cx="0" cy="0" rx="3" ry="1.8" />
+              </svg>
+            </div>
+            <h1 id="hero-title" class="hero__title">
+              زیبایی،
+              <em>به وقت تو</em>
+            </h1>
 
             <div class="hero__actions">
               <a class="btn btn-primary btn-lg" href="booking.html">
